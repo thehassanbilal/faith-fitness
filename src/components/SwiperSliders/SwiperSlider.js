@@ -9,23 +9,20 @@ import classes from "./SwiperSlider.module.css";
 
 // import Swiper core and required modules
 import SwiperCore, { Pagination, Navigation } from "swiper";
-import {
-  getProductData,
-  getProductThunk,
-} from "../../features/productSlice/productSlice";
+import { getProductThunk } from "../../features/productSlice/productSlice";
 import { useDispatch, useSelector } from "react-redux";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 // install Swiper modules
 SwiperCore.use([Pagination, Navigation]);
-
 const SwiperSlider = ({ heading }) => {
-  const  data  = useSelector(getProductData);
+  const [datas, setDatas] = useState([]);
+  const data = useSelector((state) => state?.getProduct?.products);
   console.log(data);
 
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getProductThunk());
-  }, [dispatch]);
+  }, [dispatch, datas]);
   return (
     <>
       <h1 className={classes["SwiperSlider-Heading"]}>{heading}</h1>
