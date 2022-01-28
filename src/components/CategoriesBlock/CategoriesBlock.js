@@ -1,18 +1,19 @@
-import React from 'react';
+import React from "react";
 
-import classes from './CategoriesBlock.module.css';
+import classes from "./CategoriesBlock.module.css";
 
 const CategoriesBlock = ({ data }) => {
   return (
-    <div className={classes['categories-block-container']}>
+    <div className={classes["categories-block-container"]}>
       {data.map((category) => (
         <>
-          <div className={classes['categories-block-category-container']}>
+          <div className={classes["categories-block-category-container"]}>
             <img
-              className={classes['categories-block-category-img']}
+              className={classes["categories-block-category-img"]}
               src={category.img}
+              alt=""
             />
-            <div className={classes['categories-block-category-name']}>
+            <div className={classes["categories-block-category-name"]}>
               {category.productCategory}
             </div>
           </div>
