@@ -21,6 +21,14 @@ import productsCategoriesProteinImg from '../assets/productsCategories/productsC
 import productCategoriesPerformanceImg from '../assets/productsCategories/productCategoriesPerformanceImg.webp';
 import productCategoriesAccessoriesImg from '../assets/productsCategories/productCategoriesAccessoriesImg.webp';
 
+// Import imges for Shop Procuct Categories
+import shopProductsCategoriesProteinImg from '../assets/shop/ProductCategoriesImgs/shopProductCategoryProteinImg.jpg';
+import shopProductCategoryPostWorkoutImg from '../assets/shop/ProductCategoriesImgs/shopProductCategoryPostWorkoutImg.jpg';
+import shopProductCategoryFatBurnerImg from '../assets/shop/ProductCategoriesImgs/shopProductCategoryFatBurnerImg.jpg';
+import shopProductCategoryAminoAcidImg from '../assets/shop/ProductCategoriesImgs/shopProductCategoryAminoAcidsImg.jpg';
+import shopProductCategoryPreWorkoutImg from '../assets/shop/ProductCategoriesImgs/shopProductCategoryPreWorkoutImg.jpg';
+import shopProductCategoryGiftsAndValueSetsImg from '../assets/shop/ProductCategoriesImgs/shopProductCategoryGiftsAndValueSetsImg.jpg';
+
 // ------------------------DUMMY PRODUCTS-----------------------------------------------
 
 export const DUMMY_PRODUCTS = [
@@ -87,7 +95,6 @@ export const productsCategoriesData = [
 
 // ------------------------PRICING DATA-----------------------------------------------
 
-
 export const pricingsData = [
   {
     logo: '🤑',
@@ -114,3 +121,19 @@ export const pricingsData = [
     desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor.',
   },
 ];
+
+//--------------------------------SHOP PRODUCT CATEGORIES------------------------------
+
+export const shopProductCategories = [
+  { productCategory: 'PROTEIN', img: shopProductsCategoriesProteinImg },
+  { productCategory: 'POST-WORKOUT', img: shopProductCategoryPostWorkoutImg },
+  { productCategory: 'FAT BURNER', img: shopProductCategoryFatBurnerImg },
+  { productCategory: 'AMINO ACID', img: shopProductCategoryAminoAcidImg },
+  { productCategory: 'PRE-WORKOUT', img: shopProductCategoryPreWorkoutImg },
+  {
+    productCategory: 'GUIFTS & VALUE SETS',
+    img: shopProductCategoryGiftsAndValueSetsImg,
+  },
+];
+
+// rafce shortcut
