@@ -1,10 +1,16 @@
-import { Layout } from '../../components/Layout/Layout';
+import CategoriesBlock from '../../components/CategoriesBlock/CategoriesBlock';
 import classes from './Shop.module.css';
+
+import { shopProductCategories } from '../../services/productData';
+import SwiperSlider from '../../components/SwiperSliders/SwiperSlider';
 
 const Shop = () => {
   return (
     <>
-      <div>The Shop</div>
+      <div>
+        <CategoriesBlock data={shopProductCategories} />
+        <SwiperSlider heading={'FEATURED'} />
+      </div>
     </>
   );
 };
