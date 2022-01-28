@@ -1,11 +1,9 @@
-import { configureStore } from '@reduxjs/toolkit';
-import counterReducer from '../features/counter/counterSlice';
-import uiSlice from '../features/uiSlice/uiSlice';
+import { configureStore } from "@reduxjs/toolkit";
+import  productReducer  from "../features/productSlice/productSlice";
 
 const store = configureStore({
   reducer: {
-    ui: uiSlice.reducer,
-    counter: counterReducer,
+    getProduct: productReducer,
   },
 });
 export default store;
