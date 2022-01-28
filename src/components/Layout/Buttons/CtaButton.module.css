@@ -1,0 +1,10 @@
+.globle-ctaButton {
+  background-color: #c6101c;
+  color: white;
+  padding: 15px 20px;
+  border: none;
+}
+
+.globle-ctaButton:hover {
+  background-color: tomato;
+}
