@@ -1,0 +1,59 @@
+.whyUssection-container {
+  display: flex;
+  height: 800px;
+  border: solid 5px #c6101c;
+}
+
+.whyUssection-left-img {
+  width: 45%;
+}
+
+.whyUssection-right-whyUs {
+  width: 75%;
+}
+
+.whyUsSection-heading {
+  font-family: 'Pacifico', 'cursive';
+  font-weight: normal;
+  font-size: 40px;
+  padding-top: 40px;
+
+  color: #c6101c;
+}
+
+.whyUsSection-title {
+  display: flex;
+  align-items: center;
+  padding-top: 20px;
+}
+
+.whyUsSection-title-firstHalf {
+  font-family: 'Alfa Slab One', sans-serif;
+
+  font-size: 35px;
+  color: #c6101c;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+.whyUsSection-title-secondHalf {
+  font-family: 'Alfa Slab One', sans-serif;
+  padding: 10px;
+  font-size: 37px;
+  color: #c6101c;
+  font-weight: bold;
+}
+
+.whyUsSection-desc {
+  text-align: justify;
+  max-width: 80%;
+  margin-top: 25px;
+  color: black;
+}
+
+.whyUsSection-mini-section-container {
+  display: flex;
+}
+
+.whyUsSection-mini-section-container-rowOne {
+  width: 50%;
+}

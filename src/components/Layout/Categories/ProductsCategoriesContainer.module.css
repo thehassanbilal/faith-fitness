@@ -1,0 +1,12 @@
+.product-categories-container {
+  border: solid 5px #c6101c;
+}
+
+.product-categories-heading {
+  padding: 30px 0px 0px 10px;
+  text-decoration: underline;
+  font-size: 30px;
+  font-weight: bold;
+  background-color: gray;
+  align-content: center;
+}
