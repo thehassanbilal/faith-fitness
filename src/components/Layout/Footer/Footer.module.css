@@ -1,0 +1,28 @@
+.footerSection-container {
+  display: flex;
+  justify-content: center;
+  background-color: rgb(34, 32, 32);
+  border: solid 5px #c6101c;
+  width: 100%;
+  height: 90px;
+}
+
+.footerSection-poweredBy-part {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.footerSection-poweredBy-part-brandName {
+  font-size: 40px;
+}
+
+.footerSection-poweredBy-part-from {
+  font-size: 20px;
+}
+
+.footerSection-poweredBy-part-founderName {
+  font-size: 40px;
+  padding-left: 10px;
+}
