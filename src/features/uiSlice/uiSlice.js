@@ -2,10 +2,10 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const uiSlice = createSlice({
   name: 'uiSlice',
-  initialState: { dropdownIsVisible: false },
+  initialState: { isVisible: false },
   reducers: {
     toggle(state) {
-      state.dropdownIsVisible = !state.dropdownIsVisible;
+      state.isVisible = !state.isVisible;
     },
   },
 });

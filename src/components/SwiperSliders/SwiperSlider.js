@@ -12,40 +12,35 @@ import classes from './SwiperSlider.module.css';
 
 // import Swiper core and required modules
 import SwiperCore, { Pagination, Navigation } from 'swiper';
+import ProductCard from '../ProductCard/ProductCard';
 
 // install Swiper modules
 SwiperCore.use([Pagination, Navigation]);
 
 const SwiperSlider = (props) => {
-  console.log(DUMMY_PRODUCTS);
   return (
     <>
       <h1 className={classes['SwiperSlider-Heading']}>{props.heading}</h1>
       <Swiper
-        slidesPerView={6}
+        slidesPerView={5}
         spaceBetween={10}
-        slidesPerGroup={3}
+        slidesPerGroup={2}
         loop={false}
         loopFillGroupWithBlank={true}
         pagination={{
           clickable: true,
         }}
         navigation={false}
-        className='swiper'
+        className={classes['swiper']}
       >
         {DUMMY_PRODUCTS.map((product) => (
           <SwiperSlide className={classes['swiper-slide']}>
-            <div className={classes['swiper-slider-card']}>
-              <img src={product.img} />
-              <div className={classes['swiper-slider-description-container']}>
-                <h4 className={classes['swiper-slider-product-title']}>
-                  John Doe
-                </h4>
-                <p className={classes['swiper-slider-product-desc']}>
-                  Architect And Engineer
-                </p>
-              </div>
-            </div>
+            <ProductCard
+              img={product.img}
+              name={product.name}
+              price={product.price}
+              rating={product.rating}
+            />
           </SwiperSlide>
         ))}
       </Swiper>

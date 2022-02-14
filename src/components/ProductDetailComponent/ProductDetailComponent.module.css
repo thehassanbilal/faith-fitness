@@ -1,0 +1,74 @@
+.ProductDetailPage-container {
+  display: flex;
+  margin-top: 50px;
+  background-color: wheat;
+}
+
+.ProductDetailPage-imgSide {
+  width: 60%;
+}
+
+.ProductDetailPage-img-container {
+  padding: 50px 50px 50px 200px;
+}
+.ProductDetailPage-desc {
+  background-color: white;
+  margin: 30px;
+  padding: 20px;
+}
+
+.ProductDetailPage-imgSide img {
+  width: 100%;
+  max-width: 80%;
+}
+
+.ProductDetailPage-detailSide {
+  width: 40%;
+  padding: 50px 50px;
+}
+
+.ProductDetailPage-name {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.ProductDetailPage-rating {
+  padding: 10px 0px;
+}
+
+.ProductDetailPage-price-section {
+  background-color: azure;
+  padding: 20px 10px 30px 30px;
+}
+
+.ProductDetailPage-price {
+  list-style-type: none;
+  color: red;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.ProductDetailPage-ctaBtn {
+  padding-top: 20px;
+}
+
+.ProductDetailPage-flavour-and-weight-container {
+  background-color: white;
+  margin-top: 20px;
+  padding: 20px;
+}
+
+.ProductDetailPage-flavour-and-weight {
+  margin: 10px;
+  padding: 10px;
+  width: 100%;
+}
+
+.option {
+}
+
+.ProductDetailPage-nutritionImg img {
+  max-width: 500px;
+  height: 700px;
+  padding-top: 20px;
+}

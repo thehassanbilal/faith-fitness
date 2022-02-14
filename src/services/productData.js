@@ -21,6 +21,26 @@ import productsCategoriesProteinImg from '../assets/productsCategories/productsC
 import productCategoriesPerformanceImg from '../assets/productsCategories/productCategoriesPerformanceImg.webp';
 import productCategoriesAccessoriesImg from '../assets/productsCategories/productCategoriesAccessoriesImg.webp';
 
+// Import imges for Shop Procuct Categories
+import shopProductsCategoriesProteinImg from '../assets/shop/ProductCategoriesImgs/shopProductCategoryProteinImg.jpg';
+import shopProductCategoryPostWorkoutImg from '../assets/shop/ProductCategoriesImgs/shopProductCategoryPostWorkoutImg.jpg';
+import shopProductCategoryFatBurnerImg from '../assets/shop/ProductCategoriesImgs/shopProductCategoryFatBurnerImg.jpg';
+import shopProductCategoryAminoAcidImg from '../assets/shop/ProductCategoriesImgs/shopProductCategoryAminoAcidsImg.jpg';
+import shopProductCategoryPreWorkoutImg from '../assets/shop/ProductCategoriesImgs/shopProductCategoryPreWorkoutImg.jpg';
+import shopProductCategoryGiftsAndValueSetsImg from '../assets/shop/ProductCategoriesImgs/shopProductCategoryGiftsAndValueSetsImg.jpg';
+
+// Import imges for Shop Procuct Company Categories
+
+import proteinCompanyProductsTheProteinWorks from '../assets/shop/companiesImgs/theProteinWorks.jpg';
+import proteinCompanyProductsCellulor from '../assets/shop/companiesImgs/cellular.jpg';
+import proteinCompanyProductsMuscleTech from '../assets/shop/companiesImgs/muscleTech.jpg';
+import proteinCompanyProductsOn from '../assets/shop/companiesImgs/on.jpg';
+import proteinCompanyProductsJackedNutrition from '../assets/shop/companiesImgs/jackNeutrition.jpg';
+
+//------------------Product Data By Category------------------
+
+// import proteinOne from '../assets/products/Supliments DataBase/1-Six Star Muscle 100% Whey Protein Plus.webp';
+
 // ------------------------DUMMY PRODUCTS-----------------------------------------------
 
 export const DUMMY_PRODUCTS = [
@@ -87,7 +107,6 @@ export const productsCategoriesData = [
 
 // ------------------------PRICING DATA-----------------------------------------------
 
-
 export const pricingsData = [
   {
     logo: '🤑',
@@ -114,3 +133,29 @@ export const pricingsData = [
     desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor.',
   },
 ];
+
+//--------------------------------SHOP PRODUCT CATEGORIES------------------------------
+
+export const shopProductCategories = [
+  { name: 'PROTEIN', img: shopProductsCategoriesProteinImg },
+  { name: 'POST-WORKOUT', img: shopProductCategoryPostWorkoutImg },
+  { name: 'FAT BURNER', img: shopProductCategoryFatBurnerImg },
+  { name: 'AMINO ACID', img: shopProductCategoryAminoAcidImg },
+  { name: 'PRE-WORKOUT', img: shopProductCategoryPreWorkoutImg },
+  {
+    name: 'GUIFTS & VALUE SETS',
+    img: shopProductCategoryGiftsAndValueSetsImg,
+  },
+];
+
+//--------------------------------SHOP PRODUCT COMPANIES CATEGORIES------------------------------
+
+export const proteinCompaniesCategory = [
+  { name: 'the-protein-works', img: proteinCompanyProductsTheProteinWorks },
+  { name: 'cellulor', img: proteinCompanyProductsCellulor },
+  { name: 'muscle-Tech', img: proteinCompanyProductsMuscleTech },
+  { name: 'on', img: proteinCompanyProductsOn },
+  { name: 'jack-nutrition', img: proteinCompanyProductsJackedNutrition },
+];
+
+// rafce shortcut
