@@ -1,8 +1,16 @@
-import { Link } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { Link, Outlet } from 'react-router-dom';
+import { uiActions } from '../../../features/uiSlice/uiSlice';
 import { CtaButton } from '../Buttons/CtaButton';
 import classes from './NavBar.module.css';
 
 const NavBar = () => {
+  const dispatch = useDispatch();
+
+  const toggleCartHandler = () => {
+    dispatch(uiActions.toggle);
+  };
+
   const dropdown = (
     <div className={classes['navBar-dropdown']}>
       <div className={classes['navBar-dropdown-moreBtn']}>⋮</div>
@@ -16,7 +24,9 @@ const NavBar = () => {
   return (
     <>
       <div className={classes['navBar']}>
-        <p className={classes['navBar-brandImg']}>Faith Fitness 💪🏻</p>
+        <Link style={{ textDecoration: 'none' }} to='/'>
+          <p className={classes['navBar-brandImg']}>Faith Fitness 💪🏻</p>
+        </Link>
         <ul className={classes['navBar-list']}>
           <Link style={{ textDecoration: 'none' }} to='/store'>
             <li className={classes['navBar-list-link']}>STORE</li>
@@ -26,9 +36,10 @@ const NavBar = () => {
           </Link>
           <li>{dropdown}</li>
         </ul>
+        <Outlet />
         <div className={classes['navBar-rightDiv']}>
           <span>
-            <a className={classes.cartIcon}>
+            <a onClick={toggleCartHandler} className={classes.cartIcon}>
               🛒<sup className={classes.cartBatch}>2</sup>
             </a>
           </span>

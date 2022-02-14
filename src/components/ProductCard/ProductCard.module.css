@@ -1,0 +1,40 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.ProductCard-container {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  width: 250px;
+  text-align: center;
+  font-family: arial;
+  margin: 10px;
+}
+.ProductCard-container img {
+  width: 100%;
+}
+
+.ProductCard-detailPart {
+  background-color: rgb(185, 167, 167);
+}
+
+.ProductCard-name {
+  padding: 10px;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.ProductCard-price {
+  padding: 10px;
+  color: black;
+  font-size: 18px;
+}
+
+.ProductCard-rating {
+  padding: 10px;
+}
+.ProductCard-container:hover {
+  box-shadow: 0 0 5px rgb(60, 60, 131);
+}

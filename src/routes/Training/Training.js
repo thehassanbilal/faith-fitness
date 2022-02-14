@@ -1,10 +1,10 @@
 import React from 'react';
-import { Layout } from '../../components/Layout/Layout';
+import Pricing from '../../components/Layout/Pricing/Pricing';
 
 const Training = () => {
   return (
     <>
-      <div>Training Page</div>
+      <Pricing />
     </>
   );
 };

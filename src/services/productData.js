@@ -29,6 +29,18 @@ import shopProductCategoryAminoAcidImg from '../assets/shop/ProductCategoriesImg
 import shopProductCategoryPreWorkoutImg from '../assets/shop/ProductCategoriesImgs/shopProductCategoryPreWorkoutImg.jpg';
 import shopProductCategoryGiftsAndValueSetsImg from '../assets/shop/ProductCategoriesImgs/shopProductCategoryGiftsAndValueSetsImg.jpg';
 
+// Import imges for Shop Procuct Company Categories
+
+import proteinCompanyProductsTheProteinWorks from '../assets/shop/companiesImgs/theProteinWorks.jpg';
+import proteinCompanyProductsCellulor from '../assets/shop/companiesImgs/cellular.jpg';
+import proteinCompanyProductsMuscleTech from '../assets/shop/companiesImgs/muscleTech.jpg';
+import proteinCompanyProductsOn from '../assets/shop/companiesImgs/on.jpg';
+import proteinCompanyProductsJackedNutrition from '../assets/shop/companiesImgs/jackNeutrition.jpg';
+
+//------------------Product Data By Category------------------
+
+// import proteinOne from '../assets/products/Supliments DataBase/1-Six Star Muscle 100% Whey Protein Plus.webp';
+
 // ------------------------DUMMY PRODUCTS-----------------------------------------------
 
 export const DUMMY_PRODUCTS = [
@@ -125,15 +137,25 @@ export const pricingsData = [
 //--------------------------------SHOP PRODUCT CATEGORIES------------------------------
 
 export const shopProductCategories = [
-  { productCategory: 'PROTEIN', img: shopProductsCategoriesProteinImg },
-  { productCategory: 'POST-WORKOUT', img: shopProductCategoryPostWorkoutImg },
-  { productCategory: 'FAT BURNER', img: shopProductCategoryFatBurnerImg },
-  { productCategory: 'AMINO ACID', img: shopProductCategoryAminoAcidImg },
-  { productCategory: 'PRE-WORKOUT', img: shopProductCategoryPreWorkoutImg },
+  { name: 'PROTEIN', img: shopProductsCategoriesProteinImg },
+  { name: 'POST-WORKOUT', img: shopProductCategoryPostWorkoutImg },
+  { name: 'FAT BURNER', img: shopProductCategoryFatBurnerImg },
+  { name: 'AMINO ACID', img: shopProductCategoryAminoAcidImg },
+  { name: 'PRE-WORKOUT', img: shopProductCategoryPreWorkoutImg },
   {
-    productCategory: 'GUIFTS & VALUE SETS',
+    name: 'GUIFTS & VALUE SETS',
     img: shopProductCategoryGiftsAndValueSetsImg,
   },
+];
+
+//--------------------------------SHOP PRODUCT COMPANIES CATEGORIES------------------------------
+
+export const proteinCompaniesCategory = [
+  { name: 'the-protein-works', img: proteinCompanyProductsTheProteinWorks },
+  { name: 'cellulor', img: proteinCompanyProductsCellulor },
+  { name: 'muscle-Tech', img: proteinCompanyProductsMuscleTech },
+  { name: 'on', img: proteinCompanyProductsOn },
+  { name: 'jack-nutrition', img: proteinCompanyProductsJackedNutrition },
 ];
 
 // rafce shortcut

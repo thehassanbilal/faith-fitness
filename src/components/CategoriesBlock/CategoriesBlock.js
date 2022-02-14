@@ -1,21 +1,25 @@
 import React from 'react';
+import { Link, Outlet } from 'react-router-dom';
 
 import classes from './CategoriesBlock.module.css';
 
 const CategoriesBlock = ({ data }) => {
   return (
     <div className={classes['categories-block-container']}>
-      {data.map((category) => (
+      {data?.map((category) => (
         <>
-          <div className={classes['categories-block-category-container']}>
-            <img
-              className={classes['categories-block-category-img']}
-              src={category.img}
-            />
-            <div className={classes['categories-block-category-name']}>
-              {category.productCategory}
+          <Link to={`/store/${category.id}`} key={category.name}>
+            <div className={classes['categories-block-category-container']}>
+              <img
+                className={classes['categories-block-category-img']}
+                src={`http://localhost:1337${category?.img?.[0]?.url}`}
+              />
+              <div className={classes['categories-block-category-name']}>
+                {category.name}
+              </div>
             </div>
-          </div>
+          </Link>
+          <Outlet />
         </>
       ))}
     </div>
