@@ -1,7 +1,10 @@
+.checkout-form {
+  padding: 50px;
+}
+
 .form {
   margin: 1rem 0;
   height: 19rem;
-  overflow: auto;
 }
 
 .control {
