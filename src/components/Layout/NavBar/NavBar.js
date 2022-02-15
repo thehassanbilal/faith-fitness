@@ -1,4 +1,4 @@
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { Link, Outlet } from 'react-router-dom';
 import { uiActions } from '../../../features/uiSlice/uiSlice';
 import { CtaButton } from '../Buttons/CtaButton';
@@ -7,8 +7,10 @@ import classes from './NavBar.module.css';
 const NavBar = () => {
   const dispatch = useDispatch();
 
+  const cartQuantity = useSelector((state) => state.cart.totalQuantity);
+
   const toggleCartHandler = () => {
-    dispatch(uiActions.toggle);
+    dispatch(uiActions.toggle());
   };
 
   const dropdown = (
@@ -40,7 +42,7 @@ const NavBar = () => {
         <div className={classes['navBar-rightDiv']}>
           <span>
             <a onClick={toggleCartHandler} className={classes.cartIcon}>
-              🛒<sup className={classes.cartBatch}>2</sup>
+              🛒<sup className={classes.cartBatch}>{cartQuantity}</sup>
             </a>
           </span>
           <CtaButton btnTxt={'SIGN UP'} />

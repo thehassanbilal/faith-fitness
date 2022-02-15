@@ -11,7 +11,6 @@ const Shop = () => {
   const productCategories = useSelector(
     (state) => state.productSlice.productCategories
   );
-  console.log(productCategories);
 
   useEffect(async () => {
     dispatch(getProductCategoriesThunk());

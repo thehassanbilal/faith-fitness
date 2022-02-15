@@ -48,8 +48,19 @@
   font-weight: bold;
 }
 
-.ProductDetailPage-ctaBtn {
+.ProductDetailPage-ctaBtn-container {
   padding-top: 20px;
+}
+
+.ProductDetailPage-btn {
+  background-color: #c6101c;
+  color: white;
+  padding: 15px 20px;
+  border: none;
+}
+
+.ProductDetailPage-btn:hover {
+  background-color: tomato;
 }
 
 .ProductDetailPage-flavour-and-weight-container {
