@@ -1,26 +1,52 @@
+import { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { uiActions } from '../../../features/uiSlice/uiSlice';
 import { Modal } from '../Modal/Modal';
 import classes from './Cart.module.css';
+import CartItem from './CartItem';
+import Checkout from './Checkout';
 
 const Cart = (props) => {
-  const cartItems = (
-    <ul className={classes['cart-items']}>
-      {[{ id: 'c1', name: 'Sushi', amount: 2, price: 12.99 }].map((item) => (
-        <li>{item.name}</li>
-      ))}
-    </ul>
-  );
+  const [isCheckout, setisCheckout] = useState(false);
+  const dispatch = useDispatch();
+
+  const cartData = useSelector((state) => state.cart.items);
+
+  const closeButtonHandler = () => {
+    dispatch(uiActions.toggle());
+  };
+
+  const orderHandler = () => {
+    setisCheckout(true);
+  };
 
   return (
     <Modal>
-      {cartItems}
-      <div className={classes.total}>
-        <span>Total Amount</span>
-        <span>35.62</span>
-      </div>
+      <ul className={classes['cart-items']}>
+        <h1>Cart Items</h1>
+        {cartData?.map((item, i) => (
+          <CartItem
+            key={item.id}
+            item={{
+              id: item.id,
+              name: item.name,
+              quantity: item.quantity,
+              total: item.totalPrice,
+              price: item.price,
+            }}
+          />
+        ))}
+      </ul>
+
       <div className={classes.actions}>
-        <button className={classes['button--alt']}>Close</button>
-        <button className={classes.button}>Order</button>
+        <button onClick={closeButtonHandler} className={classes['button--alt']}>
+          Close
+        </button>
+        <button className={classes.button} onClick={orderHandler}>
+          Order
+        </button>
       </div>
+      {isCheckout && <Checkout onCancel={closeButtonHandler} />}
     </Modal>
   );
 };

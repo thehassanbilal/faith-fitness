@@ -13,11 +13,9 @@ import Cart from '../../components/Layout/Cart/Cart';
 import { useSelector } from 'react-redux';
 
 export const HomePage = () => {
-  const showCart = useSelector((state) => state.ui.isVisible);
   return (
     <>
       <div className='app-container'>
-        {showCart && <Cart />}
         <CarouselComponent />
         <Banner img={homePageBannerImg} />
         <SwiperSlider heading={'MOST POPULAR'} />

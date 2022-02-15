@@ -2,10 +2,26 @@ import React from 'react';
 
 import classes from './ProductDetailComponent.module.css';
 import { CtaButton } from '../Layout/Buttons/CtaButton';
+import { useDispatch } from 'react-redux';
+import { cartActions } from '../../features/cartSlice/cartSlice';
 
 const ProductDetailComponent = ({ data }) => {
+  const dispatch = useDispatch();
+
+  const { id, name, price, description } = data;
+
+  const addToCartHandler = () => {
+    dispatch(
+      cartActions.addItemToCart({
+        id,
+        name,
+        price,
+        description,
+      })
+    );
+  };
+
   const { supplement_flavors, supplement_weights } = data;
-  console.log(supplement_flavors);
   const productImg = `http://localhost:1337${data?.product_img?.[0]?.url}`;
   const nutritionImg = `http://localhost:1337${data?.nutrition_img?.[0]?.url}`;
 
@@ -57,8 +73,13 @@ const ProductDetailComponent = ({ data }) => {
             ))}
           </select>
         </div>
-        <div className={classes['ProductDetailPage-ctaBtn']}>
-          <CtaButton btnTxt={'ADD TO CART'} />
+        <div className={classes['ProductDetailPage-ctaBtn-container']}>
+          <button
+            className={classes['ProductDetailPage-btn']}
+            onClick={addToCartHandler}
+          >
+            ADD TO CART
+          </button>
         </div>
         {!nutritionImg && (
           <div className={classes['ProductDetailPage-nutritionImg']}>

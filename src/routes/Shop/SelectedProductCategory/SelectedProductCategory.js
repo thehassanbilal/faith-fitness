@@ -29,9 +29,9 @@ const SelectedProductCategory = () => {
     dispatch(getSelectedCategoryThunk(id));
     dispatch(getCompaniesThunk());
 
-    return () => {
-      return dispatch(removeSelectedCategoryProduct());
-    };
+    // return () => {
+    //   return dispatch(removeSelectedCategoryProduct());
+    // };
   }, [dispatch, id]);
 
   const bannerURL = `http://localhost:1337${selectedCategory?.banner?.[0]?.url}`;
@@ -52,13 +52,12 @@ const SelectedProductCategory = () => {
         <div className={classes['SelectedProductCategory-products']}>
           {selectedCategory?.products?.map((product, i) => {
             return (
-              <Link to={`/store/products/${product.id}`}>
-                <ProductCard
-                  img={`http://localhost:1337${product?.product_img?.[0]?.url}`}
-                  name={product.name}
-                  price={product.price}
-                />
-              </Link>
+              <ProductCard
+                id={product.id}
+                img={`http://localhost:1337${product?.product_img?.[0]?.url}`}
+                name={product.name}
+                price={product.price}
+              />
             );
           })}
         </div>

@@ -28,7 +28,7 @@
   }
 }
 
-@keyframes slide-down {
+/* @keyframes slide-down {
   from {
     opacity: 0;
     transform: translateY(-3rem);
@@ -37,4 +37,4 @@
     opacity: 1;
     transform: translateY(0);
   }
-}
+} */
