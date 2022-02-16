@@ -1,13 +1,12 @@
+/** @format */
+
 .SwiperSlider-Heading {
   margin: 20px;
   padding: 30px 0px 0px 10px;
-  text-decoration: underline;
   font-size: 30px;
   font-weight: bold;
-}
-
-.swiper {
-  background-color: tomato;
+  font-family: Poppins;
+  text-align: center;
 }
 
 .swiper-slide {

@@ -1,8 +1,10 @@
-import classes from './Banner.module.css';
+/** @format */
+
+import "../Banner/Banner.css";
 
 export const Banner = (props) => {
   return (
-    <div className={classes['under-carousel-banner-container']}>
+    <div className="under-carousel-banner-container">
       <img src={props.img} />
     </div>
   );

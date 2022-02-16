@@ -1,3 +1,5 @@
+/** @format */
+
 * {
   margin: 0;
   padding: 0;
@@ -8,14 +10,11 @@
   width: 250px;
   text-align: center;
   font-family: arial;
-  margin: 10px;
+
+  padding: 12px 0;
 }
 .ProductCard-container img {
   width: 100%;
-}
-
-.ProductCard-detailPart {
-  background-color: rgb(185, 167, 167);
 }
 
 .ProductCard-name {
@@ -26,15 +25,23 @@
   text-overflow: ellipsis;
 }
 
-.ProductCard-price {
+/* .ProductCard-price {
   padding: 10px;
   color: black;
   font-size: 18px;
-}
+} */
 
 .ProductCard-rating {
   padding: 10px;
 }
 .ProductCard-container:hover {
   box-shadow: 0 0 5px rgb(60, 60, 131);
+}
+
+button {
+  border: none;
+  outline: none;
+  padding: 4px 24px;
+  background-image: linear-gradient(#4c1216, #902129, #881e25, #5e1a1e);
+  color: white !important;
 }
