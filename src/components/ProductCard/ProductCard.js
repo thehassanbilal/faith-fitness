@@ -4,8 +4,9 @@ import React from "react";
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { cartActions } from "../../features/cartSlice/cartSlice";
+import Fade from "react-reveal/Fade";
 
-import classes from "./ProductCard.module.css";
+import "./ProductCard.css";
 
 function ProductCard(props) {
   const dispatch = useDispatch();
@@ -24,20 +25,20 @@ function ProductCard(props) {
   };
 
   return (
-    <div className={classes["ProductCard-container"]}>
-      <Link to={`/store/products/${id}`}>
-        <img src={props.img} alt="Product Image" />
-        <div className={classes["ProductCard-detailPart"]}>
-          <p className={classes["ProductCard-name"]}>{props.name}</p>
-          <p className={classes["ProductCard-price"]}>RS{props.price}</p>
-          <div className={classes["ProductCard-rating"]}>
-            {props.rating}⭐⭐⭐⭐⭐
+    <div className="ProductCard-container">
+      <Fade left>
+        <Link to={`/store/products/${id}`}>
+          <img src={props.img} alt="Product Image" />
+          <div className="ProductCard-detailPart">
+            <p className="ProductCard-name">{props.name}</p>
+            <p className="ProductCard-price">$29.0</p>
+            {/* <div className="ProductCard-rating">{props.rating}⭐⭐⭐⭐⭐</div> */}
           </div>
-        </div>
-      </Link>
-      <button onClick={addToCartHandler}>
-        <i className="fa fa-shopping-cart" style={{ color: "white" }}></i>
-      </button>
+        </Link>
+        <button onClick={addToCartHandler}>
+          <i className="fa fa-shopping-cart" style={{ color: "white" }}></i>
+        </button>
+      </Fade>
     </div>
   );
 }

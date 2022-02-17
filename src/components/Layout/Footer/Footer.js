@@ -2,6 +2,7 @@
 
 import "../Footer/Footer.css";
 import logo from "../../../assets/logo/logo.svg";
+import Flip from "react-reveal/Flip";
 
 const Footer = () => {
   return (
@@ -22,9 +23,16 @@ const Footer = () => {
             </div>
             <div class="row">
               <div class="col-sm">
-                <a href="#" class="footer-logo">
-                  <img src={logo} alt="Not Found" height="58px" width="58px" />
-                </a>
+                <Flip right>
+                  <a href="#" class="footer-logo">
+                    <img
+                      src={logo}
+                      alt="Not Found"
+                      height="58px"
+                      width="58px"
+                    />
+                  </a>
+                </Flip>
               </div>
               <div class="col-sm">
                 <h3>Customers</h3>
@@ -64,27 +72,31 @@ const Footer = () => {
               </div>
               <div class="col-md-3">
                 <h3>Follow us</h3>
+
                 <ul class="list-unstyled social d-flex gap-2">
-                  <li>
-                    <a href="#">
-                      <span class="fa fa-facebook"></span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <span class="fa fa-twitter"></span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <span class="fa fa-linkedin"></span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <span class="fa fa-youtube"></span>
-                    </a>
-                  </li>
+                  <Flip right>
+                    <li>
+                      <a href="#">
+                        <span class="fa fa-facebook"></span>
+                      </a>
+                    </li>
+
+                    <li>
+                      <a href="#">
+                        <span class="fa fa-twitter"></span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#">
+                        <span class="fa fa-linkedin"></span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#">
+                        <span class="fa fa-youtube"></span>
+                      </a>
+                    </li>
+                  </Flip>
                 </ul>
               </div>
             </div>

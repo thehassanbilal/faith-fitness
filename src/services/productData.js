@@ -19,9 +19,9 @@ import carouselImgTwo from "../assets/banners/banner-image.jpg";
 import carouselImgThree from "../assets/banners/banner-image.jpg";
 
 // Import imges for Product Categories
-import productsCategoriesProteinImg from "../assets/productsCategories/productsCategoriesProteinsImg.webp";
-import productCategoriesPerformanceImg from "../assets/productsCategories/productCategoriesPerformanceImg.webp";
-import productCategoriesAccessoriesImg from "../assets/productsCategories/productCategoriesAccessoriesImg.webp";
+import productsCategoriesProteinImg from "../assets/productsCategories/catagory-1.jpg";
+import productCategoriesPerformanceImg from "../assets/productsCategories/catagory-2.jpg";
+import productCategoriesAccessoriesImg from "../assets/productsCategories/catagory-3.jpg";
 
 // Import imges for Shop Procuct Categories
 import shopProductsCategoriesProteinImg from "../assets/shop/ProductCategoriesImgs/shopProductCategoryProteinImg.jpg";

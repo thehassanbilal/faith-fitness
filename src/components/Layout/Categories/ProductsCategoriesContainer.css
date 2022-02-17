@@ -1,0 +1,26 @@
+/** @format */
+
+.product-categories-container {
+  border: double 6px transparent;
+  border-radius: 18px;
+  background-image: linear-gradient(white, white),
+    linear-gradient(to right, #ae5157, #3396a5, #7e2375, #90a025, #4f2427);
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+  margin-top: 50px;
+}
+
+.product-categories-heading {
+  padding: 30px 0px 0px 10px;
+  font-size: 30px;
+  font-weight: bold;
+  font-family: Poppins;
+  text-align: center;
+}
+
+.products-categories-desc {
+  text-align: justify;
+  font-family: Poppins;
+  font-weight: 400;
+  line-height: 28px;
+}

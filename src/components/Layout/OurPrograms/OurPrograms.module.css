@@ -1,11 +1,12 @@
+/** @format */
+
 .programSection-container {
   height: 850px;
-  border: solid 5px #c6101c;
 }
 
 .programSection-heading {
-  font-family: 'Pacifico', 'cursive';
-  font-weight: normal;
+  font-family: "Pacifico", "cursive";
+  font-weight: 500;
   font-size: 40px;
   padding-top: 40px;
   text-align: center;
@@ -20,17 +21,17 @@
 }
 
 .programSection-title-firstHalf {
-  font-family: 'Alfa Slab One', sans-serif;
+  font-family: Poppins;
   padding: 10px;
-  font-size: 35px;
+  font-size: 34px;
   color: #c6101c;
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
 .programSection-title-secondHalf {
-  font-family: 'Alfa Slab One', sans-serif;
+  font-family: Poppins;
   padding: 10px;
-  font-size: 37px;
+  font-size: 34px;
   color: #c6101c;
   font-weight: bold;
 }
@@ -39,5 +40,7 @@
   display: flex;
   justify-content: space-between;
   margin: 0px 20px 0px 20px;
-  max-width: 1300px;
+  align-items: center;
+  flex-wrap: wrap;
+  font-family: Poppins !important;
 }

@@ -1,0 +1,27 @@
+/** @format */
+
+.SwiperSlider-Heading {
+  margin: 20px;
+  padding: 30px 0px 0px 10px;
+  font-size: 30px;
+  font-weight: bold;
+  font-family: Poppins;
+  text-align: center;
+}
+
+/* .swiper-slide {
+  padding: 30px 0;
+} */
+
+.slider-container {
+  padding: 12px;
+}
+
+.swiper-pagination-bullet-active {
+  background-image: linear-gradient(
+    #4c1216,
+    #902129,
+    #881e25,
+    #5e1a1e
+  ) !important;
+}

@@ -8,13 +8,16 @@ nav {
   right: 0;
   cursor: pointer;
   z-index: 999;
+  transition: all 1s ease-in-out;
+  scroll-behavior: smooth;
 }
 
 /* sticky nav */
 .sticky-nav {
   position: fixed;
   z-index: 999;
-  transition: all 1s ease-in-out;
+  transition: all 1s linear;
+  scroll-behavior: smooth;
 }
 
 nav ul {
@@ -39,6 +42,7 @@ nav ul {
 }
 
 .navBar-rightDiv {
+  position: relative;
   display: flex;
   align-items: center;
   margin-left: auto !important;

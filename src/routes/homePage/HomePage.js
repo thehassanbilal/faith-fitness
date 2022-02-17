@@ -23,7 +23,7 @@ export const HomePage = () => {
         <SwiperSlider heading={"MOST POPULAR"} />
         <ProductsCategoriesContainer />
         <OurPrograms />
-        <WhyUs />
+        {/* <WhyUs /> */}
         {/* <AboutCoach />
         <ClientTestimonials /> */}
       </div>

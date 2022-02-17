@@ -1,16 +1,26 @@
-import classes from './OurProgramsCard.module.css';
+/** @format */
+
+import "./OurProgramsCard.css";
+import Flip from "react-reveal/Flip";
 
 const OurProgramsCard = (props) => {
   return (
     <>
-      <div className={classes['ourProgramCard-card-container']}>
-        <div className={classes['ourProgramCard-logo-container']}>
-          <span className={classes['ourProgramCard-logo']}>{props.logo}</span>
+      <Flip left>
+        <div className="ourProgramCard-card-container">
+          <div className="ourProgramCard-logo-container">
+            <span className="ourProgramCard-logo">
+              <div class="circle-wrapper">
+                <div class="success circle"></div>
+                <div class="icon">{props.logo}</div>
+              </div>
+            </span>
+          </div>
+          <div className="ourProgramCard-title">{props.title}</div>
+          <div className="ourProgramCard-cost">{props.cost}</div>
+          <p className="ourProgramCard-desc">{props.desc}</p>
         </div>
-        <div className={classes['ourProgramCard-title']}>{props.title}</div>
-        <div className={classes['ourProgramCard-cost']}>{props.cost}</div>
-        <p className={classes['ourProgramCard-desc']}>{props.desc}</p>
-      </div>
+      </Flip>
     </>
   );
 };

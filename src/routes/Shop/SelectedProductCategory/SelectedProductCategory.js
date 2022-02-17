@@ -1,18 +1,20 @@
-import React, { useEffect } from 'react';
-import CategoriesBlock from '../../../components/CategoriesBlock/CategoriesBlock';
-import { Banner } from '../../../components/Layout/Banner/Banner';
-import SwiperSlider from '../../../components/SwiperSliders/SwiperSlider';
+/** @format */
 
-import { proteinCompaniesCategory } from '../../../services/productData';
-import classes from './SelectedProductCategory.module.css';
-import { Link, useParams } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
+import React, { useEffect } from "react";
+import CategoriesBlock from "../../../components/CategoriesBlock/CategoriesBlock";
+import { Banner } from "../../../components/Layout/Banner/Banner";
+import SwiperSlider from "../../../components/SwiperSliders/SwiperSlider";
+
+import { proteinCompaniesCategory } from "../../../services/productData";
+import "./SelectedProductCategory.css";
+import { Link, useParams } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
 import {
   getCompaniesThunk,
   getSelectedCategoryThunk,
   removeSelectedCategoryProduct,
-} from '../../../features/productSlice';
-import ProductCard from '../../../components/ProductCard/ProductCard';
+} from "../../../features/productSlice";
+import ProductCard from "../../../components/ProductCard/ProductCard";
 
 const SelectedProductCategory = () => {
   let { id } = useParams();
@@ -38,18 +40,16 @@ const SelectedProductCategory = () => {
 
   return (
     <>
-      <div className={classes['SelectedProductCategory-container']}>
-        <div className={classes['SelectedProductCategory-bannerDiv']}>
+      <div className="SelectedProductCategory-container">
+        <div className="SelectedProductCategory-bannerDiv">
           <Banner img={bannerURL} />
         </div>
-        <p className={classes['SelectedProductCategory-param']}></p>
-        <h1
-          className={classes['SelectedProductCategory-selectCompany-heading']}
-        >
+        <p className="SelectedProductCategory-param"></p>
+        <h1 className="SelectedProductCategory-selectCompany-heading">
           Products:
         </h1>
 
-        <div className={classes['SelectedProductCategory-products']}>
+        <div className="SelectedProductCategory-products">
           {selectedCategory?.products?.map((product, i) => {
             return (
               <ProductCard
@@ -62,7 +62,7 @@ const SelectedProductCategory = () => {
           })}
         </div>
       </div>
-      <SwiperSlider heading={'Here Are PROTEIN Products'} />
+      <SwiperSlider heading={"Here Are PROTEIN Products"} />
     </>
   );
 };

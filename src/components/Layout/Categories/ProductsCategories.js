@@ -1,35 +1,36 @@
-import { CtaButton } from '../Buttons/CtaButton';
-import classes from './ProductsCategories.module.css';
+/** @format */
+
+import Fade from "react-reveal/Fade";
+import { CtaButton } from "../Buttons/CtaButton";
+import "./ProductsCategories.css";
 
 export const ProductsCategories = (props) => {
-  let textStyle = '';
+  let textStyle = "";
 
-  if (props.style !== 'imgRightSide') {
-    textStyle = classes['products-categories-text-Rightside'];
+  if (props.style !== "imgRightSide") {
+    textStyle = "products-categories-text-Rightside";
   } else {
-    textStyle = classes['products-categories-text-side'];
+    textStyle = "products-categories-text-side";
   }
 
   const textSideOfProductCategories = (
     <div className={textStyle}>
-      <h3 className={classes['products-categories-heading']}>
-        {props.heading}
-      </h3>
-      <p className={classes['products-categories-desc']}>{props.desc}</p>
-      <CtaButton btnTxt={'SHOP NOW'} />
+      <h3 className="products-categories-heading">{props.heading}</h3>
+      <p className="products-categories-desc">{props.desc}</p>
+      <CtaButton btnTxt={"SHOP NOW"} />
     </div>
   );
 
   const imgSideOfProductCategories = (
-    <div className={classes['products-categories-img-side']}>
+    <div className="products-categories-img-side">
       <img src={props.img} />
     </div>
   );
 
-  let rightSideOfDiv = '';
-  let leftSideOfDiv = '';
+  let rightSideOfDiv = "";
+  let leftSideOfDiv = "";
 
-  if (props.style === 'imgRightSide') {
+  if (props.style === "imgRightSide") {
     rightSideOfDiv = textSideOfProductCategories;
     leftSideOfDiv = imgSideOfProductCategories;
   } else {
@@ -38,13 +39,13 @@ export const ProductsCategories = (props) => {
   }
 
   return (
-    <section className={classes['products-categories-container']}>
-      <div className={classes['products-categories-right-side']}>
-        {rightSideOfDiv}
-      </div>
-      <div className={classes['products-categories-left-side']}>
-        {leftSideOfDiv}
-      </div>
+    <section className="products-categories-container">
+      <Fade left>
+        <div className="products-categories-right-side">{rightSideOfDiv}</div>
+      </Fade>
+      <Fade right>
+        <div className="products-categories-left-side">{leftSideOfDiv}</div>
+      </Fade>
     </section>
   );
 };

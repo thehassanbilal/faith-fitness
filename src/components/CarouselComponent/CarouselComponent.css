@@ -25,3 +25,12 @@
 .swiper-button-prev:after {
   color: #830514 !important;
 }
+
+@media (max-width: 450px) {
+  .swiper-button-next:after,
+  .swiper-rtl .swiper-button-prev:after,
+  .swiper-button-next:after,
+  .swiper-button-prev:after {
+    font-size: 24px;
+  }
+}
