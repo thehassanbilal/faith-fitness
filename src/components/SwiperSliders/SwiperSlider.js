@@ -46,7 +46,7 @@ const SwiperSlider = (props) => {
         slidesPerGroup={2}
         loop={true}
         autoplay={{
-          delay: 3000,
+          delay: 2500,
           disableOnInteraction: false,
         }}
         loopFillGroupWithBlank={true}

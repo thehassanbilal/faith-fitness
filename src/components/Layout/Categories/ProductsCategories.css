@@ -38,6 +38,7 @@
 .products-categories-text-Rightside,
 .products-categories-text-side {
   max-width: 480px;
+  padding: 14px 12px;
 }
 
 .products-categories-right-side {
@@ -51,5 +52,11 @@
   .products-categories-desc {
     text-align: left !important;
     word-spacing: 8px;
+  }
+}
+
+@media (max-width: 892px) {
+  .products-categories-container {
+    justify-content: center;
   }
 }

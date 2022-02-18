@@ -5,6 +5,10 @@
   margin: auto;
 }
 
+.navbar {
+  padding: 0;
+}
+
 nav {
   box-shadow: 0 3px 10px rgb(0 0 0 / 0.2) !important;
   box-shadow: inset 0px -1px 0px #ffffff !important;
@@ -52,6 +56,8 @@ nav ul {
   align-items: center;
   margin-left: auto !important;
   justify-content: center;
+  padding-left: 100px;
+  margin-bottom: 18px;
 }
 
 .cartIcon {
@@ -161,4 +167,12 @@ nav ul {
   align-items: center;
   max-width: 100px;
   width: 100px;
+}
+
+.navbar-light .navbar-toggler-icon {
+  background-image: url("../../../assets/humberger.png");
+}
+
+.navbar-collapse {
+  padding: 6px 0;
 }

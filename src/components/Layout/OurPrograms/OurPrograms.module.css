@@ -1,9 +1,5 @@
 /** @format */
 
-.programSection-container {
-  height: 850px;
-}
-
 .programSection-heading {
   font-family: "Pacifico", "cursive";
   font-weight: 500;
@@ -25,7 +21,7 @@
   padding: 10px;
   font-size: 34px;
   color: #3b6d3a;
-  text-shadow: 3px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  font-weight: bold;
 }
 
 .programSection-title-secondHalf {
@@ -40,4 +36,12 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   font-family: Poppins !important;
+  gap: 18px;
+}
+
+@media (max-width: 480px) {
+  .programSection-title-firstHalf,
+  .programSection-title-secondHalf {
+    font-size: 24px;
+  }
 }

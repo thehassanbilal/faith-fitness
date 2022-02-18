@@ -30,6 +30,7 @@ const WhyUs = () => {
         <Fade left>
           <div className={classes["whyUssection-left-img"]}>
             <img
+              className="why-us-img"
               src={chooseUs}
               alt="Not Found"
               style={{ width: "100%", maxWidth: "500px" }}
