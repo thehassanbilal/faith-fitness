@@ -142,7 +142,7 @@ export const pricingsData = [
     desc: "Lacking motivation to get back into the gym? Back in the gym already but feel stagnated? Or maybe you’re just looking for new inspiration for a the new year. Whatever your situation, reading words of wisdom from successful people can be super-inspiring.",
   },
   {
-    logo: <img src={img4} alt="not found" height="70" width="110" />,
+    logo: <img src={img4} alt="not found" height="60" width="90" />,
     title: "Customised Target",
     cost: "50$",
     desc: "Lacking motivation to get back into the gym? Back in the gym already but feel stagnated? Or maybe you’re just looking for new inspiration for a the new year. Whatever your situation, reading words of wisdom from successful people can be super-inspiring.",
