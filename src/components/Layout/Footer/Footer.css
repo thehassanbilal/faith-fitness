@@ -42,7 +42,7 @@ a:hover {
   font-weight: 400;
 }
 .footer-20192 .links li a:hover {
-  color: #ac050f;
+  color: #3b6d3a;
 }
 .footer-20192 .social li {
   display: inline-block;
@@ -60,7 +60,12 @@ a:hover {
   color: #fff;
   font-family: Poppins;
   font-weight: 500;
-  background-image: linear-gradient(#4c1216, #902129, #881e25, #5e1a1e);
+  background: radial-gradient(
+    circle,
+    rgb(52 124 40) -6%,
+    rgba(35, 39, 40, 1) 84%,
+    rgba(14, 18, 17, 1) 100%
+  );
 }
 
 .footer-20192 .social li a:hover {
@@ -93,7 +98,12 @@ a:hover {
   -webkit-box-shadow: -20px -20px 0 0 rgba(52, 58, 64, 0.2);
   box-shadow: -20px -20px 0 0 rgba(52, 58, 64, 0.2);
   padding: 20px;
-  background-image: linear-gradient(#4c1216, #902129, #881e25, #5e1a1e);
+  background: radial-gradient(
+    circle,
+    rgb(52 124 40) -6%,
+    rgba(35, 39, 40, 1) 84%,
+    rgba(14, 18, 17, 1) 100%
+  );
   top: -150px;
   position: relative;
 }
@@ -102,9 +112,19 @@ a:hover {
   line-height: 1.5;
   font-family: Poppins;
   font-weight: 500;
+  color: white;
 }
 .footer-20192 .cta h3 {
   font-size: 18px;
+}
+
+.btn-dark {
+  border: 1px solid #d7d6d1;
+  border-radius: 8px !important;
+}
+
+.btn-dark:hover {
+  border: 1px solid #3b6d3a;
 }
 
 @media (max-width: 450px) {

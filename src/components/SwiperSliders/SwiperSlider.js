@@ -50,7 +50,7 @@ const SwiperSlider = (props) => {
         className="swiper"
       >
         {DUMMY_PRODUCTS.map((product) => (
-          <SwiperSlide className="swiper-slide slider-container">
+          <SwiperSlide className="swiper-slide slider-container ">
             <ProductCard
               img={product.img}
               name={product.name}

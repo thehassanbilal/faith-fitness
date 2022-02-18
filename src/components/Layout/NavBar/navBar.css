@@ -1,4 +1,9 @@
 /** @format */
+.navbar-container {
+  max-width: 1280px;
+  width: 100%;
+  margin: auto;
+}
 
 nav {
   box-shadow: 0 3px 10px rgb(0 0 0 / 0.2) !important;
@@ -33,7 +38,7 @@ nav ul {
 }
 
 .navbar-nav .nav-item a:hover {
-  color: #ac050f !important;
+  color: #3b6d3a !important;
 }
 
 .navBar-list-link:hover {
@@ -64,12 +69,11 @@ nav ul {
 .cartBatc {
   height: 22px;
   width: 22px;
-  border-radius: 50%;
+  border-radius: 8px;
+  background-color: whitesmoke;
   color: black;
-  position: absolute;
-  top: -6px;
-  margin-left: 14px;
-  font-size: 14px;
+  margin-left: 18px;
+  font-size: 16px;
   font-family: Poppins;
   display: flex;
   align-items: center;
@@ -89,16 +93,10 @@ nav ul {
   font-weight: 500;
   font-size: 18px;
   color: white;
-  background-color: #c6101c;
+
   padding: 8px 15px;
   max-width: 200px;
   border: none;
-}
-
-.ctaNavBar:hover {
-  color: #d6d6d6;
-  background-color: tomato;
-  cursor: pointer;
 }
 
 /* ----------------DROP DOWN BUTTON CSS------------------------> */
@@ -131,7 +129,7 @@ nav ul {
 }
 
 .navBar-dropdown-moreBtn-links a:hover {
-  box-shadow: 0 0px 6px rgb(172 5 15) !important;
+  box-shadow: 0 0px 6px #3b6d3a !important;
 }
 
 .navBar-dropdown:hover .navBar-dropdown-moreBtn-links {
@@ -139,5 +137,28 @@ nav ul {
 }
 
 .fa-shopping-cart {
-  color: #ac050f;
+  color: whitesmoke;
+}
+
+.signin {
+  font-family: Poppins;
+  font-size: 18px;
+  font-weight: bold;
+  color: black;
+  cursor: pointer;
+}
+
+.signin:hover {
+  color: #3b6d3a;
+}
+
+.cart-div {
+  background-color: #3b6d3a;
+  height: 38px;
+  justify-content: center;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  max-width: 100px;
+  width: 100px;
 }
