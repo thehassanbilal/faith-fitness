@@ -87,21 +87,19 @@ export const carouselImgs = [
 export const productsCategoriesData = [
   {
     heading: "Proteins",
-    desc: `Protein is an essential macronutrient to build and maintain your
-     muscle mass. Our protein requirements depend on many internal and
-     external factors.`,
+    desc: `Lacking motivation to get back into the gym? Back in the gym already but feel stagnated? Or maybe you’re just looking for new inspiration for a the new year. Whatever your situation, reading words of wisdom from successful people can be super-inspiring.`,
     img: productsCategoriesProteinImg,
     style: "imgRightSide",
   },
   {
     heading: "Performance",
-    desc: `Enhance your muscle building workout with our range of performance supplements. You will find supplements like essential amino acids, pre-workout supplements and more.`,
+    desc: `Lacking motivation to get back into the gym? Back in the gym already but feel stagnated? Or maybe you’re just looking for new inspiration for a the new year. Whatever your situation, reading words of wisdom from successful people can be super-inspiring.`,
     img: productCategoriesPerformanceImg,
     style: "imgLeftSide",
   },
   {
     heading: "Accessories",
-    desc: `Shop our accessories for shakers, gym bags, pill box and more. All prepared with high-grade raw materials.`,
+    desc: `Lacking motivation to get back into the gym? Back in the gym already but feel stagnated? Or maybe you’re just looking for new inspiration for a the new year. Whatever your situation, reading words of wisdom from successful people can be super-inspiring.`,
     img: productCategoriesAccessoriesImg,
     style: "imgRightSide",
   },
@@ -114,25 +112,25 @@ export const pricingsData = [
     logo: "🤑",
     title: "Free Demo",
     cost: "0$",
-    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor.",
+    desc: "Lacking motivation to get back into the gym? Back in the gym already but feel stagnated? Or maybe you’re just looking for new inspiration for a the new year. Whatever your situation, reading words of wisdom from successful people can be super-inspiring.",
   },
   {
     logo: "🏠",
     title: "Home Package",
     cost: "20$",
-    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor.",
+    desc: "Lacking motivation to get back into the gym? Back in the gym already but feel stagnated? Or maybe you’re just looking for new inspiration for a the new year. Whatever your situation, reading words of wisdom from successful people can be super-inspiring.",
   },
   {
     logo: "😎",
     title: "Personal Training",
     cost: "45$",
-    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor.",
+    desc: "Lacking motivation to get back into the gym? Back in the gym already but feel stagnated? Or maybe you’re just looking for new inspiration for a the new year. Whatever your situation, reading words of wisdom from successful people can be super-inspiring.",
   },
   {
     logo: "🧘🏻‍♀️",
     title: "Customised Target",
     cost: "50$",
-    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor.",
+    desc: "Lacking motivation to get back into the gym? Back in the gym already but feel stagnated? Or maybe you’re just looking for new inspiration for a the new year. Whatever your situation, reading words of wisdom from successful people can be super-inspiring.",
   },
 ];
 

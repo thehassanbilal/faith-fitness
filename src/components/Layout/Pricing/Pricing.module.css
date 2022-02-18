@@ -1,15 +1,12 @@
-.pricingSection-container {
-  border: solid 5px #c6101c;
-  height: 850px;
-}
+/** @format */
 
 .pricingSection-heading {
-  font-family: 'Pacifico', 'cursive';
+  font-family: "Pacifico", "cursive";
   font-weight: normal;
   font-size: 40px;
   padding-top: 40px;
   text-align: center;
-  color: #c6101c;
+  color: #3b6d3a;
 }
 
 .pricingSection-title {
@@ -20,24 +17,31 @@
 }
 
 .pricingSection-title-firstHalf {
-  font-family: 'Alfa Slab One', sans-serif;
+  font-family: Poppins;
   padding: 10px;
   font-size: 35px;
-  color: #c6101c;
-  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  color: #3b6d3a;
 }
 
 .pricingSection-title-secondHalf {
-  font-family: 'Alfa Slab One', sans-serif;
+  font-family: Poppins;
   padding: 10px;
   font-size: 37px;
-  color: #c6101c;
+  color: #3b6d3a;
   font-weight: bold;
 }
 
 .pricingSection-cards {
-  display: flex;
-  justify-content: space-between;
-  margin: 0px 20px 0px 20px;
-  max-width: 1300px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  font-family: Poppins !important;
+  grid-gap: 18px;
+  gap: 18px;
+}
+
+@media (max-width: 480px) {
+  .pricingSection-title-secondHalf,
+  .pricingSection-title-firstHalf {
+    font-size: 24px;
+  }
 }

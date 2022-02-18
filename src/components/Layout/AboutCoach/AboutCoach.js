@@ -1,19 +1,20 @@
-import classes from './AboutCoach.module.css';
+/** @format */
 
+import "../AboutCoach/AboutCoach.css";
+import about from "../../../assets/about.jpg";
 const AboutCoach = () => {
   return (
     <>
-      <section className={classes['aboutCoachSection-container']}>
-        <div className={classes['aboutCoachSection-title']}>
-          <p className={classes['aboutCoachSection-title-firstHalf']}>About</p>
-          <p className={classes['aboutCoachSection-title-secondHalf']}>Coach</p>
+      <section className="aboutCoachSection-container about-page">
+        <div className="aboutCoachSection-title">
+          <p className="aboutCoachSection-title-firstHalf">About</p>
+          <p className="aboutCoachSection-title-secondHalf">Coach</p>
         </div>
-        <div className={classes['aboutCoachSection-desc-and-Img-container']}>
-          <div className={classes['aboutCoachSection-desc']}>
-            <p className={classes['aboutCoachSection-desc-greeting']}>
-              Hi I'm Coach
-            </p>
-            <ul className={classes['aboutCoachSection-desc-text']}>
+        <img src={about} alt="not found" style={{ width: "60%" }} />
+        <div className="aboutCoachSection-desc-and-Img-container">
+          <div className="aboutCoachSection-desc">
+            <p className="aboutCoachSection-desc-greeting">Hi I'm Coach</p>
+            <ul className="aboutCoachSection-desc-text">
               <li>
                 <p>
                   When I started weight training 24 years ago it was never to be
@@ -51,7 +52,7 @@ const AboutCoach = () => {
               </li>
             </ul>
           </div>
-          <div className={classes['aboutCoachSection-coachImg']}></div>
+          <div className="aboutCoachSection-coachImg"></div>
         </div>
       </section>
     </>

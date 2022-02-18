@@ -13,6 +13,9 @@ import Training from "./routes/Training/Training";
 import SelectedProductCategory from "./routes/Shop/SelectedProductCategory/SelectedProductCategory";
 import ProductDetailPage from "./routes/ProductDetailPage/ProductDetailPage";
 import Checkout from "./components/Layout/Cart/Checkout";
+import Error from "./404/Error";
+import AboutCoach from "./components/Layout/AboutCoach/AboutCoach";
+import Contact from "./contact/Contact";
 
 function App() {
   return (
@@ -26,14 +29,9 @@ function App() {
             <Route path="/store/products/:id" element={<ProductDetailPage />} />
             <Route path="training" element={<Training />} />
             <Route path="/store/checkout" element={<Checkout />} />
-            <Route
-              path="*"
-              element={
-                <main style={{ padding: "1rem" }}>
-                  <p>There's nothing here!</p>
-                </main>
-              }
-            />
+            <Route path="/about" element={<AboutCoach />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="*" element={<Error />} />
           </Routes>
         </Layout>
       </BrowserRouter>

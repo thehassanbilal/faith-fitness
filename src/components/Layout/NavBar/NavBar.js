@@ -45,7 +45,9 @@ const NavBar = () => {
       <nav className={`navbar navbar-expand-lg navbar-light ${stickyClass}`}>
         <div className="navbar-container container">
           <a className="navbar-brand" href="#">
-            <img src={logo} alt="Not Found" height="48px" width="48px" />
+            <Link to="/">
+              <img src={logo} alt="Not Found" height="48px" width="48px" />
+            </Link>
           </a>
           <button
             className="navbar-toggler"

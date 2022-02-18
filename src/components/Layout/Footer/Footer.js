@@ -3,6 +3,7 @@
 import "../Footer/Footer.css";
 import logo from "../../../assets/logo/logo.svg";
 import Flip from "react-reveal/Flip";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -49,13 +50,17 @@ const Footer = () => {
                 <h3>Company</h3>
                 <ul class="list-unstyled links">
                   <li>
-                    <a href="#">About us</a>
+                    <Link to="/about">
+                      <a href="#">About us</a>
+                    </Link>
                   </li>
                   <li>
                     <a href="#">Careers</a>
                   </li>
                   <li>
-                    <a href="#">Contact us</a>
+                    <Link to="/contact">
+                      <a href="#">Contact us</a>
+                    </Link>
                   </li>
                 </ul>
               </div>
