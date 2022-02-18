@@ -3,7 +3,6 @@
 import { useDispatch, useSelector } from "react-redux";
 import { Link, Outlet } from "react-router-dom";
 import { uiActions } from "../../../features/uiSlice/uiSlice";
-import { CtaButton } from "../Buttons/CtaButton";
 import "../NavBar/navBar.css";
 import logo from "../../../assets/logo/logo.svg";
 import { useState, useEffect } from "react";
@@ -44,7 +43,7 @@ const NavBar = () => {
   return (
     <>
       <nav className={`navbar navbar-expand-lg navbar-light ${stickyClass}`}>
-        <div className="container">
+        <div className="navbar-container container">
           <a className="navbar-brand" href="#">
             <img src={logo} alt="Not Found" height="48px" width="48px" />
           </a>
@@ -81,13 +80,15 @@ const NavBar = () => {
 
             <div className="navBar-rightDiv">
               <a onClick={toggleCartHandler} className="cartIcon">
-                <div>
+                <div className="cart-div">
                   <i class="fa fa-shopping-cart"></i>
                   <div className="cartBatc">{cartQuantity}</div>
                 </div>
               </a>
 
-              <CtaButton btnTxt={"SIGN UP"} />
+              <a href="#" className="signin">
+                Sign In
+              </a>
             </div>
           </div>
         </div>

@@ -25,7 +25,7 @@ function ProductCard(props) {
   };
 
   return (
-    <div className="ProductCard-container">
+    <div className="ProductCard-container container">
       <Fade left>
         <Link to={`/store/products/${id}`}>
           <img src={props.img} alt="Product Image" />

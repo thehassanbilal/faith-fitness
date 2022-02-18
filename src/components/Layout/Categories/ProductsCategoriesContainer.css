@@ -3,8 +3,7 @@
 .product-categories-container {
   border: double 6px transparent;
   border-radius: 18px;
-  background-image: linear-gradient(white, white),
-    linear-gradient(to right, #ae5157, #3396a5, #7e2375, #90a025, #4f2427);
+
   background-origin: border-box;
   background-clip: content-box, border-box;
   margin-top: 50px;

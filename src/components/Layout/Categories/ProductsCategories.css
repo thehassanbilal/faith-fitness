@@ -4,7 +4,6 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 30px;
   flex-wrap: wrap;
 }
 
@@ -12,7 +11,7 @@
 
 .products-categories-heading {
   font-size: 28px;
-  color: #c6101c;
+  color: #3b6d3a;
   font-family: Poppins;
   font-weight: 600;
 }
@@ -22,14 +21,10 @@
 }
 
 .products-categories-cta {
-  background-color: #c6101c;
+  background-color: #3b6d3a;
   color: white;
   padding: 20px 30px;
   border: none;
-}
-
-.products-categories-cta:hover {
-  background-color: tomato;
 }
 
 /* ----------------Image side---------------------- */
@@ -46,8 +41,6 @@
 }
 
 .products-categories-right-side {
-  max-width: 800px;
-  width: 100%;
   text-align: justify;
   font-family: Poppins;
   font-weight: 400;

@@ -23,7 +23,7 @@
 .swiper-rtl .swiper-button-prev:after,
 .swiper-button-next:after,
 .swiper-button-prev:after {
-  color: #830514 !important;
+  color: #3b6d3a !important;
 }
 
 @media (max-width: 450px) {

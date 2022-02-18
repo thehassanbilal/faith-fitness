@@ -13,7 +13,7 @@ import "swiper/css/navigation";
 import "./SwiperSlider.css";
 
 // import Swiper core and required modules
-import SwiperCore, { Pagination, Navigation } from "swiper";
+import SwiperCore, { Autoplay, Pagination, Navigation } from "swiper";
 import ProductCard from "../ProductCard/ProductCard";
 
 // install Swiper modules
@@ -45,12 +45,17 @@ const SwiperSlider = (props) => {
         spaceBetween={10}
         slidesPerGroup={2}
         loop={true}
+        autoplay={{
+          delay: 3000,
+          disableOnInteraction: false,
+        }}
         loopFillGroupWithBlank={true}
         navigation={false}
         className="swiper"
+        modules={[Autoplay]}
       >
         {DUMMY_PRODUCTS.map((product) => (
-          <SwiperSlide className="swiper-slide slider-container">
+          <SwiperSlide className="swiper-slide slider-container ">
             <ProductCard
               img={product.img}
               name={product.name}
