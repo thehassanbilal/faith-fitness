@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { uiActions } from '../../../features/uiSlice/uiSlice';
@@ -19,7 +18,7 @@ const Cart = (props) => {
     <Modal>
       <ul className={classes['cart-items']}>
         <h1>Cart Items</h1>
-        {cartData?.map((item, i) => (
+        {cartData?.map((item) => (
           <CartItem
             key={item.id}
             item={{
