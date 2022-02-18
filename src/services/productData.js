@@ -12,11 +12,20 @@ import imgNine from "../../src/assets/products/DUMMY_PRODUCTS/9.jpg";
 import imgTen from "../../src/assets/products/DUMMY_PRODUCTS/10.jpg";
 import imgEleven from "../../src/assets/products/DUMMY_PRODUCTS/11.jpg";
 import imgTwelve from "../../src/assets/products/DUMMY_PRODUCTS/12.jpg";
+import img1 from "../../src/assets/money-icons1.png";
+import img2 from "../../src/assets/home-icon.svg";
+import img3 from "../../src/assets/train.png";
+import img4 from "../../src/assets/train-1-removebg-preview.png";
 
 // Import imges for carousel slider
 import carouselImgOne from "../assets/banners/banner-image.jpg";
 import carouselImgTwo from "../assets/banners/banner-image.jpg";
 import carouselImgThree from "../assets/banners/banner-image.jpg";
+
+// Import imges for pricing slider
+import pricingImgOne from "../assets/Gym/training-1.jpg";
+import pricingImgTwo from "../assets/Gym/training-2.jpg";
+import pricingImgThree from "../assets/Gym/training-3.jpg";
 
 // Import imges for Product Categories
 import productsCategoriesProteinImg from "../assets/productsCategories/catagory-1.jpg";
@@ -82,6 +91,12 @@ export const carouselImgs = [
   { img: carouselImgThree },
 ];
 
+export const pricingSliderImages = [
+  { img: pricingImgOne },
+  { img: pricingImgTwo },
+  { img: pricingImgThree },
+];
+
 // ------------------------PRODUCT CATEGORIES DATA-----------------------------------------------
 
 export const productsCategoriesData = [
@@ -109,25 +124,25 @@ export const productsCategoriesData = [
 
 export const pricingsData = [
   {
-    logo: "🤑",
+    logo: <img src={img1} alt="not found" height="70" width="70" />,
     title: "Free Demo",
     cost: "0$",
     desc: "Lacking motivation to get back into the gym? Back in the gym already but feel stagnated? Or maybe you’re just looking for new inspiration for a the new year. Whatever your situation, reading words of wisdom from successful people can be super-inspiring.",
   },
   {
-    logo: "🏠",
+    logo: <img src={img2} alt="not found" height="80" width="150" />,
     title: "Home Package",
     cost: "20$",
     desc: "Lacking motivation to get back into the gym? Back in the gym already but feel stagnated? Or maybe you’re just looking for new inspiration for a the new year. Whatever your situation, reading words of wisdom from successful people can be super-inspiring.",
   },
   {
-    logo: "😎",
+    logo: <img src={img3} alt="not found" height="70" width="70" />,
     title: "Personal Training",
     cost: "45$",
     desc: "Lacking motivation to get back into the gym? Back in the gym already but feel stagnated? Or maybe you’re just looking for new inspiration for a the new year. Whatever your situation, reading words of wisdom from successful people can be super-inspiring.",
   },
   {
-    logo: "🧘🏻‍♀️",
+    logo: <img src={img4} alt="not found" height="70" width="110" />,
     title: "Customised Target",
     cost: "50$",
     desc: "Lacking motivation to get back into the gym? Back in the gym already but feel stagnated? Or maybe you’re just looking for new inspiration for a the new year. Whatever your situation, reading words of wisdom from successful people can be super-inspiring.",
