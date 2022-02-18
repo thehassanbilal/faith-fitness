@@ -36,7 +36,7 @@ const NavBar = () => {
       <div className="navBar-dropdown-moreBtn-links">
         <a href="#">DIET PLAN 🍏</a>
         <a href="#">BLOGS 📰</a>
-        <a href="#">ABOUT 🧑 </a>
+        <Link to="/about">ABOUT 🧑</Link>
       </div>
     </div>
   );

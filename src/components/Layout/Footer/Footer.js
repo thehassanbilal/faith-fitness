@@ -17,9 +17,11 @@ const Footer = () => {
                 <h3 class="text-white">Let's get started!</h3>
               </div>
               <div class="ml-auto">
-                <a href="#" class="btn btn-dark rounded-0 py-3 px-5">
-                  Contact us
-                </a>
+                <Link to="/contact">
+                  <a href="#" class="btn btn-dark rounded-0 py-3 px-5">
+                    Contact us
+                  </a>
+                </Link>
               </div>
             </div>
             <div class="row">
