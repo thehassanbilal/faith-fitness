@@ -43,10 +43,12 @@ const Footer = () => {
                 <h3>Customers</h3>
                 <ul class="list-unstyled links">
                   <li>
-                    <a href="#">Buyer</a>
+                    <a href="#">Food Suplements</a>
                   </li>
                   <li>
-                    <a href="#">Supplier</a>
+                    <Link to="/dietplan">
+                      <a href="#">Diet Plans</a>
+                    </Link>
                   </li>
                 </ul>
               </div>
@@ -58,9 +60,7 @@ const Footer = () => {
                       <a href="#">About us</a>
                     </Link>
                   </li>
-                  <li>
-                    <a href="#">Careers</a>
-                  </li>
+
                   <li>
                     <Link to="/contact">
                       <a href="#">Contact us</a>
