@@ -16,6 +16,7 @@ import Checkout from "./components/Layout/Cart/Checkout";
 import Error from "./404/Error";
 import AboutCoach from "./components/Layout/AboutCoach/AboutCoach";
 import Contact from "./contact/Contact";
+import Dietplan from "./routes/Diet Plan/Dietplan";
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
             <Route path="training" element={<Training />} />
             <Route path="/store/checkout" element={<Checkout />} />
             <Route path="/about" element={<AboutCoach />} />
+            <Route path="/dietplan" element={<Dietplan />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="*" element={<Error />} />
           </Routes>

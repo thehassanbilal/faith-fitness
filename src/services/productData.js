@@ -32,6 +32,11 @@ import productsCategoriesProteinImg from "../assets/productsCategories/catagory-
 import productCategoriesPerformanceImg from "../assets/productsCategories/catagory-2.jpg";
 import productCategoriesAccessoriesImg from "../assets/productsCategories/catagory-3.jpg";
 
+// Import imges for diet plan portion
+import dietplan1 from "../assets/dietplan/dietplan1.jpg";
+import dietplan2 from "../assets/dietplan/dietplan2.jpg";
+import dietplan3 from "../assets/dietplan/dietplan3.jpg";
+
 // Import imges for Shop Procuct Categories
 import shopProductsCategoriesProteinImg from "../assets/shop/ProductCategoriesImgs/shopProductCategoryProteinImg.jpg";
 import shopProductCategoryPostWorkoutImg from "../assets/shop/ProductCategoriesImgs/shopProductCategoryPostWorkoutImg.jpg";
@@ -95,6 +100,12 @@ export const pricingSliderImages = [
   { img: pricingImgOne },
   { img: pricingImgTwo },
   { img: pricingImgThree },
+];
+
+export const forDietPlan = [
+  { img: dietplan1 },
+  { img: dietplan2 },
+  { img: dietplan3 },
 ];
 
 // ------------------------PRODUCT CATEGORIES DATA-----------------------------------------------

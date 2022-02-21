@@ -28,12 +28,14 @@ const Footer = () => {
               <div class="col-sm">
                 <Flip right>
                   <a href="#" class="footer-logo">
-                    <img
-                      src={logo}
-                      alt="Not Found"
-                      height="58px"
-                      width="58px"
-                    />
+                    <Link to="/">
+                      <img
+                        src={logo}
+                        alt="Not Found"
+                        height="58px"
+                        width="58px"
+                      />
+                    </Link>
                   </a>
                 </Flip>
               </div>

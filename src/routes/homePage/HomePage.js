@@ -27,8 +27,7 @@ export const HomePage = () => {
           <OurPrograms />
           <WhyUs />
         </div>
-
-        {/* <ClientTestimonials /> */}
+        <ClientTestimonials />
       </div>
     </>
   );

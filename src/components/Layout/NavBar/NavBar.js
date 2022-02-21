@@ -34,7 +34,7 @@ const NavBar = () => {
     <div className="navBar-dropdown">
       <div className="navBar-dropdown-moreBtn">⋮</div>
       <div className="navBar-dropdown-moreBtn-links">
-        <a href="#">DIET PLAN 🍏</a>
+        <Link to="/dietplan">DIET PLAN 🍏</Link>
         <a href="#">BLOGS 📰</a>
         <Link to="/about">ABOUT 🧑</Link>
       </div>
