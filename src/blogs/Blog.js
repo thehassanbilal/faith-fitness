@@ -12,81 +12,81 @@ import post6 from "../assets/dietplan/dietplan3.jpg";
 export default function Blog() {
   return (
     <main>
-      <div class="container">
-        <section class="text-center">
+      <div className="container">
+        <section className="text-center">
           <h1 className="pricingSection-heading">Latest Posts</h1>
           <div className="pricingSection-title">
             <p className="pricingSection-title-firstHalf">Our</p>
             <p className="pricingSection-title-secondHalf">Intresting Blogs</p>
           </div>
 
-          <div class="row">
-            <div class="col-lg-4 col-md-12 mb-4">
-              <div class="card">
+          <div className="row">
+            <div className="col-lg-4 col-md-12 mb-4">
+              <div className="card">
                 <div
-                  class="bg-image hover-overlay ripple"
+                  className="bg-image hover-overlay ripple"
                   data-mdb-ripple-color="light"
                 >
-                  <img src={post1} class="img-fluid" />
+                  <img src={post1} className="img-fluid" />
                   <a href="#!">
-                    <div class="mask"></div>
+                    <div className="mask"></div>
                   </a>
                 </div>
-                <div class="card-body">
-                  <h5 class="card-title">Post title</h5>
-                  <p class="card-text">
+                <div className="card-body">
+                  <h5 className="card-title">Post title</h5>
+                  <p className="card-text">
                     Some quick example text to build on the card title and make
                     up the bulk of the card's content.
                   </p>
-                  <a href="#!" class="btn ">
+                  <a href="#!" className="btn ">
                     Read
                   </a>
                 </div>
               </div>
             </div>
 
-            <div class="col-lg-4 col-md-6 mb-4">
-              <div class="card">
+            <div className="col-lg-4 col-md-6 mb-4">
+              <div className="card">
                 <div
-                  class="bg-image hover-overlay ripple"
+                  className="bg-image hover-overlay ripple"
                   data-mdb-ripple-color="light"
                 >
-                  <img src={post2} class="img-fluid" />
+                  <img src={post2} className="img-fluid" />
                   <a href="#!">
-                    <div class="mask"></div>
+                    <div className="mask"></div>
                   </a>
                 </div>
-                <div class="card-body">
-                  <h5 class="card-title">Post title</h5>
-                  <p class="card-text">
+                <div className="card-body">
+                  <h5 className="card-title">Post title</h5>
+                  <p className="card-text">
                     Some quick example text to build on the card title and make
                     up the bulk of the card's content.
                   </p>
-                  <a href="#!" class="btn ">
+                  <a href="#!" className="btn ">
                     Read
                   </a>
                 </div>
               </div>
             </div>
 
-            <div class="col-lg-4 col-md-6 mb-4">
-              <div class="card">
+            <div className="col-lg-4 col-md-6 mb-4">
+              <div className="card">
                 <div
-                  class="bg-image hover-overlay ripple"
+                  className="bg-image hover-overlay ripple"
                   data-mdb-ripple-color="light"
                 >
-                  <img src={post3} class="img-fluid" />
+                  <img src={post3} className="img-fluid" />
                   <a href="#!">
-                    <div class="mask"></div>
+                    <div className="mask"></div>
                   </a>
                 </div>
-                <div class="card-body">
-                  <h5 class="card-title">Post title</h5>
-                  <p class="card-text">
+                <div className="card-body">
+                  <h5 className="card-title">Post title</h5>
+                  <p className="card-text">
                     Some quick example text to build on the card title and make
                     up the bulk of the card's content.
                   </p>
-                  <a href="#!" class="btn ">
+                  <a href="#!" className="btn ">
                     Read
                   </a>
                 </div>
@@ -94,73 +94,73 @@ export default function Blog() {
             </div>
           </div>
 
-          <div class="row">
-            <div class="col-lg-4 col-md-12 mb-4">
-              <div class="card">
+          <div className="row">
+            <div className="col-lg-4 col-md-12 mb-4">
+              <div className="card">
                 <div
-                  class="bg-image hover-overlay ripple"
+                  className="bg-image hover-overlay ripple"
                   data-mdb-ripple-color="light"
                 >
-                  <img src={post4} class="img-fluid" />
+                  <img src={post4} className="img-fluid" />
                   <a href="#!">
-                    <div class="mask"></div>
+                    <div className="mask"></div>
                   </a>
                 </div>
-                <div class="card-body">
-                  <h5 class="card-title">Post title</h5>
-                  <p class="card-text">
+                <div className="card-body">
+                  <h5 className="card-title">Post title</h5>
+                  <p className="card-text">
                     Some quick example text to build on the card title and make
                     up the bulk of the card's content.
                   </p>
-                  <a href="#!" class="btn ">
+                  <a href="#!" className="btn ">
                     Read
                   </a>
                 </div>
               </div>
             </div>
 
-            <div class="col-lg-4 col-md-6 mb-4">
-              <div class="card">
+            <div className="col-lg-4 col-md-6 mb-4">
+              <div className="card">
                 <div
-                  class="bg-image hover-overlay ripple"
+                  className="bg-image hover-overlay ripple"
                   data-mdb-ripple-color="light"
                 >
-                  <img src={post5} class="img-fluid" />
+                  <img src={post5} className="img-fluid" />
                   <a href="#!">
-                    <div class="mask"></div>
+                    <div className="mask"></div>
                   </a>
                 </div>
-                <div class="card-body">
-                  <h5 class="card-title">Post title</h5>
-                  <p class="card-text">
+                <div className="card-body">
+                  <h5 className="card-title">Post title</h5>
+                  <p className="card-text">
                     Some quick example text to build on the card title and make
                     up the bulk of the card's content.
                   </p>
-                  <a href="#!" class="btn ">
+                  <a href="#!" className="btn ">
                     Read
                   </a>
                 </div>
               </div>
             </div>
 
-            <div class="col-lg-4 col-md-6 mb-4">
-              <div class="card">
+            <div className="col-lg-4 col-md-6 mb-4">
+              <div className="card">
                 <div
-                  class="bg-image hover-overlay ripple"
+                  className="bg-image hover-overlay ripple"
                   data-mdb-ripple-color="light"
                 >
-                  <img src={post6} class="img-fluid" />
+                  <img src={post6} className="img-fluid" />
                   <a href="#!">
-                    <div class="mask"></div>
+                    <div className="mask"></div>
                   </a>
                 </div>
-                <div class="card-body">
-                  <h5 class="card-title">Post title</h5>
-                  <p class="card-text">
+                <div className="card-body">
+                  <h5 className="card-title">Post title</h5>
+                  <p className="card-text">
                     Some quick example text to build on the card title and make
                     up the bulk of the card's content.
                   </p>
-                  <a href="#!" class="btn ">
+                  <a href="#!" className="btn ">
                     Read
                   </a>
                 </div>

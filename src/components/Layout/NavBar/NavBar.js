@@ -83,7 +83,7 @@ const NavBar = () => {
             <div className="navBar-rightDiv">
               <a onClick={toggleCartHandler} className="cartIcon">
                 <div className="cart-div">
-                  <i class="fa fa-shopping-cart"></i>
+                  <i className="fa fa-shopping-cart"></i>
                   <div className="cartBatc">{cartQuantity}</div>
                 </div>
               </a>

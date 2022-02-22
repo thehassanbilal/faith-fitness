@@ -10,9 +10,9 @@ const OurProgramsCard = (props) => {
         <div className="ourProgramCard-card-container">
           <div className="ourProgramCard-logo-container">
             <span className="ourProgramCard-logo">
-              <div class="circle-wrapper">
-                <div class="success circle"></div>
-                <div class="icon">{props.logo}</div>
+              <div className="circle-wrapper">
+                <div className="success circle"></div>
+                <div className="icon">{props.logo}</div>
               </div>
             </span>
           </div>

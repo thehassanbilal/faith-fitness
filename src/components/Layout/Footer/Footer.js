@@ -8,26 +8,26 @@ import { Link } from "react-router-dom";
 const Footer = () => {
   return (
     <>
-      <footer class="footer-20192">
-        <div class="site-section">
-          <div class="container">
-            <div class="cta d-block d-md-flex justify-content-between align-items-center px-5">
+      <footer className="footer-20192">
+        <div className="site-section">
+          <div className="container">
+            <div className="cta d-block d-md-flex justify-content-between align-items-center px-5">
               <div>
-                <h2 class="mb-0"> Faith Fitness 💪🏻</h2>
-                <h3 class="text-white">Let's get started!</h3>
+                <h2 className="mb-0"> Faith Fitness 💪🏻</h2>
+                <h3 className="text-white">Let's get started!</h3>
               </div>
-              <div class="ml-auto">
+              <div className="ml-auto">
                 <Link to="/contact">
-                  <a href="#" class="btn btn-dark rounded-0 py-3 px-5">
+                  <a href="#" className="btn btn-dark rounded-0 py-3 px-5">
                     Contact us
                   </a>
                 </Link>
               </div>
             </div>
-            <div class="row">
-              <div class="col-sm">
+            <div className="row">
+              <div className="col-sm">
                 <Flip right>
-                  <a href="#" class="footer-logo">
+                  <a href="#" className="footer-logo">
                     <Link to="/">
                       <img
                         src={logo}
@@ -39,9 +39,9 @@ const Footer = () => {
                   </a>
                 </Flip>
               </div>
-              <div class="col-sm">
+              <div className="col-sm">
                 <h3>Customers</h3>
-                <ul class="list-unstyled links">
+                <ul className="list-unstyled links">
                   <li>
                     <a href="#">Food Suplements</a>
                   </li>
@@ -52,9 +52,9 @@ const Footer = () => {
                   </li>
                 </ul>
               </div>
-              <div class="col-sm">
+              <div className="col-sm">
                 <h3>Company</h3>
-                <ul class="list-unstyled links">
+                <ul className="list-unstyled links">
                   <li>
                     <Link to="/about">
                       <a href="#">About us</a>
@@ -68,9 +68,9 @@ const Footer = () => {
                   </li>
                 </ul>
               </div>
-              <div class="col-sm">
+              <div className="col-sm">
                 <h3>Further Information</h3>
-                <ul class="list-unstyled links">
+                <ul className="list-unstyled links">
                   <li>
                     <a href="#">Terms &amp; Conditions</a>
                   </li>
@@ -79,30 +79,30 @@ const Footer = () => {
                   </li>
                 </ul>
               </div>
-              <div class="col-md-3">
+              <div className="col-md-3">
                 <h3>Follow us</h3>
 
-                <ul class="list-unstyled social d-flex gap-2">
+                <ul className="list-unstyled social d-flex gap-2">
                   <Flip right>
                     <li>
                       <a href="#">
-                        <span class="fa fa-facebook"></span>
+                        <span className="fa fa-facebook"></span>
                       </a>
                     </li>
 
                     <li>
                       <a href="#">
-                        <span class="fa fa-twitter"></span>
+                        <span className="fa fa-twitter"></span>
                       </a>
                     </li>
                     <li>
                       <a href="#">
-                        <span class="fa fa-linkedin"></span>
+                        <span className="fa fa-linkedin"></span>
                       </a>
                     </li>
                     <li>
                       <a href="#">
-                        <span class="fa fa-youtube"></span>
+                        <span className="fa fa-youtube"></span>
                       </a>
                     </li>
                   </Flip>

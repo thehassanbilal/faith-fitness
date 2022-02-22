@@ -1,17 +1,34 @@
-import { useSelector } from 'react-redux';
-import Cart from './Cart/Cart';
-import Footer from './Footer/Footer';
-import NavBar from './NavBar/NavBar';
+/** @format */
+
+import { useSelector } from "react-redux";
+import { useLocation, useParams } from "react-router-dom";
+import SignIn from "../../authentication/SignIn";
+import Cart from "./Cart/Cart";
+import Footer from "./Footer/Footer";
+import NavBar from "./NavBar/NavBar";
 
 export const Layout = ({ children }) => {
   const showCart = useSelector((state) => state.ui.isVisible);
+  const { pathname } = useLocation();
 
-  return (
-    <>
-      <NavBar />
-      {showCart && <Cart />}
-      {children}
-      <Footer />
-    </>
-  );
+  const renderLayoutComponent = () => {
+    if (pathname === "/signup" || pathname === "/signin") {
+      return (
+        <>
+          {showCart && <Cart />}
+          {children}
+        </>
+      );
+    } else {
+      return (
+        <>
+          <NavBar />
+          {showCart && <Cart />}
+          {children}
+          <Footer />
+        </>
+      );
+    }
+  };
+  return <>{renderLayoutComponent()}</>;
 };

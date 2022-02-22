@@ -8,51 +8,51 @@ import training2 from "../../../assets/Gym/training-3.jpg";
 const ClientTestimonials = () => {
   return (
     <>
-      <div class="post-slider text-white">
-        <div class="container updated-container">
+      <div className="post-slider text-white">
+        <div className="container updated-container">
           <div
             id="carouselExampleCaptions"
-            class="carousel slide"
+            className="carousel slide"
             data-ride="carousel"
           >
-            <ol class="carousel-indicators">
+            <ol className="carousel-indicators">
               <li
                 data-target="#carouselExampleCaptions"
                 data-slide-to="0"
-                class="active"
+                className="active"
               ></li>
               <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
               <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
             </ol>
-            <div class="carousel-inner">
-              <div class="carousel-item active">
-                <div class="row">
-                  <div class="col-md-6">
-                    <img src={training2} class="img-fluid" alt="" />
+            <div className="carousel-inner">
+              <div className="carousel-item active">
+                <div className="row">
+                  <div className="col-md-6">
+                    <img src={training2} className="img-fluid" alt="" />
                   </div>
-                  <div class="col-md-6">
+                  <div className="col-md-6">
                     <h3>What our clients say's?</h3>
 
-                    <p class="font-italic">
+                    <p className="font-italic">
                       It is a long established fact that a reader will be
                       distracted by the readable content of a page when looking
                       at its layout
                     </p>
                     <ul>
                       <li>
-                        <i class="fa fa-arrow-right"></i> The standard Lorem
+                        <i className="fa fa-arrow-right"></i> The standard Lorem
                         Ipsum passage, used since the 1500s
                       </li>
                       <li>
-                        <i class="fa fa-arrow-right"></i> 1914 translation by H.
-                        Rackham
+                        <i className="fa fa-arrow-right"></i> 1914 translation
+                        by H. Rackham
                       </li>
                       <li>
-                        <i class="fa fa-arrow-right"></i> Section 1.10.33 of "de
-                        Finibus Bonorum et Malorum"
+                        <i className="fa fa-arrow-right"></i> Section 1.10.33 of
+                        "de Finibus Bonorum et Malorum"
                       </li>
                     </ul>
-                    <p className="font-italic">
+                    <p classNameName="font-italic">
                       Lorem Ipsum is simply dummy text of the printing and
                       typesetting industry. Lorem Ipsum has been the industry's
                       standard dummy text ever since the 1500s
@@ -60,34 +60,34 @@ const ClientTestimonials = () => {
                   </div>
                 </div>
               </div>
-              <div class="carousel-item">
-                <div class="row">
-                  <div class="col-md-6">
-                    <img src={training} class="img-fluid" alt="" />
+              <div className="carousel-item">
+                <div className="row">
+                  <div className="col-md-6">
+                    <img src={training} className="img-fluid" alt="" />
                   </div>
-                  <div class="col-md-6">
+                  <div className="col-md-6">
                     <h3>What our clients say's?</h3>
 
-                    <p class="font-italic">
+                    <p className="font-italic">
                       It is a long established fact that a reader will be
                       distracted by the readable content of a page when looking
                       at its layout
                     </p>
                     <ul>
                       <li>
-                        <i class="fa fa-arrow-right"></i> The standard Lorem
+                        <i className="fa fa-arrow-right"></i> The standard Lorem
                         Ipsum passage, used since the 1500s
                       </li>
                       <li>
-                        <i class="fa fa-arrow-right"></i> 1914 translation by H.
-                        Rackham
+                        <i className="fa fa-arrow-right"></i> 1914 translation
+                        by H. Rackham
                       </li>
                       <li>
-                        <i class="fa fa-arrow-right"></i> Section 1.10.33 of "de
-                        Finibus Bonorum et Malorum"
+                        <i className="fa fa-arrow-right"></i> Section 1.10.33 of
+                        "de Finibus Bonorum et Malorum"
                       </li>
                     </ul>
-                    <p className="font-italic">
+                    <p classNameName="font-italic">
                       Lorem Ipsum is simply dummy text of the printing and
                       typesetting industry. Lorem Ipsum has been the industry's
                       standard dummy text ever since the 1500s
@@ -95,34 +95,34 @@ const ClientTestimonials = () => {
                   </div>
                 </div>
               </div>
-              <div class="carousel-item">
-                <div class="row">
-                  <div class="col-md-6">
-                    <img src={training1} class="img-fluid" alt="" />
+              <div className="carousel-item">
+                <div className="row">
+                  <div className="col-md-6">
+                    <img src={training1} className="img-fluid" alt="" />
                   </div>
-                  <div class="col-md-6">
+                  <div className="col-md-6">
                     <h3>What our clients say's?</h3>
 
-                    <p class="font-italic">
+                    <p className="font-italic">
                       It is a long established fact that a reader will be
                       distracted by the readable content of a page when looking
                       at its layout
                     </p>
                     <ul>
                       <li>
-                        <i class="fa fa-arrow-right"></i> The standard Lorem
+                        <i className="fa fa-arrow-right"></i> The standard Lorem
                         Ipsum passage, used since the 1500s
                       </li>
                       <li>
-                        <i class="fa fa-arrow-right"></i> 1914 translation by H.
-                        Rackham
+                        <i className="fa fa-arrow-right"></i> 1914 translation
+                        by H. Rackham
                       </li>
                       <li>
-                        <i class="fa fa-arrow-right"></i> Section 1.10.33 of "de
-                        Finibus Bonorum et Malorum"
+                        <i className="fa fa-arrow-right"></i> Section 1.10.33 of
+                        "de Finibus Bonorum et Malorum"
                       </li>
                     </ul>
-                    <p className="font-italic">
+                    <p classNameName="font-italic">
                       Lorem Ipsum is simply dummy text of the printing and
                       typesetting industry. Lorem Ipsum has been the industry's
                       standard dummy text ever since the 1500s
@@ -133,28 +133,28 @@ const ClientTestimonials = () => {
             </div>
 
             <a
-              class="carousel-control-prev"
+              className="carousel-control-prev"
               href="#carouselExampleCaptions"
               role="button"
               data-slide="prev"
             >
               <span
-                class="carousel-control-prev-icon"
+                className="carousel-control-prev-icon"
                 aria-hidden="true"
               ></span>
-              <span class="sr-only">Previous</span>
+              <span className="sr-only">Previous</span>
             </a>
             <a
-              class="carousel-control-next"
+              className="carousel-control-next"
               href="#carouselExampleCaptions"
               role="button"
               data-slide="next"
             >
               <span
-                class="carousel-control-next-icon"
+                className="carousel-control-next-icon"
                 aria-hidden="true"
               ></span>
-              <span class="sr-only">Next</span>
+              <span className="sr-only">Next</span>
             </a>
           </div>
         </div>
