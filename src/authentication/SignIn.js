@@ -13,15 +13,7 @@ function SignIn() {
             <h2>Sign In</h2>
             <p>Fill out the Sign-In details!</p>
           </div>
-          <div className="form-group">
-            <label>Username</label>
-            <input
-              type="text"
-              className="form-control"
-              name="username"
-              required="required"
-            />
-          </div>
+
           <div className="form-group">
             <label>Email Address</label>
             <input
@@ -37,15 +29,6 @@ function SignIn() {
               type="password"
               className="form-control"
               name="password"
-              required="required"
-            />
-          </div>
-          <div className="form-group">
-            <label>Confirm Password</label>
-            <input
-              type="password"
-              className="form-control"
-              name="confirm_password"
               required="required"
             />
           </div>

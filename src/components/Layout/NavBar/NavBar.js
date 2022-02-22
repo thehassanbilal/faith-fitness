@@ -88,9 +88,9 @@ const NavBar = () => {
                 </div>
               </a>
 
-              <a href="#" className="signin">
+              <Link to="/signin" className="signin">
                 Sign In
-              </a>
+              </Link>
             </div>
           </div>
         </div>
