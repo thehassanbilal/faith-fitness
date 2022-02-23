@@ -2,20 +2,35 @@
 
 .ProductDetailPage-container {
   display: flex;
-  margin-top: 50px;
-  background-color: wheat;
+  background: radial-gradient(
+    circle,
+    rgb(52 124 40) -6%,
+    rgba(35, 39, 40, 1) 84%,
+    rgba(14, 18, 17, 1) 100%
+  );
+  flex-wrap: wrap;
+  padding: 12px 12px 54px 12px;
+  justify-content: space-around;
 }
 
 .ProductDetailPage-imgSide {
-  width: 60%;
+  max-width: 550px;
+  width: 100%;
+}
+
+.ProductDetailPage-img-container img {
+  border-radius: 6px;
 }
 
 .ProductDetailPage-img-container {
-  padding: 50px 50px 50px 200px;
+  max-width: 320px;
+  width: 100%;
+  padding: 64px 20px 20px 0;
 }
 .ProductDetailPage-desc {
   background-color: white;
-  margin: 30px;
+  max-width: 550px;
+  width: 100%;
   padding: 20px;
 }
 
@@ -25,13 +40,25 @@
 }
 
 .ProductDetailPage-detailSide {
-  width: 40%;
-  padding: 50px 50px;
+  max-width: 400px;
+  width: 100%;
 }
 
+dl,
+ol,
+ul {
+  padding: 0;
+}
+
+ul,
+li {
+  font-family: Poppins;
+}
 .ProductDetailPage-name {
   font-size: 20px;
   font-weight: bold;
+  color: white;
+  padding-top: 34px;
 }
 
 .ProductDetailPage-rating {
@@ -39,15 +66,16 @@
 }
 
 .ProductDetailPage-price-section {
-  background-color: azure;
-  padding: 20px 10px 30px 30px;
+  background-color: white;
+  padding: 20px 20px 20px 20px;
 }
 
 .ProductDetailPage-price {
   list-style-type: none;
-  color: red;
+  color: #3b6d3a;
   font-size: 30px;
-  font-weight: bold;
+  font-weight: 500;
+  font-family: Poppins;
 }
 
 .ProductDetailPage-ctaBtn-container {
@@ -55,10 +83,13 @@
 }
 
 .ProductDetailPage-btn {
-  background-color: #c6101c;
   color: white;
   padding: 15px 20px;
   border: none;
+}
+
+.desc {
+  font-family: Poppins;
 }
 
 .ProductDetailPage-btn:hover {
@@ -72,9 +103,9 @@
 }
 
 .ProductDetailPage-flavour-and-weight {
-  margin: 10px;
   padding: 10px;
   width: 100%;
+  margin-top: 12px;
 }
 
 .ProductDetailPage-nutritionImg img {

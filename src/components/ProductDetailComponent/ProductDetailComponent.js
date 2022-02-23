@@ -3,9 +3,9 @@
 import React from "react";
 
 import classes from "./ProductDetailComponent.module.css";
-import { CtaButton } from "../Layout/Buttons/CtaButton";
 import { useDispatch } from "react-redux";
 import { cartActions } from "../../features/cartSlice/cartSlice";
+import img from "../../assets/products/DUMMY_PRODUCTS/1.jpg";
 
 const ProductDetailComponent = ({ data }) => {
   const dispatch = useDispatch();
@@ -31,16 +31,16 @@ const ProductDetailComponent = ({ data }) => {
     <div className={classes["ProductDetailPage-container"]}>
       <div className={classes["ProductDetailPage-imgSide"]}>
         <div className={classes["ProductDetailPage-img-container"]}>
-          <img src={productImg} />
+          <img src={img} />
         </div>
         <div className={classes["ProductDetailPage-desc"]}>
-          <h3>Description:</h3>
+          <h3 className={classes["desc"]}>Description:</h3>
           <p>{data?.description}</p>
         </div>
       </div>
       <div className={classes["ProductDetailPage-detailSide"]}>
-        <p className={classes["ProductDetailPage-name"]}>{data?.name}</p>
-        <p className={classes["ProductDetailPage-rating"]}>⭐⭐⭐⭐</p>
+        <p className={classes["ProductDetailPage-name"]}>Product Details</p>
+
         <div className={classes["ProductDetailPage-price-section"]}>
           <ul>
             <li className={classes["ProductDetailPage-price"]}>

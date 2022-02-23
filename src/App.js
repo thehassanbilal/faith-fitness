@@ -20,6 +20,7 @@ import Dietplan from "./routes/Diet Plan/Dietplan";
 import Blog from "./blogs/Blog";
 import SignUp from "./authentication/SignUp";
 import SignIn from "./authentication/SignIn";
+import CheckoutItems from "./components/Layout/Cart/CheckoutItems";
 
 function App() {
   return (
@@ -39,6 +40,7 @@ function App() {
             <Route path="/blog" element={<Blog />} />
             <Route path="/signup" element={<SignUp />} />
             <Route path="/signin" element={<SignIn />} />
+            <Route path="/checkout" element={<CheckoutItems />} />
             <Route path="*" element={<Error />} />
           </Routes>
         </Layout>
