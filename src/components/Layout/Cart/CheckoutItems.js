@@ -158,7 +158,7 @@ function CheckoutItems() {
                         placeholder='Complete address...'
                         className='address-info'
                         ref={addressInputRef}
-                      ></textarea>{' '}
+                      ></textarea>
                       {!formInputsValidity.address && (
                         <p>Please enter a valid address!</p>
                       )}
@@ -167,64 +167,62 @@ function CheckoutItems() {
                 </form>
               </div>
             </div>
-            <div class='col-md-5'>
-              <div class='right border'>
-                <div class='header'>Order Summary</div>
-                <p>Total Items : {TotalItems}</p>
+          </div>
+          <div class='col-md-5'>
+            <div class='right border'>
+              <div class='header'>Order Summary</div>
+              <p>Total Items : {TotalItems}</p>
 
-                {/* -----------------------CART ITEMS-------------------------- */}
-                {cartData.map((cartItem) => {
-                  return (
-                    <div class='row item'>
-                      <div class='col-4 align-self-center'>
-                        <img
-                          class='img-fluid'
-                          src={cartItem.img}
-                          alt='product Image'
-                        />
-                      </div>
-                      <div class='col-8'>
-                        <div class='row'>
-                          <b className='handle-padding'>RS {cartItem.price}</b>
-                        </div>
-                        <div class='row text-muted'>{cartItem.name}</div>
-                        <div class='row'>Quantity: x{cartItem.quantity}</div>
-                      </div>
+              {/* -----------------------CART ITEMS-------------------------- */}
+              {cartData.map((cartItem) => {
+                return (
+                  <div class='row item'>
+                    <div class='col-4 align-self-center'>
+                      <img
+                        class='img-fluid'
+                        src={cartItem.img}
+                        alt='product Image'
+                      />
                     </div>
-                  );
-                })}
-
-                {/* ---------------------------------------------- */}
-
-                <hr />
-                <div class='row lower'>
-                  <div class='col text-left'>Subtotal</div>
-                  <div class='col text-right'>
-                    RS {subTotal.toLocaleString()}
+                    <div class='col-8'>
+                      <div class='row'>
+                        <b className='handle-padding'>RS {cartItem.price}</b>
+                      </div>
+                      <div class='row text-muted'>{cartItem.name}</div>
+                      <div class='row'>Quantity: x{cartItem.quantity}</div>
+                    </div>
                   </div>
-                </div>
-                <div class='row lower'>
-                  <div class='col text-left'>Delivery</div>
-                  <div class='col text-right'>RS {deliveryCharges}</div>
-                </div>
-                <div class='row lower'>
-                  <div class='col text-left'>
-                    <b>Total to pay</b>
-                  </div>
-                  <div class='col text-right'>
-                    <b>RS {totalToPay.toLocaleString()}</b>
-                  </div>
-                </div>
+                );
+              })}
 
-                <button
-                  class='btn'
-                  data-toggle='modal'
-                  data-target='#exampleModal'
-                  onClick={confirmHandler}
-                >
-                  Place order
-                </button>
+              {/* ---------------------------------------------- */}
+
+              <hr />
+              <div class='row lower'>
+                <div class='col text-left'>Subtotal</div>
+                <div class='col text-right'>RS {subTotal.toLocaleString()}</div>
               </div>
+              <div class='row lower'>
+                <div class='col text-left'>Delivery</div>
+                <div class='col text-right'>RS {deliveryCharges}</div>
+              </div>
+              <div class='row lower'>
+                <div class='col text-left'>
+                  <b>Total to pay</b>
+                </div>
+                <div class='col text-right'>
+                  <b>RS {totalToPay.toLocaleString()}</b>
+                </div>
+              </div>
+
+              <button
+                class='btn'
+                data-toggle='modal'
+                data-target='#exampleModal'
+                onClick={confirmHandler}
+              >
+                Place order
+              </button>
             </div>
           </div>
         </div>

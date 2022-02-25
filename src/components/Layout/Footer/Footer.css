@@ -127,6 +127,13 @@ a:hover {
   border: 1px solid #3b6d3a;
 }
 
+.privacy-heading {
+  font-size: 24px;
+  font-weight: 600;
+  font-family: Poppins;
+  padding-top: 12px;
+}
+
 @media (max-width: 450px) {
   .site-section .row {
     gap: 14px;

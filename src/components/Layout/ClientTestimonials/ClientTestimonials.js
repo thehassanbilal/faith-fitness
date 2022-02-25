@@ -1,6 +1,6 @@
 /** @format */
 
-import "./ClientTestimonials.css";
+import "../ClientTestimonials/ClientTestimonials.css";
 import training from "../../../assets/Gym/training-2.jpg";
 import training1 from "../../../assets/Gym/training-1.jpg";
 import training2 from "../../../assets/Gym/training-3.jpg";
@@ -103,7 +103,7 @@ const ClientTestimonials = () => {
                   <div className="col-md-6">
                     <h3>What our clients say's?</h3>
 
-                    <p className="font-italic">
+                    <p className="font-italic text-clr">
                       It is a long established fact that a reader will be
                       distracted by the readable content of a page when looking
                       at its layout
@@ -122,7 +122,7 @@ const ClientTestimonials = () => {
                         "de Finibus Bonorum et Malorum"
                       </li>
                     </ul>
-                    <p classNameName="font-italic">
+                    <p classNameName="font-italic text-clr">
                       Lorem Ipsum is simply dummy text of the printing and
                       typesetting industry. Lorem Ipsum has been the industry's
                       standard dummy text ever since the 1500s

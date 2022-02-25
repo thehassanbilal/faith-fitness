@@ -1,9 +1,6 @@
 /** @format */
 
-import { useState } from 'react';
-
 import CarouselComponent from '../../components/CarouselComponent/CarouselComponent';
-import AboutCoach from '../../components/Layout/AboutCoach/AboutCoach';
 import { ProductsCategoriesContainer } from '../../components/Layout/Categories/ProductsCategoriesContainer';
 import ClientTestimonials from '../../components/Layout/ClientTestimonials/ClientTestimonials';
 import OurPrograms from '../../components/Layout/OurPrograms/OurPrograms';
@@ -11,9 +8,8 @@ import { Banner } from '../../components/Layout/Banner/Banner';
 import WhyUs from '../../components/Layout/WhyUs/WhyUs';
 import SwiperSlider from '../../components/SwiperSliders/SwiperSlider';
 import homePageBannerImg from '../../assets/banners/underCarouselBanner.jpg';
-import Cart from '../../components/Layout/Cart/Cart';
-import { useSelector } from 'react-redux';
 import '../../App.css';
+import NewsLetter from '../../cookies/NewLetter';
 
 export const HomePage = () => {
   return (
@@ -28,6 +24,7 @@ export const HomePage = () => {
           <WhyUs />
         </div>
         <ClientTestimonials />
+        <NewsLetter />
       </div>
     </>
   );
