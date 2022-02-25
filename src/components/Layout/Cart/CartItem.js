@@ -7,7 +7,7 @@ import classes from './CartItem.module.css';
 const CartItem = (props) => {
   const dispatch = useDispatch();
 
-  const { id, name, quantity, total, price } = props.item;
+  const { id, name, quantity, totalPrice, price, img } = props.item;
 
   const removeItemHandler = () => {
     dispatch(cartActions.removeItemFromCart(id));
@@ -19,6 +19,8 @@ const CartItem = (props) => {
         id,
         name,
         price,
+        img,
+        totalPrice,
       })
     );
   };
@@ -33,8 +35,18 @@ const CartItem = (props) => {
         </div>
       </div>
       <div className={classes.actions}>
-        <button onClick={removeItemHandler}>−</button>
-        <button onClick={addItemHandler}>+</button>
+        <button
+          className={classes['actions-button-minus']}
+          onClick={removeItemHandler}
+        >
+          −
+        </button>
+        <button
+          className={classes['actions-button-add']}
+          onClick={addItemHandler}
+        >
+          +
+        </button>
       </div>
     </li>
   );

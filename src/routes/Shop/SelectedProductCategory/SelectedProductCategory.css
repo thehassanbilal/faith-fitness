@@ -8,10 +8,10 @@
 }
 
 .SelectedProductCategory-bannerDiv {
-  padding-top: 70px;
 }
 
 .SelectedProductCategory-selectCompany-heading {
+  padding: 20px;
 }
 
 .SelectedProductCategory-param {
@@ -21,7 +21,8 @@
 
 .SelectedProductCategory-products {
   display: flex;
-  padding: 50px;
+  flex-direction: row;
+  padding: 50px 10px 10px 10px;
 }
 .ProductCard-price {
   color: black !important;

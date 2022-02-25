@@ -161,7 +161,7 @@ nav ul {
 }
 
 .cart-div {
-  background-color: #3b6d3a;
+  background: rgb(52 124 40) -6%;
   height: 38px;
   justify-content: center;
   border-radius: 8px;
@@ -172,7 +172,7 @@ nav ul {
 }
 
 .navbar-light .navbar-toggler-icon {
-  background-image: url("../../../assets/humberger.png");
+  background-image: url('../../../assets/humberger.png');
 }
 
 .navbar-collapse {

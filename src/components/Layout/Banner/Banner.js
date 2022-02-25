@@ -1,7 +1,11 @@
 /** @format */
 
-import "../Banner/Banner.css";
+import '../Banner/Banner.css';
 
 export const Banner = (props) => {
-  return <div className="under-carousel-banner-container"></div>;
+  return (
+    <div className='banner-container'>
+      <img src={props.img} alt='Banner' />
+    </div>
+  );
 };
