@@ -1,12 +1,11 @@
 /** @format */
 
-import { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { Link } from "react-router-dom";
-import { uiActions } from "../../../features/uiSlice/uiSlice";
-import { Modal } from "../Modal/Modal";
-import classes from "./Cart.module.css";
-import CartItem from "./CartItem";
+import { useDispatch, useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
+import { uiActions } from '../../../features/uiSlice/uiSlice';
+import { Modal } from '../Modal/Modal';
+import classes from './Cart.module.css';
+import CartItem from './CartItem';
 
 const Cart = (props) => {
   const dispatch = useDispatch();
@@ -19,7 +18,7 @@ const Cart = (props) => {
 
   return (
     <Modal>
-      <ul className={classes["cart-items"]}>
+      <ul className={classes['cart-items']}>
         <h1>Cart Items</h1>
         {cartData?.map((item, i) => (
           <CartItem
@@ -36,7 +35,7 @@ const Cart = (props) => {
       </ul>
 
       <div className={classes.actions}>
-        <button onClick={closeButtonHandler} className={classes["button--alt"]}>
+        <button onClick={closeButtonHandler} className={classes['button--alt']}>
           Close
         </button>
         <Link to={`/checkout`}>

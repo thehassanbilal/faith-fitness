@@ -37,6 +37,13 @@
   flex-direction: column;
 }
 
+.actions-button-minus {
+  background: #ff5733 !important;
+}
+.actions-button-add {
+  background: rgb(52 124 40) -6% !important;
+}
+
 @media (min-width: 768px) {
   .actions {
     flex-direction: row;

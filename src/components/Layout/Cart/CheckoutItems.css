@@ -19,7 +19,7 @@
 }
 
 #logo {
-  font-family: "Dancing Script";
+  font-family: 'Dancing Script';
   font-weight: bold;
   font-size: 1.6rem;
 }
@@ -29,7 +29,7 @@
 }
 
 .card-body {
-  background-image: url("https://i.imgur.com/4bg1e6u.jpg");
+  background-image: url('https://i.imgur.com/4bg1e6u.jpg');
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -46,7 +46,7 @@
 @media (max-width: 768px) {
   .card-body {
     padding: 0 1rem 1rem 1rem;
-    background-image: url("https://i.imgur.com/4bg1e6u.jpg");
+    background-image: url('https://i.imgur.com/4bg1e6u.jpg');
     background-size: cover;
     background-repeat: no-repeat;
   }
@@ -137,7 +137,7 @@ a:hover {
   text-decoration: none;
 }
 
-input[type="checkbox"] {
+input[type='checkbox'] {
   width: unset;
   margin-bottom: unset;
 }
@@ -158,4 +158,33 @@ input[type="checkbox"] {
 .modal-body,
 .modal-title {
   font-family: Poppins;
+}
+
+/* --------------------------------------------- */
+
+.control {
+  margin-bottom: 0.5rem;
+}
+
+.control label {
+  font-weight: bold;
+  margin-bottom: 0.25rem;
+  display: block;
+}
+
+.control input {
+  font: inherit;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 20rem;
+  max-width: 100%;
+}
+
+.invalid label {
+  color: #ca3e51;
+}
+
+.invalid input {
+  border-color: #aa0b20;
+  background-color: #ffeff1;
 }

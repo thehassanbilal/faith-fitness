@@ -6,8 +6,7 @@
 }
 
 .ProductCard-container {
-  /* width: 250px; */
-
+  width: 250px;
   text-align: center;
   font-family: arial;
 
@@ -18,7 +17,7 @@
 }
 
 .ProductCard-name {
-  padding: 10px;
+  padding-top: 5px;
   text-align: center;
   white-space: nowrap;
   overflow: hidden;
@@ -26,7 +25,6 @@
 }
 
 .ProductCard-rating {
-  padding: 10px;
 }
 .ProductCard-container:hover {
   box-shadow: 0 0 5px #3b6d3a;
@@ -36,12 +34,7 @@ button {
   outline: none;
   padding: 8px 44px;
 
-  background: radial-gradient(
-    circle,
-    rgb(52 124 40) -6%,
-    rgba(35, 39, 40, 1) 84%,
-    rgba(14, 18, 17, 1) 100%
-  );
+  background: rgb(52 124 40) -6%;
   border: 2px solid #3b6d3a !important;
   color: white !important;
   border-radius: 8px;
