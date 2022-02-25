@@ -68,6 +68,10 @@
   margin-right: 5px;
   color: black;
 }
+
+.text-clr {
+  color: black !important;
+}
 /*-- Responsive CSS --*/
 @media (max-width: 767px) {
   .post-slider .carousel-control-prev {

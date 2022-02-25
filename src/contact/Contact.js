@@ -24,7 +24,7 @@ export default function Contact() {
                 className="input1"
                 type="text"
                 name="name"
-                placeholder="Name"
+                placeholder="*Name..."
               />
               <span className="shadow-input1"></span>
             </div>
@@ -37,7 +37,7 @@ export default function Contact() {
                 className="input1"
                 type="text"
                 name="email"
-                placeholder="Email"
+                placeholder="*Email..."
               />
               <span className="shadow-input1"></span>
             </div>

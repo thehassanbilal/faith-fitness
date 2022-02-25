@@ -150,6 +150,13 @@ input[type="checkbox"] {
   font-size: 20px;
 }
 
+.close span {
+  margin-top: -4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .modal-title {
   color: #3b6d3a;
   font-weight: 600;
@@ -158,4 +165,13 @@ input[type="checkbox"] {
 .modal-body,
 .modal-title {
   font-family: Poppins;
+}
+
+.required-field {
+  color: red;
+}
+
+.item-main-wraper {
+  height: 270px;
+  overflow: auto;
 }
