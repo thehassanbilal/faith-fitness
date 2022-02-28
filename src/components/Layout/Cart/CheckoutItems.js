@@ -60,21 +60,21 @@ function CheckoutItems() {
     }
   };
 
-  // const nameControlClasses = `${classes.control} ${
-  //   formInputsValidity.name ? '' : classes.invalid
-  // }`;
-  // const contactControlClasses = `${classes.control} ${
-  //   formInputsValidity.name ? '' : classes.invalid
-  // }`;
-  // const addressControlClasses = `${classes.control} ${
-  //   formInputsValidity.address ? '' : classes.invalid
-  // }`;
-  // const postalCodeControlClasses = `${classes.control} ${
-  //   formInputsValidity.postalCode ? '' : classes.invalid
-  // }`;
-  // const emailControlClasses = `${classes.control} ${
-  //   formInputsValidity.email ? '' : classes.invalid
-  // }`;
+  const nameControlClasses = `'col-6' ${
+    formInputsValidity.name ? '' : 'invalid'
+  }`;
+  const contactControlClasses = `'col-6' ${
+    formInputsValidity.name ? '' : 'invalid'
+  }`;
+  const addressControlClasses = `'col-6' ${
+    formInputsValidity.address ? '' : 'invalid'
+  }`;
+  const postalCodeControlClasses = `'col-6' ${
+    formInputsValidity.postalCode ? '' : 'invalid'
+  }`;
+  const emailControlClasses = `'col-6' ${
+    formInputsValidity.email ? '' : 'invalid'
+  }`;
 
   // -------------------------Total items-------------------------------------------------
 
@@ -108,14 +108,14 @@ function CheckoutItems() {
                 </div>
                 <form>
                   <div class='row'>
-                    <div class='col-6'>
+                    <div className={nameControlClasses}>
                       <span>Full Name:</span>
                       <input placeholder='Name...' ref={nameInputRef} />
                       {!formInputsValidity.name && (
                         <p>Please enter a valid name!</p>
                       )}
                     </div>
-                    <div class='col-6'>
+                    <div class={emailControlClasses}>
                       <span>Email Address:</span>
                       <input
                         id='email'
@@ -126,7 +126,7 @@ function CheckoutItems() {
                         <p>Please enter a valid email!</p>
                       )}
                     </div>
-                    <div class='col-6'>
+                    <div class={contactControlClasses}>
                       <span>Contact Number:</span>
                       <input
                         id='contact'
@@ -137,7 +137,7 @@ function CheckoutItems() {
                         <p>Please enter a valid contact!</p>
                       )}
                     </div>
-                    <div class='col-6'>
+                    <div class={postalCodeControlClasses}>
                       <span>Postal Code:</span>
 
                       <input
@@ -151,7 +151,7 @@ function CheckoutItems() {
                         </p>
                       )}
                     </div>
-                    <div class='col-12'>
+                    <div class={addressControlClasses}>
                       <span>Address:</span>
                       <textarea
                         id='address'
@@ -174,26 +174,28 @@ function CheckoutItems() {
               <p>Total Items : {TotalItems}</p>
 
               {/* -----------------------CART ITEMS-------------------------- */}
-              {cartData.map((cartItem) => {
-                return (
-                  <div class='row item'>
-                    <div class='col-4 align-self-center'>
-                      <img
-                        class='img-fluid'
-                        src={cartItem.img}
-                        alt='product Image'
-                      />
-                    </div>
-                    <div class='col-8'>
-                      <div class='row'>
-                        <b className='handle-padding'>RS {cartItem.price}</b>
+              <div>
+                {cartData.map((cartItem) => {
+                  return (
+                    <div class='row item'>
+                      <div class='col-4 align-self-center'>
+                        <img
+                          class='img-fluid'
+                          src={cartItem.img}
+                          alt='product Image'
+                        />
                       </div>
-                      <div class='row text-muted'>{cartItem.name}</div>
-                      <div class='row'>Quantity: x{cartItem.quantity}</div>
+                      <div class='col-8'>
+                        <div class='row'>
+                          <b className='handle-padding'>RS {cartItem.price}</b>
+                        </div>
+                        <div class='row text-muted'>{cartItem.name}</div>
+                        <div class='row'>Quantity: x{cartItem.quantity}</div>
+                      </div>
                     </div>
-                  </div>
-                );
-              })}
+                  );
+                })}
+              </div>
 
               {/* ---------------------------------------------- */}
 

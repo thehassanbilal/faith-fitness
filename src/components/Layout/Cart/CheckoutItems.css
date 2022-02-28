@@ -187,11 +187,15 @@ input[type='checkbox'] {
   max-width: 100%;
 }
 
-.invalid label {
+.invalid span {
+  color: #ca3e51;
+}
+.invalid p {
   color: #ca3e51;
 }
 
-.invalid input {
+.invalid input,
+textarea {
   border-color: #aa0b20;
   background-color: #ffeff1;
 }
