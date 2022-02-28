@@ -1,7 +1,6 @@
 /** @format */
 
 .globle-ctaButton {
-  background-color: #c6101c;
   color: white;
   padding: 15px 20px;
   border: none;
@@ -10,8 +9,4 @@
   line-height: 28px;
   outline: none;
   margin-top: 12px;
-}
-
-.globle-ctaButton:hover {
-  background-color: tomato;
 }

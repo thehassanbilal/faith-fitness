@@ -60,22 +60,6 @@ function CheckoutItems() {
     }
   };
 
-  const nameControlClasses = `'col-6' ${
-    formInputsValidity.name ? '' : 'invalid'
-  }`;
-  const contactControlClasses = `'col-6' ${
-    formInputsValidity.name ? '' : 'invalid'
-  }`;
-  const addressControlClasses = `'col-6' ${
-    formInputsValidity.address ? '' : 'invalid'
-  }`;
-  const postalCodeControlClasses = `'col-6' ${
-    formInputsValidity.postalCode ? '' : 'invalid'
-  }`;
-  const emailControlClasses = `'col-6' ${
-    formInputsValidity.email ? '' : 'invalid'
-  }`;
-
   // -------------------------Total items-------------------------------------------------
 
   var allProductsQuantity = [];
@@ -108,14 +92,14 @@ function CheckoutItems() {
                 </div>
                 <form>
                   <div class='row'>
-                    <div className={nameControlClasses}>
+                    <div class='col-6'>
                       <span>Full Name:</span>
                       <input placeholder='Name...' ref={nameInputRef} />
                       {!formInputsValidity.name && (
                         <p>Please enter a valid name!</p>
                       )}
                     </div>
-                    <div class={emailControlClasses}>
+                    <div class='col-6'>
                       <span>Email Address:</span>
                       <input
                         id='email'
@@ -126,7 +110,7 @@ function CheckoutItems() {
                         <p>Please enter a valid email!</p>
                       )}
                     </div>
-                    <div class={contactControlClasses}>
+                    <div class='col-6'>
                       <span>Contact Number:</span>
                       <input
                         id='contact'
@@ -137,7 +121,7 @@ function CheckoutItems() {
                         <p>Please enter a valid contact!</p>
                       )}
                     </div>
-                    <div class={postalCodeControlClasses}>
+                    <div class='col-6'>
                       <span>Postal Code:</span>
 
                       <input
@@ -151,7 +135,7 @@ function CheckoutItems() {
                         </p>
                       )}
                     </div>
-                    <div class={addressControlClasses}>
+                    <div class='col-12'>
                       <span>Address:</span>
                       <textarea
                         id='address'
@@ -174,28 +158,26 @@ function CheckoutItems() {
               <p>Total Items : {TotalItems}</p>
 
               {/* -----------------------CART ITEMS-------------------------- */}
-              <div>
-                {cartData.map((cartItem) => {
-                  return (
-                    <div class='row item'>
-                      <div class='col-4 align-self-center'>
-                        <img
-                          class='img-fluid'
-                          src={cartItem.img}
-                          alt='product Image'
-                        />
-                      </div>
-                      <div class='col-8'>
-                        <div class='row'>
-                          <b className='handle-padding'>RS {cartItem.price}</b>
-                        </div>
-                        <div class='row text-muted'>{cartItem.name}</div>
-                        <div class='row'>Quantity: x{cartItem.quantity}</div>
-                      </div>
+              {cartData.map((cartItem) => {
+                return (
+                  <div class='row item'>
+                    <div class='col-4 align-self-center'>
+                      <img
+                        class='img-fluid'
+                        src={cartItem.img}
+                        alt='product Image'
+                      />
                     </div>
-                  );
-                })}
-              </div>
+                    <div class='col-8'>
+                      <div class='row'>
+                        <b className='handle-padding'>RS {cartItem.price}</b>
+                      </div>
+                      <div class='row text-muted'>{cartItem.name}</div>
+                      <div class='row'>Quantity: x{cartItem.quantity}</div>
+                    </div>
+                  </div>
+                );
+              })}
 
               {/* ---------------------------------------------- */}
 
