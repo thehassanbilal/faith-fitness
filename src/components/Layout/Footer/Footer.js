@@ -43,7 +43,10 @@ const Footer = () => {
                 <h3>Customers</h3>
                 <ul className="list-unstyled links">
                   <li>
-                    <a href="#">Food Suplements</a>
+                    <Link to="/store">
+                      {" "}
+                      <a href="#">Food Suplements</a>
+                    </Link>
                   </li>
                   <li>
                     <Link to="/dietplan">

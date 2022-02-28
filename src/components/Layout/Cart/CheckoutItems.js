@@ -1,15 +1,15 @@
 /** @format */
-import React, { useRef, useState } from 'react';
-import '../Cart/CheckoutItems.css';
+import React, { useRef, useState } from "react";
+import "../Cart/CheckoutItems.css";
 
-import { useSelector } from 'react-redux';
+import { useSelector } from "react-redux";
 
 function CheckoutItems() {
   const cartData = useSelector((state) => state.cart.items);
   console.log(cartData);
 
   //-------------------------Validations---------------------------------------------------
-  const isEmpty = (value) => value.trim() === '';
+  const isEmpty = (value) => value.trim() === "";
   const isFiveChars = (value) => value.trim().length === 5;
 
   const [formInputsValidity, setFormInputsValidity] = useState({
@@ -60,22 +60,6 @@ function CheckoutItems() {
     }
   };
 
-  // const nameControlClasses = `${classes.control} ${
-  //   formInputsValidity.name ? '' : classes.invalid
-  // }`;
-  // const contactControlClasses = `${classes.control} ${
-  //   formInputsValidity.name ? '' : classes.invalid
-  // }`;
-  // const addressControlClasses = `${classes.control} ${
-  //   formInputsValidity.address ? '' : classes.invalid
-  // }`;
-  // const postalCodeControlClasses = `${classes.control} ${
-  //   formInputsValidity.postalCode ? '' : classes.invalid
-  // }`;
-  // const emailControlClasses = `${classes.control} ${
-  //   formInputsValidity.email ? '' : classes.invalid
-  // }`;
-
   // -------------------------Total items-------------------------------------------------
 
   var allProductsQuantity = [];
@@ -97,52 +81,52 @@ function CheckoutItems() {
   const totalToPay = subTotal + deliveryCharges;
 
   return (
-    <div className='cart-top'>
-      <div class='card'>
-        <div class='card-body pt-5'>
-          <div class='row'>
-            <div class='col-md-7'>
-              <div class='left border'>
-                <div class='row'>
-                  <span class='header'>Fill Information</span>
+    <div className="cart-top">
+      <div class="card">
+        <div class="card-body pt-5">
+          <div class="row">
+            <div class="col-md-7">
+              <div class="left border">
+                <div class="row">
+                  <span class="header">Fill Information</span>
                 </div>
                 <form>
-                  <div class='row'>
-                    <div class='col-6'>
+                  <div class="row">
+                    <div class="col-6">
                       <span>Full Name:</span>
-                      <input placeholder='Name...' ref={nameInputRef} />
+                      <input placeholder="Name..." ref={nameInputRef} />
                       {!formInputsValidity.name && (
                         <p>Please enter a valid name!</p>
                       )}
                     </div>
-                    <div class='col-6'>
+                    <div class="col-6">
                       <span>Email Address:</span>
                       <input
-                        id='email'
-                        placeholder='email...'
+                        id="email"
+                        placeholder="email..."
                         ref={emailInputRef}
                       />
                       {!formInputsValidity.email && (
                         <p>Please enter a valid email!</p>
                       )}
                     </div>
-                    <div class='col-6'>
+                    <div class="col-6">
                       <span>Contact Number:</span>
                       <input
-                        id='contact'
-                        placeholder='Contact...'
+                        id="contact"
+                        placeholder="Contact..."
                         ref={contactInputRef}
                       />
                       {!formInputsValidity.contact && (
                         <p>Please enter a valid contact!</p>
                       )}
                     </div>
-                    <div class='col-6'>
+                    <div class="col-6">
                       <span>Postal Code:</span>
 
                       <input
-                        id='Postal Code'
-                        placeholder='Postal Code...'
+                        id="Postal Code"
+                        placeholder="Postal Code..."
                         ref={postalCodeInputRef}
                       />
                       {!formInputsValidity.postalCode && (
@@ -151,12 +135,12 @@ function CheckoutItems() {
                         </p>
                       )}
                     </div>
-                    <div class='col-12'>
+                    <div class="col-12">
                       <span>Address:</span>
                       <textarea
-                        id='address'
-                        placeholder='Complete address...'
-                        className='address-info'
+                        id="address"
+                        placeholder="Complete address..."
+                        className="address-info"
                         ref={addressInputRef}
                       ></textarea>
                       {!formInputsValidity.address && (
@@ -168,28 +152,28 @@ function CheckoutItems() {
               </div>
             </div>
           </div>
-          <div class='col-md-5'>
-            <div class='right border'>
-              <div class='header'>Order Summary</div>
+          <div class="col-md-5">
+            <div class="right border">
+              <div class="header">Order Summary</div>
               <p>Total Items : {TotalItems}</p>
 
               {/* -----------------------CART ITEMS-------------------------- */}
               {cartData.map((cartItem) => {
                 return (
-                  <div class='row item'>
-                    <div class='col-4 align-self-center'>
+                  <div class="row item">
+                    <div class="col-4 align-self-center">
                       <img
-                        class='img-fluid'
+                        class="img-fluid"
                         src={cartItem.img}
-                        alt='product Image'
+                        alt="product Image"
                       />
                     </div>
-                    <div class='col-8'>
-                      <div class='row'>
-                        <b className='handle-padding'>RS {cartItem.price}</b>
+                    <div class="col-8">
+                      <div class="row">
+                        <b className="handle-padding">RS {cartItem.price}</b>
                       </div>
-                      <div class='row text-muted'>{cartItem.name}</div>
-                      <div class='row'>Quantity: x{cartItem.quantity}</div>
+                      <div class="row text-muted">{cartItem.name}</div>
+                      <div class="row">Quantity: x{cartItem.quantity}</div>
                     </div>
                   </div>
                 );
@@ -198,27 +182,27 @@ function CheckoutItems() {
               {/* ---------------------------------------------- */}
 
               <hr />
-              <div class='row lower'>
-                <div class='col text-left'>Subtotal</div>
-                <div class='col text-right'>RS {subTotal.toLocaleString()}</div>
+              <div class="row lower">
+                <div class="col text-left">Subtotal</div>
+                <div class="col text-right">RS {subTotal.toLocaleString()}</div>
               </div>
-              <div class='row lower'>
-                <div class='col text-left'>Delivery</div>
-                <div class='col text-right'>RS {deliveryCharges}</div>
+              <div class="row lower">
+                <div class="col text-left">Delivery</div>
+                <div class="col text-right">RS {deliveryCharges}</div>
               </div>
-              <div class='row lower'>
-                <div class='col text-left'>
+              <div class="row lower">
+                <div class="col text-left">
                   <b>Total to pay</b>
                 </div>
-                <div class='col text-right'>
+                <div class="col text-right">
                   <b>RS {totalToPay.toLocaleString()}</b>
                 </div>
               </div>
 
               <button
-                class='btn'
-                data-toggle='modal'
-                data-target='#exampleModal'
+                class="btn"
+                data-toggle="modal"
+                data-target="#exampleModal"
                 onClick={confirmHandler}
               >
                 Place order
@@ -230,29 +214,29 @@ function CheckoutItems() {
 
       {/* // popup model code */}
       <div
-        class='modal fade'
-        id='exampleModal'
-        tabindex='-1'
-        role='dialog'
-        aria-labelledby='exampleModalLabel'
-        aria-hidden='true'
+        class="modal fade"
+        id="exampleModal"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
       >
-        <div class='modal-dialog' role='document'>
-          <div class='modal-content'>
-            <div class='modal-header'>
-              <h5 class='modal-title' id='exampleModalLabel'>
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">
                 User Confermation
               </h5>
               <button
-                type='button'
-                class='close'
-                data-dismiss='modal'
-                aria-label='Close'
+                type="button"
+                class="close"
+                data-dismiss="modal"
+                aria-label="Close"
               >
-                <span aria-hidden='true'>&times;</span>
+                <span aria-hidden="true">&times;</span>
               </button>
             </div>
-            <div class='modal-body'>
+            <div class="modal-body">
               Thank You for using our services, As the name suggests, this email
               contains a buyer’s order confirmation details, including what they
               bought, the purchase total, and the estimated delivery date.
