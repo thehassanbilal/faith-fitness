@@ -2,15 +2,18 @@
 import React, { useRef, useState } from 'react';
 import '../Cart/CheckoutItems.css';
 
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { placeOrderThunk } from '../../../features/orderSlice/orderSlice';
+
+import { Modal } from '../Modal/Modal';
 
 function CheckoutItems() {
+  const dispatch = useDispatch();
   const cartData = useSelector((state) => state.cart.items);
-  console.log(cartData);
 
   //-------------------------Validations---------------------------------------------------
-  const isEmpty = (value) => value.trim() === '';
-  const isFiveChars = (value) => value.trim().length === 5;
+  const isEmpty = (value) => value?.trim() === '';
+  const isFiveChars = (value) => value?.trim().length === 5;
 
   const [formInputsValidity, setFormInputsValidity] = useState({
     name: true,
@@ -26,20 +29,27 @@ function CheckoutItems() {
   const postalCodeInputRef = useRef();
   const addressInputRef = useRef();
 
+  const enteredName = nameInputRef?.current?.value;
+  const enteredEmail = emailInputRef?.current?.value;
+  const enteredContact = contactInputRef?.current?.value;
+  const enteredPostalCode = postalCodeInputRef?.current?.value;
+  const enteredAddress = addressInputRef?.current?.value;
+
+  const enteredNameIsValid = !isEmpty(enteredName);
+  const enteredEmailIsValid = !isEmpty(enteredEmail);
+  const enteredContactIsValid = !isEmpty(enteredContact);
+  const enteredPostalCodeIsValid = isFiveChars(enteredPostalCode);
+  const enteredAddressIsValid = !isEmpty(enteredAddress);
+
+  const formIsValid =
+    enteredNameIsValid &&
+    enteredEmailIsValid &&
+    enteredContactIsValid &&
+    enteredPostalCodeIsValid &&
+    enteredAddressIsValid;
+
   const confirmHandler = (event) => {
     event.preventDefault();
-
-    const enteredName = nameInputRef.current.value;
-    const enteredEmail = emailInputRef.current.value;
-    const enteredContact = contactInputRef.current.value;
-    const enteredPostalCode = postalCodeInputRef.current.value;
-    const enteredAddress = addressInputRef.current.value;
-
-    const enteredNameIsValid = !isEmpty(enteredName);
-    const enteredEmailIsValid = !isEmpty(enteredEmail);
-    const enteredContactIsValid = !isEmpty(enteredContact);
-    const enteredPostalCodeIsValid = isFiveChars(enteredPostalCode);
-    const enteredAddressIsValid = !isEmpty(enteredAddress);
 
     setFormInputsValidity({
       name: enteredNameIsValid,
@@ -49,30 +59,51 @@ function CheckoutItems() {
       address: enteredAddressIsValid,
     });
 
-    const formIsValid =
-      enteredNameIsValid &&
-      enteredEmailIsValid &&
-      enteredContactIsValid &&
-      enteredPostalCodeIsValid &&
-      enteredAddressIsValid;
-    if (!formIsValid) {
-      return;
+    if (formIsValid) {
+      console.log(
+        'cart data',
+        enteredName,
+        enteredEmail,
+        enteredContact,
+        enteredPostalCode,
+        enteredAddress,
+        cartData
+      );
+      dispatch(
+        placeOrderThunk({
+          name: enteredName,
+          email: enteredEmail,
+          contact: enteredContact,
+          postalCode: enteredPostalCode,
+          address: enteredAddress,
+          cartData: cartData,
+          totalToPay: totalToPay,
+        })
+      );
+
+      console.log('info is valid');
+    } else {
+      console.log('info not  validate');
     }
   };
 
   // -------------------------Total items-------------------------------------------------
 
   var allProductsQuantity = [];
-  cartData.forEach((item) => allProductsQuantity.push(item.quantity));
-  var TotalItems = allProductsQuantity.reduce((a, b) => a + b);
+  cartData?.forEach((item) => allProductsQuantity?.push(item.quantity));
+  var TotalItems = allProductsQuantity?.reduce(
+    (previousValue, currentValue) => previousValue + currentValue,
+    0
+  );
 
   //-------------------------Sub Total ---------------------------------------------------
 
   var allProductsTotals = [];
   cartData.forEach((item) => allProductsTotals.push(item.totalPrice));
-  var subTotal = allProductsTotals.reduce(function (a, b) {
-    return a + b;
-  }, 0);
+  var subTotal = allProductsTotals?.reduce(
+    (previousValue, currentValue) => previousValue + currentValue,
+    0
+  );
 
   //--------------------------------------------------------------------------------------
 
@@ -92,11 +123,11 @@ function CheckoutItems() {
                 </div>
                 <form>
                   <div class='row'>
-                    <div class='col-6'>
+                    <div class='col'>
                       <span>Full Name:</span>
                       <input placeholder='Name...' ref={nameInputRef} />
                       {!formInputsValidity.name && (
-                        <p>Please enter a valid name!</p>
+                        <p className='validate'>Please enter a valid name!</p>
                       )}
                     </div>
                     <div class='col-6'>
@@ -107,18 +138,21 @@ function CheckoutItems() {
                         ref={emailInputRef}
                       />
                       {!formInputsValidity.email && (
-                        <p>Please enter a valid email!</p>
+                        <p className='validate'>Please enter a valid email!</p>
                       )}
                     </div>
                     <div class='col-6'>
                       <span>Contact Number:</span>
                       <input
+                        type='tel'
                         id='contact'
                         placeholder='Contact...'
                         ref={contactInputRef}
                       />
                       {!formInputsValidity.contact && (
-                        <p>Please enter a valid contact!</p>
+                        <p className='validate'>
+                          Please enter a valid contact!
+                        </p>
                       )}
                     </div>
                     <div class='col-6'>
@@ -130,7 +164,7 @@ function CheckoutItems() {
                         ref={postalCodeInputRef}
                       />
                       {!formInputsValidity.postalCode && (
-                        <p>
+                        <p className='validate'>
                           Please enter a valid postal code (5 characters long)!
                         </p>
                       )}
@@ -144,69 +178,79 @@ function CheckoutItems() {
                         ref={addressInputRef}
                       ></textarea>
                       {!formInputsValidity.address && (
-                        <p>Please enter a valid address!</p>
+                        <p className='validate'>
+                          Please enter a valid address!
+                        </p>
                       )}
+                    </div>
+
+                    <div className='btn-submit'>
+                      <button
+                        class='btn'
+                        data-toggle='modal'
+                        data-target='#exampleModal'
+                        onClick={confirmHandler}
+                      >
+                        Place order
+                      </button>
                     </div>
                   </div>
                 </form>
               </div>
             </div>
-          </div>
-          <div class='col-md-5'>
-            <div class='right border'>
-              <div class='header'>Order Summary</div>
-              <p>Total Items : {TotalItems}</p>
+            <div class='col-md-5'>
+              <div class='right border'>
+                <div class='header'>Order Summary</div>
+                <p>Total Items : {TotalItems}</p>
 
-              {/* -----------------------CART ITEMS-------------------------- */}
-              {cartData.map((cartItem) => {
-                return (
-                  <div class='row item'>
-                    <div class='col-4 align-self-center'>
-                      <img
-                        class='img-fluid'
-                        src={cartItem.img}
-                        alt='product Image'
-                      />
-                    </div>
-                    <div class='col-8'>
-                      <div class='row'>
-                        <b className='handle-padding'>RS {cartItem.price}</b>
+                {/* -----------------------CART ITEMS-------------------------- */}
+                <div className='items-main-wraper'>
+                  {cartData.map((cartItem) => {
+                    return (
+                      <div class='row item'>
+                        <div class='col-4 align-self-center'>
+                          <img
+                            class='img-fluid'
+                            src={cartItem.img}
+                            alt='product Image'
+                          />
+                        </div>
+                        <div class='col-8'>
+                          <div class='row'>
+                            <b className='handle-padding'>
+                              RS {cartItem.price}
+                            </b>
+                          </div>
+                          <div class='row text-muted'>{cartItem.name}</div>
+                          <div class='row'>Quantity: x{cartItem.quantity}</div>
+                        </div>
                       </div>
-                      <div class='row text-muted'>{cartItem.name}</div>
-                      <div class='row'>Quantity: x{cartItem.quantity}</div>
-                    </div>
+                    );
+                  })}
+                </div>
+
+                {/* ---------------------------------------------- */}
+
+                <hr />
+                <div class='row lower'>
+                  <div class='col text-left'>Subtotal</div>
+                  <div class='col text-right'>
+                    RS {subTotal.toLocaleString()}
                   </div>
-                );
-              })}
-
-              {/* ---------------------------------------------- */}
-
-              <hr />
-              <div class='row lower'>
-                <div class='col text-left'>Subtotal</div>
-                <div class='col text-right'>RS {subTotal.toLocaleString()}</div>
-              </div>
-              <div class='row lower'>
-                <div class='col text-left'>Delivery</div>
-                <div class='col text-right'>RS {deliveryCharges}</div>
-              </div>
-              <div class='row lower'>
-                <div class='col text-left'>
-                  <b>Total to pay</b>
                 </div>
-                <div class='col text-right'>
-                  <b>RS {totalToPay.toLocaleString()}</b>
+                <div class='row lower'>
+                  <div class='col text-left'>Delivery</div>
+                  <div class='col text-right'>RS {deliveryCharges}</div>
+                </div>
+                <div class='row lower'>
+                  <div class='col text-left'>
+                    <b>Total to pay</b>
+                  </div>
+                  <div class='col text-right'>
+                    <b>RS {totalToPay.toLocaleString()}</b>
+                  </div>
                 </div>
               </div>
-
-              <button
-                class='btn'
-                data-toggle='modal'
-                data-target='#exampleModal'
-                onClick={confirmHandler}
-              >
-                Place order
-              </button>
             </div>
           </div>
         </div>

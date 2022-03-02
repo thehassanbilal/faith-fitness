@@ -83,3 +83,8 @@
   align-items: center;
   justify-content: center;
 }
+
+.subscribe-btn {
+  width: 100%;
+  margin-top: 12px;
+}

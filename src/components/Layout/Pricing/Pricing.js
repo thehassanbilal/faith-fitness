@@ -1,23 +1,24 @@
 /** @format */
 
-import OurProgramsCard from "../../Cards/OurProgramsCard/OurProgramsCard";
-import classes from "./Pricing.module.css";
+import OurProgramsCard from '../../Cards/OurProgramsCard/OurProgramsCard';
+import classes from './Pricing.module.css';
 
-import { pricingsData } from "../../../services/productData";
-import PricingSlider from "./PricingSlider";
+import { pricingsData } from '../../../services/productData';
+import PricingSlider from './PricingSlider';
 
 const Pricing = () => {
+  const sub = 'Subscribe';
   return (
-    <section className={classes["pricingSection-container"]}>
+    <section className={classes['pricingSection-container']}>
       <PricingSlider />
-      <h1 className={classes["pricingSection-heading"]}>Pricing</h1>
-      <div className={classes["pricingSection-title"]}>
-        <p className={classes["pricingSection-title-firstHalf"]}>Our</p>
-        <p className={classes["pricingSection-title-secondHalf"]}>
+      <h1 className={classes['pricingSection-heading']}>Pricing</h1>
+      <div className={classes['pricingSection-title']}>
+        <p className={classes['pricingSection-title-firstHalf']}>Our</p>
+        <p className={classes['pricingSection-title-secondHalf']}>
           Special Plans
         </p>
       </div>
-      <div className={classes["pricingSection-cards"]}>
+      <div className={classes['pricingSection-cards']}>
         {pricingsData.map((cardData) => {
           return (
             <OurProgramsCard
@@ -25,6 +26,7 @@ const Pricing = () => {
               title={cardData.title}
               desc={cardData.desc}
               cost={cardData.cost}
+              btn_txt={sub}
             />
           );
         })}

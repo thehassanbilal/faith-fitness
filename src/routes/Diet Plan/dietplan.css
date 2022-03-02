@@ -1,11 +1,11 @@
 /** @format */
 
 .swiper-wrapper {
-  height: 550px !important;
+  height: unset !important;
 }
 
 .pricingSection-heading {
-  font-family: "Pacifico", "cursive";
+  font-family: 'Pacifico', 'cursive';
   font-weight: normal;
   font-size: 40px;
   padding-top: 40px;

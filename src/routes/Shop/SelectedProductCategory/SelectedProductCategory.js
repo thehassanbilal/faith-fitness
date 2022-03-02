@@ -15,6 +15,7 @@ import {
   removeSelectedCategoryProduct,
 } from '../../../features/productSlice';
 import ProductCard from '../../../components/ProductCard/ProductCard';
+import '../../../App.css';
 
 const SelectedProductCategory = () => {
   let { id } = useParams();
@@ -28,10 +29,6 @@ const SelectedProductCategory = () => {
   useEffect(() => {
     dispatch(getSelectedCategoryThunk(id));
     dispatch(getCompaniesThunk());
-
-    // return () => {
-    //   return dispatch(removeSelectedCategoryProduct());
-    // };
   }, [dispatch, id]);
 
   const bannerURL = `http://localhost:1337${selectedCategory?.banner?.[0]?.url}`;
@@ -43,8 +40,8 @@ const SelectedProductCategory = () => {
           <Banner img={bannerURL} />
         </div>
         <p className='SelectedProductCategory-param'></p>
-        <h1 className='SelectedProductCategory-selectCompany-heading'>
-          Products:
+        <h1 className='pricingSection-heading line-divider'>
+          {selectedCategory.name}
         </h1>
 
         <div className='SelectedProductCategory-products'>
@@ -60,7 +57,8 @@ const SelectedProductCategory = () => {
           })}
         </div>
       </div>
-      <SwiperSlider heading={'Here Are PROTEIN Products'} />
+
+      <SwiperSlider heading={`Most Popular in ${selectedCategory.name}`} />
     </>
   );
 };

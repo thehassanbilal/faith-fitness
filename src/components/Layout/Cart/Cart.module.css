@@ -17,6 +17,7 @@
 
 .actions {
   text-align: right;
+  display: flex;
 }
 
 .actions button {
@@ -27,6 +28,7 @@
   padding: 0.5rem 2rem;
   border-radius: 25px;
   margin-left: 1rem;
+  margin-left: auto;
 }
 
 .actions button:hover,
@@ -36,10 +38,17 @@
 }
 
 .actions .button--alt {
-  background-color: gray !important;
+  background-color: black !important;
 }
 
 .actions .button {
   background: rgb(52 124 40) -6%;
   color: white;
+  margin-left: 12px;
+}
+
+.cart-items h1 {
+  font-size: 24px;
+  font-weight: 600;
+  font-family: Poppins;
 }
