@@ -13,10 +13,8 @@ a:hover {
 
 .footer-20192 {
   position: relative;
-  /* color: #fff; */
   padding: 7rem 0;
   box-shadow: 0 0 24px rgb(0 0 0 / 0.2) !important;
-  backdrop-filter: blur(55px) !important;
   margin-top: 100px;
   padding-bottom: 34px;
 }

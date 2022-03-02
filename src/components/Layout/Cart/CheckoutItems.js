@@ -6,7 +6,7 @@ import { useSelector } from "react-redux";
 
 function CheckoutItems() {
   const cartData = useSelector((state) => state.cart.items);
-  console.log(cartData);
+  console.log("redux data", cartData);
 
   //-------------------------Validations---------------------------------------------------
   const isEmpty = (value) => value.trim() === "";
@@ -158,7 +158,7 @@ function CheckoutItems() {
               <p>Total Items : {TotalItems}</p>
 
               {/* -----------------------CART ITEMS-------------------------- */}
-              {cartData.map((cartItem) => {
+              {cartData?.map((cartItem) => {
                 return (
                   <div class="row item">
                     <div class="col-4 align-self-center">

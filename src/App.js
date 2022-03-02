@@ -21,6 +21,7 @@ import Blog from "./blogs/Blog";
 import SignUp from "./authentication/SignUp";
 import SignIn from "./authentication/SignIn";
 import CheckoutItems from "./components/Layout/Cart/CheckoutItems";
+import Dashboard from "./Admin Dashboard/Dashboard";
 
 function App() {
   return (
@@ -42,6 +43,7 @@ function App() {
             <Route path="/signin" element={<SignIn />} />
             <Route path="/checkout" element={<CheckoutItems />} />
             <Route path="*" element={<Error />} />
+            <Route path="/admin" element={<Dashboard />} />
           </Routes>
         </Layout>
       </BrowserRouter>

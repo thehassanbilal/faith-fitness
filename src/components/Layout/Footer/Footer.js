@@ -44,7 +44,6 @@ const Footer = () => {
                 <ul className="list-unstyled links">
                   <li>
                     <Link to="/store">
-                      {" "}
                       <a href="#">Food Suplements</a>
                     </Link>
                   </li>
