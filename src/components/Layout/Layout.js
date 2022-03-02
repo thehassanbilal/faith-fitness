@@ -1,7 +1,7 @@
 /** @format */
 
 import { useSelector } from "react-redux";
-import { useLocation, useParams } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import Cart from "./Cart/Cart";
 import Footer from "./Footer/Footer";
 import NavBar from "./NavBar/NavBar";

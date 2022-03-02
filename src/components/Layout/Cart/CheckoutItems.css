@@ -19,7 +19,7 @@
 }
 
 #logo {
-  font-family: 'Dancing Script';
+  font-family: "Dancing Script";
   font-weight: bold;
   font-size: 1.6rem;
 }
@@ -29,7 +29,7 @@
 }
 
 .card-body {
-  background-image: url('https://i.imgur.com/4bg1e6u.jpg');
+  background-image: url("https://i.imgur.com/4bg1e6u.jpg");
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -46,7 +46,7 @@
 @media (max-width: 768px) {
   .card-body {
     padding: 0 1rem 1rem 1rem;
-    background-image: url('https://i.imgur.com/4bg1e6u.jpg');
+    background-image: url("https://i.imgur.com/4bg1e6u.jpg");
     background-size: cover;
     background-repeat: no-repeat;
   }
@@ -137,7 +137,7 @@ a:hover {
   text-decoration: none;
 }
 
-input[type='checkbox'] {
+input[type="checkbox"] {
   width: unset;
   margin-bottom: unset;
 }
@@ -218,6 +218,40 @@ textarea {
   max-width: 180px;
   margin-left: auto;
   padding: 8px 24px;
+}
+
+.popup-overlay {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 2;
+  cursor: pointer;
+
+  padding: 50px 24px 0 24px !important;
+  z-index: 999;
+}
+
+.popup-body {
+  max-width: 550px;
+  width: 100%;
+  margin: auto;
+}
+
+.order-btn {
+  max-width: 120px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: 18px;
+  margin-bottom: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
 }
 
 @media (max-width: 480px) {

@@ -1,22 +1,19 @@
 /** @format */
-import React, { useRef, useState } from 'react';
-import '../Cart/CheckoutItems.css';
+import React, { useRef, useState } from "react";
+import "../Cart/CheckoutItems.css";
 
-import { useDispatch, useSelector } from 'react-redux';
-import { placeOrderThunk } from '../../../features/orderSlice/orderSlice';
-
-import { Modal } from '../Modal/Modal';
+import { useDispatch, useSelector } from "react-redux";
+import { placeOrderThunk } from "../../../features/orderSlice/orderSlice";
+import { useNavigate } from "react-router-dom";
 
 function CheckoutItems() {
+  let navigate = useNavigate();
   const dispatch = useDispatch();
   const cartData = useSelector((state) => state.cart.items);
-<<<<<<< HEAD
-  console.log("redux data", cartData);
-=======
->>>>>>> 75de4b80a4d1d16cbf104f6c002a727a4d4cc532
+  const [popUp, setPopUp] = useState(false);
 
   //-------------------------Validations---------------------------------------------------
-  const isEmpty = (value) => value?.trim() === '';
+  const isEmpty = (value) => value?.trim() === "";
   const isFiveChars = (value) => value?.trim().length === 5;
 
   const [formInputsValidity, setFormInputsValidity] = useState({
@@ -54,7 +51,6 @@ function CheckoutItems() {
 
   const confirmHandler = (event) => {
     event.preventDefault();
-
     setFormInputsValidity({
       name: enteredNameIsValid,
       email: enteredEmailIsValid,
@@ -64,33 +60,41 @@ function CheckoutItems() {
     });
 
     if (formIsValid) {
-      console.log(
-        'cart data',
-        enteredName,
-        enteredEmail,
-        enteredContact,
-        enteredPostalCode,
-        enteredAddress,
-        cartData
-      );
-      dispatch(
-        placeOrderThunk({
-          name: enteredName,
-          email: enteredEmail,
-          contact: enteredContact,
-          postalCode: enteredPostalCode,
-          address: enteredAddress,
-          cartData: cartData,
-          totalToPay: totalToPay,
-        })
-      );
-
-      console.log('info is valid');
+      console.log("info is valid");
+      setPopUp(true);
     } else {
-      console.log('info not  validate');
+      console.log("info not validate");
     }
   };
 
+  const handleClose = () => {
+    setPopUp(false);
+  };
+
+  const confirmOrderHandler = () => {
+    console.log(
+      "cart data",
+      enteredName,
+      enteredEmail,
+      enteredContact,
+      enteredPostalCode,
+      enteredAddress,
+      cartData
+    );
+    dispatch(
+      placeOrderThunk({
+        name: enteredName,
+        email: enteredEmail,
+        contact: enteredContact,
+        postalCode: enteredPostalCode,
+        address: enteredAddress,
+        cartData: cartData,
+        totalToPay: totalToPay,
+      })
+    );
+    setPopUp(false);
+    navigate("/");
+  };
   // -------------------------Total items-------------------------------------------------
 
   var allProductsQuantity = [];
@@ -117,85 +121,80 @@ function CheckoutItems() {
   const totalToPay = subTotal + deliveryCharges;
 
   return (
-    <div className='cart-top'>
-      <div class='card'>
-        <div class='card-body pt-5'>
-          <div class='row'>
-            <div class='col-md-7'>
-              <div class='left border'>
-                <div class='row'>
-                  <span class='header'>Fill Information</span>
+    <div className="cart-top">
+      <div class="card">
+        <div class="card-body pt-5">
+          <div class="row">
+            <div class="col-md-7">
+              <div class="left border">
+                <div class="row">
+                  <span class="header">Fill Information</span>
                 </div>
                 <form>
-                  <div class='row'>
-                    <div class='col'>
+                  <div class="row">
+                    <div class="col">
                       <span>Full Name:</span>
-                      <input placeholder='Name...' ref={nameInputRef} />
+                      <input placeholder="Name..." ref={nameInputRef} />
                       {!formInputsValidity.name && (
-                        <p className='validate'>Please enter a valid name!</p>
+                        <p className="validate">Please enter a valid name!</p>
                       )}
                     </div>
-                    <div class='col-6'>
+                    <div class="col-6">
                       <span>Email Address:</span>
                       <input
-                        id='email'
-                        placeholder='email...'
+                        id="email"
+                        placeholder="email..."
                         ref={emailInputRef}
                       />
                       {!formInputsValidity.email && (
-                        <p className='validate'>Please enter a valid email!</p>
+                        <p className="validate">Please enter a valid email!</p>
                       )}
                     </div>
-                    <div class='col-6'>
+                    <div class="col-6">
                       <span>Contact Number:</span>
                       <input
-                        type='tel'
-                        id='contact'
-                        placeholder='Contact...'
+                        type="tel"
+                        id="contact"
+                        placeholder="Contact..."
                         ref={contactInputRef}
                       />
                       {!formInputsValidity.contact && (
-                        <p className='validate'>
+                        <p className="validate">
                           Please enter a valid contact!
                         </p>
                       )}
                     </div>
-                    <div class='col-6'>
+                    <div class="col-6">
                       <span>Postal Code:</span>
 
                       <input
-                        id='Postal Code'
-                        placeholder='Postal Code...'
+                        id="Postal Code"
+                        placeholder="Postal Code..."
                         ref={postalCodeInputRef}
                       />
                       {!formInputsValidity.postalCode && (
-                        <p className='validate'>
+                        <p className="validate">
                           Please enter a valid postal code (5 characters long)!
                         </p>
                       )}
                     </div>
-                    <div class='col-12'>
+                    <div class="col-12">
                       <span>Address:</span>
                       <textarea
-                        id='address'
-                        placeholder='Complete address...'
-                        className='address-info'
+                        id="address"
+                        placeholder="Complete address..."
+                        className="address-info"
                         ref={addressInputRef}
                       ></textarea>
                       {!formInputsValidity.address && (
-                        <p className='validate'>
+                        <p className="validate">
                           Please enter a valid address!
                         </p>
                       )}
                     </div>
 
-                    <div className='btn-submit'>
-                      <button
-                        class='btn'
-                        data-toggle='modal'
-                        data-target='#exampleModal'
-                        onClick={confirmHandler}
-                      >
+                    <div className="btn-submit">
+                      <button class="btn" onClick={confirmHandler}>
                         Place order
                       </button>
                     </div>
@@ -203,55 +202,32 @@ function CheckoutItems() {
                 </form>
               </div>
             </div>
-<<<<<<< HEAD
-          </div>
-          <div class="col-md-5">
-            <div class="right border">
-              <div class="header">Order Summary</div>
-              <p>Total Items : {TotalItems}</p>
-
-              {/* -----------------------CART ITEMS-------------------------- */}
-              {cartData?.map((cartItem) => {
-                return (
-                  <div class="row item">
-                    <div class="col-4 align-self-center">
-                      <img
-                        class="img-fluid"
-                        src={cartItem.img}
-                        alt="product Image"
-                      />
-                    </div>
-                    <div class="col-8">
-                      <div class="row">
-                        <b className="handle-padding">RS {cartItem.price}</b>
-=======
-            <div class='col-md-5'>
-              <div class='right border'>
-                <div class='header'>Order Summary</div>
+            <div class="col-md-5">
+              <div class="right border">
+                <div class="header">Order Summary</div>
                 <p>Total Items : {TotalItems}</p>
 
                 {/* -----------------------CART ITEMS-------------------------- */}
-                <div className='items-main-wraper'>
+                <div className="items-main-wraper">
                   {cartData.map((cartItem) => {
                     return (
-                      <div class='row item'>
-                        <div class='col-4 align-self-center'>
+                      <div class="row item">
+                        <div class="col-4 align-self-center">
                           <img
-                            class='img-fluid'
+                            class="img-fluid"
                             src={cartItem.img}
-                            alt='product Image'
+                            alt="product Image"
                           />
                         </div>
-                        <div class='col-8'>
-                          <div class='row'>
-                            <b className='handle-padding'>
+                        <div class="col-8">
+                          <div class="row">
+                            <b className="handle-padding">
                               RS {cartItem.price}
                             </b>
                           </div>
-                          <div class='row text-muted'>{cartItem.name}</div>
-                          <div class='row'>Quantity: x{cartItem.quantity}</div>
+                          <div class="row text-muted">{cartItem.name}</div>
+                          <div class="row">Quantity: x{cartItem.quantity}</div>
                         </div>
->>>>>>> 75de4b80a4d1d16cbf104f6c002a727a4d4cc532
                       </div>
                     );
                   })}
@@ -260,21 +236,21 @@ function CheckoutItems() {
                 {/* ---------------------------------------------- */}
 
                 <hr />
-                <div class='row lower'>
-                  <div class='col text-left'>Subtotal</div>
-                  <div class='col text-right'>
+                <div class="row lower">
+                  <div class="col text-left">Subtotal</div>
+                  <div class="col text-right">
                     RS {subTotal.toLocaleString()}
                   </div>
                 </div>
-                <div class='row lower'>
-                  <div class='col text-left'>Delivery</div>
-                  <div class='col text-right'>RS {deliveryCharges}</div>
+                <div class="row lower">
+                  <div class="col text-left">Delivery</div>
+                  <div class="col text-right">RS {deliveryCharges}</div>
                 </div>
-                <div class='row lower'>
-                  <div class='col text-left'>
+                <div class="row lower">
+                  <div class="col text-left">
                     <b>Total to pay</b>
                   </div>
-                  <div class='col text-right'>
+                  <div class="col text-right">
                     <b>RS {totalToPay.toLocaleString()}</b>
                   </div>
                 </div>
@@ -285,37 +261,26 @@ function CheckoutItems() {
       </div>
 
       {/* // popup model code */}
-      <div
-        class='modal fade'
-        id='exampleModal'
-        tabindex='-1'
-        role='dialog'
-        aria-labelledby='exampleModalLabel'
-        aria-hidden='true'
-      >
-        <div class='modal-dialog' role='document'>
-          <div class='modal-content'>
-            <div class='modal-header'>
-              <h5 class='modal-title' id='exampleModalLabel'>
-                User Confermation
-              </h5>
-              <button
-                type='button'
-                class='close'
-                data-dismiss='modal'
-                aria-label='Close'
-              >
-                <span aria-hidden='true'>&times;</span>
+      {popUp ? (
+        <div class="popup-overlay">
+          <div class="popup-body">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">User Confermation</h5>
+                <button type="button" class="close" onClick={handleClose}>
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">Select done to confirm your order!</div>
+
+              <button className="order-btn" onClick={confirmOrderHandler}>
+                Done
+                <i class="fa fa-check-square-o"></i>
               </button>
-            </div>
-            <div class='modal-body'>
-              Thank You for using our services, As the name suggests, this email
-              contains a buyer’s order confirmation details, including what they
-              bought, the purchase total, and the estimated delivery date.
             </div>
           </div>
         </div>
-      </div>
+      ) : null}
     </div>
   );
 }
