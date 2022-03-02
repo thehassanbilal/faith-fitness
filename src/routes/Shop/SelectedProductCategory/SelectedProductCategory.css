@@ -1,15 +1,5 @@
 /** @format */
 
-* {
-  text-decoration: none;
-}
-
-.SelectedProductCategory-container {
-}
-
-.SelectedProductCategory-bannerDiv {
-}
-
 .SelectedProductCategory-selectCompany-heading {
   padding: 20px;
 }
@@ -20,12 +10,18 @@
 }
 
 .SelectedProductCategory-products {
-  display: flex;
-  flex-direction: row;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   padding: 50px 10px 10px 10px;
 }
 .ProductCard-price {
   color: black !important;
   font-family: Poppins;
   font-weight: 500;
+}
+
+@media (max-width: 480px) {
+  .SelectedProductCategory-products {
+    flex-direction: column;
+  }
 }

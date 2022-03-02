@@ -187,11 +187,41 @@ input[type='checkbox'] {
   max-width: 100%;
 }
 
-.invalid label {
+.invalid span {
+  color: #ca3e51;
+}
+.invalid p {
   color: #ca3e51;
 }
 
-.invalid input {
+.invalid input,
+textarea {
   border-color: #aa0b20;
   background-color: #ffeff1;
+}
+
+.validate {
+  color: red;
+}
+
+.items-main-wraper {
+  height: 270px;
+  overflow: auto;
+}
+
+.btn-submit {
+  display: flex;
+}
+
+.btn-submit button {
+  width: 100%;
+  max-width: 180px;
+  margin-left: auto;
+  padding: 8px 24px;
+}
+
+@media (max-width: 480px) {
+  .col-6 {
+    width: 100%;
+  }
 }
