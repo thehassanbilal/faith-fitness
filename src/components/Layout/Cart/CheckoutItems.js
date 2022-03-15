@@ -5,11 +5,16 @@ import "../Cart/CheckoutItems.css";
 import { useDispatch, useSelector } from "react-redux";
 import { placeOrderThunk } from "../../../features/orderSlice/orderSlice";
 import { useNavigate } from "react-router-dom";
+import { clearCart } from "../../../features/cartSlice/cartSlice";
 
 function CheckoutItems() {
   let navigate = useNavigate();
   const dispatch = useDispatch();
   const cartData = useSelector((state) => state.cart.items);
+  const ProdIdsAndQuan = cartData?.map((e) => ({
+    productId: e?.id,
+    quantity: e.quantity,
+  }));
   const [popUp, setPopUp] = useState(false);
 
   //-------------------------Validations---------------------------------------------------
@@ -70,29 +75,24 @@ function CheckoutItems() {
   const handleClose = () => {
     setPopUp(false);
   };
-
+  const address = {
+    enteredName,
+    enteredEmail,
+    enteredContact,
+    enteredPostalCode,
+    enteredAddress,
+  };
   const confirmOrderHandler = () => {
-    console.log(
-      "cart data",
-      enteredName,
-      enteredEmail,
-      enteredContact,
-      enteredPostalCode,
-      enteredAddress,
-      cartData
-    );
+    console.log("cart data", address, cartData);
     dispatch(
       placeOrderThunk({
-        name: enteredName,
-        email: enteredEmail,
-        contact: enteredContact,
-        postalCode: enteredPostalCode,
-        address: enteredAddress,
-        cartData: cartData,
+        address,
+        cartData: ProdIdsAndQuan,
         totalToPay: totalToPay,
       })
     );
     setPopUp(false);
+    dispatch(clearCart(null));
     navigate("/");
   };
   // -------------------------Total items-------------------------------------------------

@@ -163,14 +163,15 @@ export const pricingsData = [
 //--------------------------------SHOP PRODUCT CATEGORIES------------------------------
 
 export const shopProductCategories = [
-  { name: "PROTEIN", img: shopProductsCategoriesProteinImg },
-  { name: "POST-WORKOUT", img: shopProductCategoryPostWorkoutImg },
-  { name: "FAT BURNER", img: shopProductCategoryFatBurnerImg },
-  { name: "AMINO ACID", img: shopProductCategoryAminoAcidImg },
-  { name: "PRE-WORKOUT", img: shopProductCategoryPreWorkoutImg },
+  { name: "PROTEIN", img: shopProductsCategoriesProteinImg, id: 1 },
+  { name: "POST-WORKOUT", img: shopProductCategoryPostWorkoutImg, id: 2 },
+  { name: "FAT BURNER", img: shopProductCategoryFatBurnerImg, id: 3 },
+  { name: "AMINO ACID", img: shopProductCategoryAminoAcidImg, id: 4 },
+  { name: "PRE-WORKOUT", img: shopProductCategoryPreWorkoutImg, id: 5 },
   {
     name: "GUIFTS & VALUE SETS",
     img: shopProductCategoryGiftsAndValueSetsImg,
+    id: 6,
   },
 ];
 

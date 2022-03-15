@@ -2,7 +2,7 @@
 
 import React from "react";
 import dietPlanChart from "../../assets/dietplan/Canvas.png";
-import "../Diet Plan/dietplan.css";
+import "../DietPlan/dietplan.css";
 
 function DietChart() {
   return (

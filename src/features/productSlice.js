@@ -1,31 +1,48 @@
-import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
+import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
-const API_PATH = 'http://localhost:1337';
+const API_PATH = "http://localhost:9000";
 
 const headers = {
-  method: 'GET',
+  method: "GET",
   headers: {
-    'Content-Type': 'application/json',
+    "Content-Type": "application/json",
   },
 };
+const PostHeaders = {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json",
+  },
+};
+// ----------------------------AddNewProduct----------------------------------
+export const addNewProductThunk = createAsyncThunk("addProduct", async () => {
+  const response = await fetch(`${API_PATH}/api/product`, PostHeaders, {});
+  const data = await response.json();
+  return data;
+});
 
 // ----------------------------------Suppliment Categories-----------------
 
 export const getProductCategoriesThunk = createAsyncThunk(
-  'GETProduct/getProductByCategoryThunk',
-  async () => {
-    const response = await fetch(`${API_PATH}/supplement-categories`, headers);
+  "GETProduct/getProductByCategoryThunk",
+  async ({ newProduct }) => {
+    const response = await fetch(
+      `${API_PATH}/supplement-categories`,
+      headers,
+      newProduct
+    );
     const data = await response.json();
     return data;
   }
 );
-// ----------------------------------One Suppliment Category-----------------
+// ----------------------------------One Suppliment Category---------------------//
 
 export const getSelectedCategoryThunk = createAsyncThunk(
-  'GETProduct/getSelectedCategoryThunk',
+  "GETProduct/getSelectedCategoryThunk",
   async (id) => {
+    console.log(id);
     const response = await fetch(
-      `${API_PATH}/supplement-categories/${id}`,
+      `${API_PATH}/api/product/?supplimentCategory=${id}`,
       headers
     );
     const data = await response.json();
@@ -34,7 +51,7 @@ export const getSelectedCategoryThunk = createAsyncThunk(
 );
 // ----------------------------------Comapanies Thunk-----------------
 export const getCompaniesThunk = createAsyncThunk(
-  'GETProduct/getCompaniesThunk',
+  "GETProduct/getCompaniesThunk",
   async () => {
     const response = await fetch(`${API_PATH}/companies`, headers);
     const data = await response.json();
@@ -44,20 +61,19 @@ export const getCompaniesThunk = createAsyncThunk(
 
 // ----------------------------------One Product Thunk-----------------
 export const getSelectedProductThunk = createAsyncThunk(
-  'GETProduct/getSelectedProductThunk',
+  "GETProduct/getSelectedProductThunk",
   async (id) => {
-    const response = await fetch(`${API_PATH}/products/${id}`, headers);
+    const response = await fetch(`${API_PATH}/api/product/find/${id}`, headers);
     const data = await response.json();
+    console.log(data);
     return data;
   }
 );
-
 const productSlice = createSlice({
-  name: 'prductSlice',
+  name: "prductSlice",
   initialState: {
     productCategories: [],
-    selectedCategory: {},
-    companies: [],
+    selectedCategory: [],
     selectedProduct: {},
   },
   reducer: {
@@ -70,43 +86,43 @@ const productSlice = createSlice({
   },
   extraReducers: {
     [getProductCategoriesThunk.pending]: (state, action) => {
-      console.log('pending');
+      console.log("pending");
     },
     [getProductCategoriesThunk.fulfilled]: (state, action) => {
       return { ...state, productCategories: action.payload };
     },
     [getProductCategoriesThunk.rejected]: (state, action) => {
-      console.log('rejected');
+      console.log("rejected");
     },
     // ------------------------------------------------------
     [getSelectedCategoryThunk.pending]: (state, action) => {
-      console.log('pending');
+      console.log("pending");
     },
     [getSelectedCategoryThunk.fulfilled]: (state, action) => {
       return { ...state, selectedCategory: action.payload };
     },
     [getSelectedCategoryThunk.rejected]: (state, action) => {
-      console.log('rejected');
+      console.log("rejected");
     },
     // ------------------------------------------------------
     [getCompaniesThunk.pending]: (state, action) => {
-      console.log('pending');
+      console.log("pending");
     },
     [getCompaniesThunk.fulfilled]: (state, action) => {
       return { ...state, companies: action.payload };
     },
     [getCompaniesThunk.rejected]: (state, action) => {
-      console.log('rejected');
+      console.log("rejected");
     },
     // --------------------------------------------------------
     [getSelectedProductThunk.pending]: (state, action) => {
-      console.log('pending');
+      console.log("pending");
     },
     [getSelectedProductThunk.fulfilled]: (state, action) => {
       return { ...state, selectedProduct: action.payload };
     },
     [getSelectedProductThunk.rejected]: (state, action) => {
-      console.log('rejected');
+      console.log("rejected");
     },
   },
 });

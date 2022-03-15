@@ -1,4 +1,9 @@
 /** @format */
+.btn-reset {
+  outline: none !important;
+  border: none !important;
+}
+
 .main-container {
   max-width: 1280px;
   width: 100%;
@@ -6,7 +11,7 @@
 }
 
 .pricingSection-heading {
-  font-family: 'Pacifico', 'cursive';
+  font-family: "Pacifico", "cursive";
   font-weight: normal;
   font-size: 40px;
   padding-top: 40px;
@@ -37,7 +42,7 @@
 }
 
 .line-divider {
-  font-family: 'Share Tech Mono', monospace;
+  font-family: "Share Tech Mono", monospace;
   color: #fff;
   font-size: 6vh;
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.45);
@@ -47,7 +52,7 @@
 }
 .line-divider::before,
 .line-divider::after {
-  content: '';
+  content: "";
   display: block;
   height: 0.09em;
   width: 28%;

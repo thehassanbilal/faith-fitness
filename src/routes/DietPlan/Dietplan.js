@@ -12,7 +12,7 @@ import "swiper/css/navigation";
 
 // import Swiper core and required modules
 import SwiperCore, { Navigation } from "swiper";
-import "../Diet Plan/dietplan.css";
+import "../DietPlan/dietplan.css";
 import DietChart from "./DietChart";
 
 // install Swiper modules

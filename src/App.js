@@ -16,12 +16,14 @@ import Checkout from "./components/Layout/Cart/Checkout";
 import Error from "./404/Error";
 import AboutCoach from "./components/Layout/AboutCoach/AboutCoach";
 import Contact from "./contact/Contact";
-import Dietplan from "./routes/Diet Plan/Dietplan";
+
 import Blog from "./blogs/Blog";
 import SignUp from "./authentication/SignUp";
 import SignIn from "./authentication/SignIn";
 import CheckoutItems from "./components/Layout/Cart/CheckoutItems";
 import Dashboard from "./Admin Dashboard/Dashboard";
+import Dietplan from "./routes/DietPlan/Dietplan";
+import NewProduct from "./Admin Dashboard/AddNewProduct/AddNewProduct";
 
 function App() {
   return (
@@ -31,8 +33,8 @@ function App() {
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="store" element={<Shop />} />
-            <Route path="/store/:id" element={<SelectedProductCategory />} />
-            <Route path="/store/products/:id" element={<ProductDetailPage />} />
+            <Route path="/products/:id" element={<SelectedProductCategory />} />
+            <Route path="/product/:id" element={<ProductDetailPage />} />
             <Route path="training" element={<Training />} />
             <Route path="/store/checkout" element={<Checkout />} />
             <Route path="/about" element={<AboutCoach />} />
@@ -43,7 +45,66 @@ function App() {
             <Route path="/signin" element={<SignIn />} />
             <Route path="/checkout" element={<CheckoutItems />} />
             <Route path="*" element={<Error />} />
-            <Route path="/admin" element={<Dashboard />} />
+            <Route path="/admin" element={<NewProduct />} />
+            <Route
+              // isAdmin={true}
+              exact
+              path="/admin/dashboard"
+              element={<Dashboard />}
+            />
+
+            {/* <Route
+              exact
+              path="/admin/products"
+              // isAdmin={true}
+              element={<NewProduct />}
+            /> */}
+            {/* <Route
+              exact
+              path="/admin/product"
+              isAdmin={true}
+              element={NewProduct}
+            />
+
+            <Route
+              exact
+              path="/admin/product/:id"
+              isAdmin={true}
+              element={UpdateProduct}
+            />
+            <Route
+              exact
+              path="/admin/orders"
+              isAdmin={true}
+              element={OrderList}
+            />
+
+            <Route
+              exact
+              path="/admin/order/:id"
+              isAdmin={true}
+              element={ProcessOrder}
+            />
+            <Route
+              exact
+              path="/admin/users"
+              isAdmin={true}
+              element={UsersList}
+            />
+
+            <Route
+              exact
+              path="/admin/user/:id"
+              isAdmin={true}
+              element={UpdateUser}
+            /> */}
+
+            {/* <Route
+              exact
+              path="/admin/reviews"
+              isAdmin={true}
+              element={ProductReviews}
+            /> */}
           </Routes>
         </Layout>
       </BrowserRouter>

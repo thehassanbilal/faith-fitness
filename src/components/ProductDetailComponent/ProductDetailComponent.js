@@ -10,7 +10,14 @@ import img from "../../assets/products/DUMMY_PRODUCTS/1.jpg";
 const ProductDetailComponent = ({ data }) => {
   const dispatch = useDispatch();
 
-  const { id, name, price, description } = data;
+  const {
+    id,
+    name,
+    price,
+    description,
+    supplimentWeights,
+    supplimentFlavours,
+  } = data;
 
   const addToCartHandler = () => {
     dispatch(
@@ -23,7 +30,6 @@ const ProductDetailComponent = ({ data }) => {
     );
   };
 
-  const { supplement_flavors, supplement_weights } = data;
   const productImg = `http://localhost:1337${data?.product_img?.[0]?.url}`;
   const nutritionImg = `http://localhost:1337${data?.nutrition_img?.[0]?.url}`;
 
@@ -61,8 +67,8 @@ const ProductDetailComponent = ({ data }) => {
             className={classes["ProductDetailPage-flavour-and-weight"]}
             name="flavor"
           >
-            {supplement_flavors?.map((flavor) => (
-              <option className={classes["option"]}>{flavor.name}</option>
+            {supplimentFlavours?.map((flavor) => (
+              <option className={classes["option"]}>{flavor}</option>
             ))}
           </select>
           {/* -------------------------------------------------------------- */}
@@ -70,8 +76,8 @@ const ProductDetailComponent = ({ data }) => {
             className={classes["ProductDetailPage-flavour-and-weight"]}
             name="flavor"
           >
-            {supplement_weights?.map((weight) => (
-              <option className={classes["option"]}>{weight.weight}</option>
+            {supplimentWeights?.map((weight) => (
+              <option className={classes["option"]}>{weight}</option>
             ))}
           </select>
         </div>

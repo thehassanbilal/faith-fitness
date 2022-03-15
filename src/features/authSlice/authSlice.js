@@ -1,18 +1,18 @@
-import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
-import React from 'react';
+import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import React from "react";
 
-const API_PATH = 'http://localhost:1337';
+const API_PATH = "http://localhost:9000";
 
 export const signupThunk = createAsyncThunk(
-  'POSTSignup/signupThunk',
+  "POSTSignup/signupThunk",
   async ({ username, email, password }) => {
     console.log(username, email, password);
-    const data = await fetch(`${API_PATH}/auth/local/register`, {
+    const data = await fetch(`${API_PATH}/api/auth/register`, {
       headers: {
-        Accept: 'application/json',
-        'Content-Type': 'application/json',
+        Accept: "application/json",
+        "Content-Type": "application/json",
       },
-      method: 'POST',
+      method: "POST",
       body: JSON.stringify({
         username: username,
         email: email,
@@ -25,14 +25,14 @@ export const signupThunk = createAsyncThunk(
 );
 
 export const signinThunk = createAsyncThunk(
-  'POSTSignin/signinThunk',
+  "POSTSignin/signinThunk",
   async ({ email, password }) => {
-    const response = await fetch(`${API_PATH}/auth/local`, {
+    const response = await fetch(`${API_PATH}/login`, {
       headers: {
-        Accept: 'application/json',
-        'Content-type': 'application/json',
+        Accept: "application/json",
+        "Content-type": "application/json",
       },
-      method: 'POST',
+      method: "POST",
       body: JSON.stringify({
         identifier: email,
         password: password,
@@ -44,7 +44,7 @@ export const signinThunk = createAsyncThunk(
 );
 
 const authSlice = createSlice({
-  name: 'authSlice',
+  name: "authSlice",
   initialState: { signupData: {}, signinData: {} },
   reducer: {
     signup(state, action) {},
@@ -52,22 +52,22 @@ const authSlice = createSlice({
   },
   extraReducers: {
     [signupThunk.pending]: (state, action) => {
-      console.log('pending');
+      console.log("pending");
     },
     [signupThunk.fulfilled]: (state, action) => {
       return { ...state, signupData: action.payload };
     },
     [signupThunk.rejected]: (state, action) => {
-      console.log('rejected');
+      console.log("rejected");
     },
     [signinThunk.pending]: (state, action) => {
-      console.log('pending');
+      console.log("pending");
     },
     [signinThunk.fulfilled]: (state, action) => {
       return { ...state, signinData: action.payload };
     },
     [signinThunk.rejected]: (state, action) => {
-      console.log('rejected');
+      console.log("rejected");
     },
   },
 });

@@ -1,61 +1,44 @@
-import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
+import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+// import { stat } from "fs/promises";
 
-const API_PATH = 'http://localhost:1337';
+const API_PATH = "http://localhost:9000";
 
 export const placeOrderThunk = createAsyncThunk(
-  'POSTPlaceOrder/placeOrderThunk',
-  async ({
-    name,
-    email,
-    contact,
-    postalCode,
-    address,
-    cartData,
-    totalToPay,
-  }) => {
-    console.log(
-      name,
-      email,
-      contact,
-      postalCode,
-      address,
-      cartData,
-      totalToPay
-    );
-    const response = await fetch(`${API_PATH}/new-orders`, {
+  "POSTPlaceOrder/placeOrderThunk",
+  async ({ address, cartData, totalToPay }) => {
+    console.log(address, cartData, totalToPay);
+    const response = await fetch(`${API_PATH}/api/order`, {
       headers: {
-        Accept: 'application/json',
-        'content-type': 'application/json',
+        Accept: "application/json",
+        "content-type": "application/json",
       },
-      method: 'POST',
+      method: "POST",
       body: JSON.stringify({
-        name: name,
-        email: email,
-        contact: contact,
-        postalCode: postalCode,
-        address: address,
+        address,
         products: cartData,
-        total_to_pay: totalToPay,
+        amount: totalToPay,
       }),
     });
-    const data = await response?.json();
-    console.log(data);
+    return response.json();
   }
 );
 
 const orderSlice = createSlice({
-  name: 'order',
+  name: "order",
   initialState: { emptorData: [] },
-  reducers: [],
+  reducers: {
+  
+  },
   extraReducers: {
     [placeOrderThunk.pending]: (state, action) => {
-      console.log('pending');
+      console.log("pending");
     },
     [placeOrderThunk.fulfilled]: (state, action) => {
-      return { ...state, emptorData: action.payload };
+      return { emptorData: action.payload };
     },
     [placeOrderThunk.rejected]: (state, action) => {
-      console.log('rejected');
+      console.log("rejected");
     },
   },
 });
+export default orderSlice.reducer;
