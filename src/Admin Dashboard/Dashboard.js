@@ -67,17 +67,7 @@ const Dashboard = () => {
   return (
     <div className="dashboard">
       {/* <MetaData title="Dashboard - Admin Panel" /> */}
-      <Sidebar />
-
-      <div className="dashboardContainer">
-        <Typography component="h1">Dashboard</Typography>
-
-        <div className="lineChart">{/* <Line data={lineState} /> */}</div>
-
-        <div className="doughnutChart">
-          {/* <Doughnut data={doughnutState} /> */}
-        </div>
-      </div>
+      {/* <Sidebar /> */}
     </div>
   );
 };

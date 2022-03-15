@@ -160,7 +160,7 @@ const NewProduct = () => {
             <div>
               <AccountTreeIcon />
               <Select
-                options={options}
+                options={["data", "address"]}
                 value={selectedValues}
                 onChange={(e) => setSelectedValues(e.target.value)}
                 isMulti
