@@ -1,20 +1,21 @@
+/** @format */
+
 import React, { Fragment, useState } from "react";
 import "./newProduct.css";
-import Select from "react-select";
 
 import { useDispatch } from "react-redux";
-// import { clearErrors, createProduct } from "../../actions/productAction";
-// import { useAlert } from "react-alert";
-import { Button } from "@material-ui/core";
-// import MetaData from "../layout/MetaData";
-import AccountTreeIcon from "@material-ui/icons/AccountTree";
-import DescriptionIcon from "@material-ui/icons/Description";
-import StorageIcon from "@material-ui/icons/Storage";
-import SpellcheckIcon from "@material-ui/icons/Spellcheck";
-import AttachMoneyIcon from "@material-ui/icons/AttachMoney";
+
+import { Button, TextField, TextareaAutosize } from "@material-ui/core";
 import "../../App.css";
-// import SideBar from "./Sidebar";
-// import { NEW_PRODUCT_RESET } from "../../constants/productConstants";
+import { makeStyles } from "@material-ui/core/styles";
+import MenuItem from "@material-ui/core/MenuItem";
+
+const useStyles = makeStyles((theme) => ({
+  root: {
+    maxWidth: "380px",
+    width: "100%",
+  },
+}));
 
 const NewProduct = () => {
   const dispatch = useDispatch();
@@ -30,37 +31,39 @@ const NewProduct = () => {
   const [images, setImages] = useState([]);
   const [imagesPreview, setImagesPreview] = useState([]);
 
-  const categories = [
-    "Laptop",
-    "Footwear",
-    "Bottom",
-    "Tops",
-    "Attire",
-    "Camera",
-    "SmartPhones",
-  ];
-  const options = [
-    "data",
-    "address",
-    "Tops",
-    "Attire",
-    "Camera",
-    "SmartPhones",
-  ];
-  const [selectedValues, setSelectedValues] = useState([]);
+  // handle the selected values
+  const classes = useStyles();
+  const [formState, setFormState] = useState({
+    productCatagories: [],
+  });
 
-  // useEffect(() => {
-  //   if (error) {
-  //     alert.error(error);
-  //     // dispatch(clearErrors());
-  //   }
+  const [formState1, setFormState1] = useState({
+    showProductCatagories: [],
+  });
 
-  //   if (success) {
-  //     alert.success("Product Created Successfully");
-  //     history.push("/admin/dashboard");
-  //     // dispatch({ type: NEW_PRODUCT_RESET });
-  //   }
-  // }, [dispatch, alert, error, history, success]);
+  const handleFieldChange = (event) => {
+    console.log(event);
+    event.persist();
+    setFormState((formState) => ({
+      ...formState,
+      [event.target.name]:
+        event.target.type === "checkbox"
+          ? event.target.checked
+          : event.target.value,
+    }));
+  };
+
+  const handleFieldChangeforselect = (event) => {
+    console.log(event);
+    event.persist();
+    setFormState1((formState1) => ({
+      ...formState1,
+      [event.target.name]:
+        event.target.type === "checkbox"
+          ? event.target.checked
+          : event.target.value,
+    }));
+  };
 
   const createProductSubmitHandler = (e) => {
     e.preventDefault();
@@ -101,9 +104,7 @@ const NewProduct = () => {
 
   return (
     <Fragment>
-      {/* <MetaData title="Create Product" /> */}
       <div className="dashboard">
-        {/* <SideBar /> */}
         <div className="newProductContainer">
           <form
             className="createProductForm"
@@ -113,9 +114,10 @@ const NewProduct = () => {
             <h1>Create Product</h1>
 
             <div>
-              <SpellcheckIcon />
-              <input
-                className="add_product_input"
+              <TextField
+                classes={{ root: classes.root }}
+                className="set-outline"
+                variant="outlined"
                 type="text"
                 placeholder="Product Name"
                 required
@@ -124,9 +126,10 @@ const NewProduct = () => {
               />
             </div>
             <div>
-              <AttachMoneyIcon />
-              <input
-                className="add_product_input"
+              <TextField
+                classes={{ root: classes.root }}
+                className="set-outline"
+                variant="outlined"
                 type="number"
                 placeholder="Price"
                 required
@@ -135,42 +138,61 @@ const NewProduct = () => {
             </div>
 
             <div>
-              <DescriptionIcon />
-
-              <textarea
+              <TextareaAutosize
                 placeholder="Product Description"
                 value={description}
                 onChange={(e) => setDescription(e.target.value)}
-                cols="30"
-                rows="1"
-              ></textarea>
+                className="handleTextArea"
+              ></TextareaAutosize>
             </div>
 
             <div>
-              <AccountTreeIcon />
-              <select onChange={(e) => setCategory(e.target.value)}>
-                <option value="">Choose Category</option>
-                {categories.map((cate) => (
-                  <option key={cate} value={cate}>
-                    {cate}
-                  </option>
-                ))}
-              </select>
-            </div>
-            <div>
-              <AccountTreeIcon />
-              <Select
-                options={options}
-                value={selectedValues}
-                onChange={(e) => setSelectedValues(e.target.value)}
-                isMulti
-              />
+              <TextField
+                label="Select"
+                classes={{ root: classes.root }}
+                className="set-outline"
+                select
+                name="productCatagories"
+                id="productCatagories"
+                variant="outlined"
+                SelectProps={{
+                  multiple: true,
+                  value: formState.productCatagories,
+                  onChange: handleFieldChange,
+                }}
+              >
+                <MenuItem value="admin">Items-1</MenuItem>
+                <MenuItem value="user1">Items-2</MenuItem>
+                <MenuItem value="user2">Items-3</MenuItem>
+              </TextField>
             </div>
 
             <div>
-              <StorageIcon />
-              <input
-                className="add_product_input"
+              <TextField
+                label="Select"
+                classes={{ root: classes.root }}
+                className="set-outline"
+                select
+                name="showProductCatagories"
+                id="showProductCatagories"
+                variant="outlined"
+                SelectProps={{
+                  multiple: true,
+                  value: formState1.showProductCatagories,
+                  onChange: handleFieldChangeforselect,
+                }}
+              >
+                <MenuItem value="admin">Items-1</MenuItem>
+                <MenuItem value="user1">Items-2</MenuItem>
+                <MenuItem value="user2">Items-3</MenuItem>
+              </TextField>
+            </div>
+
+            <div>
+              <TextField
+                classes={{ root: classes.root }}
+                className="set-outline"
+                variant="outlined"
                 type="number"
                 placeholder="Stock"
                 required
@@ -195,12 +217,7 @@ const NewProduct = () => {
               ))}
             </div>
 
-            <Button
-              id="createProductBtn"
-              type="submit"
-              className="btn-reset"
-              // disabled={loading ? true : false}
-            >
+            <Button id="createProductBtn" type="submit" className="btn-reset">
               Create
             </Button>
           </form>
