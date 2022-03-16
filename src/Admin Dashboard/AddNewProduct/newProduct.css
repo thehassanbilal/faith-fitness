@@ -7,7 +7,8 @@
   border-left: 1px solid rgba(0, 0, 0, 0.158);
   display: flex;
   flex-direction: column;
-  height: 100vh;
+
+  padding: 14px;
 }
 .newProductContainer h1 {
   color: rgba(0, 0, 0, 0.733);
@@ -20,19 +21,17 @@
   flex-direction: column;
   align-items: center;
   margin: auto;
-  padding: 3vmax;
+  padding: 2vmax;
   justify-content: space-evenly;
-  height: 90%;
+
   width: 100%;
-  max-width: 400px;
+  max-width: 750px;
 
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.267);
 }
 
 .createProductForm > div {
-  display: flex;
   width: 100%;
-  align-items: center;
 }
 .createProductForm > div > input,
 .createProductForm > div > select,
@@ -106,6 +105,7 @@
   border-radius: 4px;
   outline: none;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.219);
+  margin-top: 18px;
 }
 #createProductBtn:hover {
   border: unset !important;
@@ -144,6 +144,10 @@
   padding: unset !important;
 }
 
+.createProductForm > div {
+  margin-top: 18px;
+}
+
 @media screen and (max-width: 600px) {
   .createProductForm > div > input,
   .createProductForm > div > select,
@@ -174,6 +178,5 @@
 .css-b62m3t-container {
   position: relative;
   box-sizing: border-box;
-  max-width: 350px;
   width: 100%;
 }

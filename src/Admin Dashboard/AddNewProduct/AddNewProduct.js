@@ -4,23 +4,11 @@ import React, { Fragment, useState } from "react";
 import "./newProduct.css";
 // import { Select, SelectOption, SelectInput } from "reaselct";
 import Select from "react-select";
-
-import { useDispatch } from "react-redux";
-import { MultiSelect } from "react-multi-select-component";
-import { Button, TextField, TextareaAutosize } from "@material-ui/core";
+import { Button, TextField, TextareaAutosize, Grid } from "@material-ui/core";
 import "../../App.css";
-import { makeStyles } from "@material-ui/core/styles";
-import MenuItem from "@material-ui/core/MenuItem";
-
-const useStyles = makeStyles((theme) => ({
-  root: {
-    maxWidth: "380px",
-    width: "100%",
-  },
-}));
+import { DropzoneArea } from "material-ui-dropzone";
 
 const NewProduct = () => {
-  const dispatch = useDispatch();
   const [selectedFlavours, setSelectedFlavours] = useState([]);
 
   const suppOptions = [
@@ -66,7 +54,7 @@ const NewProduct = () => {
   console.log("image", imagesPreview);
 
   // handle the selectedFlavours values
-  const classes = useStyles();
+
   const createProductSubmitHandler = (e) => {
     e.preventDefault();
     const myForm = new FormData();
@@ -106,18 +94,6 @@ const NewProduct = () => {
     const imageUrl = reader.readAsDataURL(files);
     setNutritonImagesPreview(imageUrl);
     setNutImages(imageUrl);
-    // files.forEach((file) => {
-    //   const reader = new FileReader();
-
-    //   reader.onload = () => {
-    //     if (reader.readyState === 2) {
-    //       setNutritonImagesPreview((old) => [reader.result]);
-    //       setNutImages((old) => [reader.result]);
-    //     }
-    //   };
-
-    //   reader.readAsDataURL(file);
-    // });
   };
 
   return (
@@ -133,7 +109,7 @@ const NewProduct = () => {
 
             <div>
               <TextField
-                classes={{ root: classes.root }}
+                fullWidth
                 className="set-outline"
                 variant="outlined"
                 type="text"
@@ -145,7 +121,7 @@ const NewProduct = () => {
             </div>
             <div>
               <TextField
-                classes={{ root: classes.root }}
+                fullWidth
                 className="set-outline"
                 variant="outlined"
                 type="number"
@@ -157,14 +133,17 @@ const NewProduct = () => {
 
             <div>
               <TextareaAutosize
+                fullWidth
                 placeholder="Product Description"
                 value={description}
                 onChange={(e) => setDescription(e.target.value)}
                 className="handleTextArea"
               ></TextareaAutosize>
             </div>
+
             <div>
               <Select
+                fullWidth
                 options={catOptions}
                 placeholder="Select  a Category..."
                 value={category}
@@ -173,6 +152,7 @@ const NewProduct = () => {
             </div>
             <div>
               <Select
+                fullWidth
                 isMulti={true}
                 options={suppOptions}
                 placeholder="Select  Flavours..."
@@ -182,6 +162,15 @@ const NewProduct = () => {
                 }
               />
             </div>
+
+            {/* <Grid container spacing={16} justify="flex-start">
+              <Grid item xs={12} sm={6} md={6} lg={6} xl={6}>
+                
+              </Grid>
+              <Grid item xs={12} sm={6} md={6} lg={6} xl={6}>
+               
+              </Grid>
+            </Grid> */}
 
             <div>
               <Select
@@ -197,7 +186,7 @@ const NewProduct = () => {
 
             <div>
               <TextField
-                classes={{ root: classes.root }}
+                fullWidth
                 className="set-outline"
                 variant="outlined"
                 type="text"
@@ -208,42 +197,13 @@ const NewProduct = () => {
               />
             </div>
 
-            <div id="createProductFormFile">
-              <label htmlFor="file">Upload File:</label>
+            <DropzoneArea
+              acceptedFiles={["image/*"]}
+              filesLimit={2}
+              dropzoneText={"Drag and drop an image here or click"}
+              onChange={(files) => console.log("Files:", files)}
+            />
 
-              <input
-                placeholder="add product images"
-                className="add_product_input"
-                type="file"
-                name="avatar"
-                accept="image/*"
-                onChange={createProductImagesChange}
-                multiple
-              />
-            </div>
-
-            <div id="createProductFormImage">
-              {imagesPreview.map((image, index) => (
-                <img key={index} src={image} alt="Product Preview" />
-              ))}
-            </div>
-
-            <div>
-              <input
-                placeholder="add product images"
-                className="add_product_input"
-                type="file"
-                name="avatar"
-                accept="image/*"
-                onChange={createNutrionImagesChange}
-                // multiple
-              />
-            </div>
-            <div id="createProductFormImage">
-              {nutritonimagesPreview && (
-                <img src={nutritonimagesPreview} alt="Product Preview" />
-              )}
-            </div>
             <Button id="createProductBtn" type="submit" className="btn-reset">
               Create
             </Button>

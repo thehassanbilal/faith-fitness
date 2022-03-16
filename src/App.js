@@ -24,12 +24,7 @@ import CheckoutItems from "./components/Layout/Cart/CheckoutItems";
 import Dashboard from "./Admin Dashboard/Dashboard";
 import Dietplan from "./routes/DietPlan/Dietplan";
 import NewProduct from "./Admin Dashboard/AddNewProduct/AddNewProduct";
-<<<<<<< HEAD
 import AdminDashboard from "./Admin Dashboard/AddNewProduct/AdminDashboard";
-=======
-import Sidebar from "./Admin Dashboard/SideNav/SideNav";
->>>>>>> c318a0b733d8ecf329920e914f5e160209cb6f72
-
 function App() {
   return (
     <>
@@ -51,71 +46,7 @@ function App() {
             <Route path="/checkout" element={<CheckoutItems />} />
             <Route path="*" element={<Error />} />
             <Route path="/admin" element={<NewProduct />} />
-<<<<<<< HEAD
             <Route path="/dashboard" element={<AdminDashboard />} />
-=======
-            <Route path="/adminn" element={<Sidebar />} />
-
->>>>>>> c318a0b733d8ecf329920e914f5e160209cb6f72
-            <Route
-              // isAdmin={true}
-              exact
-              path="/admin/dashboard"
-              element={<Dashboard />}
-            />
-
-            {/* <Route
-              exact
-              path="/admin/products"
-              // isAdmin={true}
-              element={<NewProduct />}
-            /> */}
-            {/* <Route
-              exact
-              path="/admin/product"
-              isAdmin={true}
-              element={NewProduct}
-            />
-
-            <Route
-              exact
-              path="/admin/product/:id"
-              isAdmin={true}
-              element={UpdateProduct}
-            />
-            <Route
-              exact
-              path="/admin/orders"
-              isAdmin={true}
-              element={OrderList}
-            />
-
-            <Route
-              exact
-              path="/admin/order/:id"
-              isAdmin={true}
-              element={ProcessOrder}
-            />
-            <Route
-              exact
-              path="/admin/users"
-              isAdmin={true}
-              element={UsersList}
-            />
-
-            <Route
-              exact
-              path="/admin/user/:id"
-              isAdmin={true}
-              element={UpdateUser}
-            /> */}
-
-            {/* <Route
-              exact
-              path="/admin/reviews"
-              isAdmin={true}
-              element={ProductReviews}
-            /> */}
           </Routes>
         </Layout>
       </BrowserRouter>
