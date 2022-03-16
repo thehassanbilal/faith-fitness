@@ -1,3 +1,5 @@
+/** @format */
+
 .categories-block-container {
   display: flex;
   justify-content: space-evenly;
@@ -9,8 +11,8 @@
 }
 
 .categories-block-category-container {
-  width: 180px;
-  height: 180px;
+  width: 220px;
+  height: 220px;
   border-radius: 100%;
   display: flex;
   align-items: center;
