@@ -24,7 +24,11 @@ import CheckoutItems from "./components/Layout/Cart/CheckoutItems";
 import Dashboard from "./Admin Dashboard/Dashboard";
 import Dietplan from "./routes/DietPlan/Dietplan";
 import NewProduct from "./Admin Dashboard/AddNewProduct/AddNewProduct";
+<<<<<<< HEAD
 import AdminDashboard from "./Admin Dashboard/AddNewProduct/AdminDashboard";
+=======
+import Sidebar from "./Admin Dashboard/SideNav/SideNav";
+>>>>>>> c318a0b733d8ecf329920e914f5e160209cb6f72
 
 function App() {
   return (
@@ -47,7 +51,12 @@ function App() {
             <Route path="/checkout" element={<CheckoutItems />} />
             <Route path="*" element={<Error />} />
             <Route path="/admin" element={<NewProduct />} />
+<<<<<<< HEAD
             <Route path="/dashboard" element={<AdminDashboard />} />
+=======
+            <Route path="/adminn" element={<Sidebar />} />
+
+>>>>>>> c318a0b733d8ecf329920e914f5e160209cb6f72
             <Route
               // isAdmin={true}
               exact

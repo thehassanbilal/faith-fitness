@@ -2,9 +2,11 @@
 
 import React, { Fragment, useState } from "react";
 import "./newProduct.css";
+// import { Select, SelectOption, SelectInput } from "reaselct";
+import Select from "react-select";
 
 import { useDispatch } from "react-redux";
-
+import { MultiSelect } from "react-multi-select-component";
 import { Button, TextField, TextareaAutosize } from "@material-ui/core";
 import "../../App.css";
 import { makeStyles } from "@material-ui/core/styles";
@@ -19,75 +21,72 @@ const useStyles = makeStyles((theme) => ({
 
 const NewProduct = () => {
   const dispatch = useDispatch();
+  const [selectedFlavours, setSelectedFlavours] = useState([]);
+
+  const suppOptions = [
+    { value: "bugatti", label: "Bugatti" },
+    { value: "ferrari", label: "Ferrari" },
+    { value: "am", label: "Aston Martin" },
+    { value: "koenigsegg", label: "Koenigsegg" },
+    { value: "bmw", label: "BMW" },
+    { value: "cadillac", label: "Cadillac" },
+  ];
+  const catOptions = [
+    { value: "Protien", label: "Protien" },
+    { value: "water", label: "water" },
+    { value: "sugar", label: "Aston Martin" },
+    { value: "furits", label: "furits" },
+    { value: "bmw", label: "BMW" },
+    { value: "cadillac", label: "Cadillac" },
+  ];
+  const supplimentWeights = [
+    { value: "Protien", label: "Protien" },
+    { value: "water", label: "water" },
+    { value: "sugar", label: "Aston Martin" },
+    { value: "furits", label: "furits" },
+    { value: "bmw", label: "BMW" },
+    { value: "cadillac", label: "Cadillac" },
+  ];
+
   // const alert = useAlert();
 
   // const { loading, error, success } = useSelector((state) => state.newProduct);
 
   const [name, setName] = useState("");
+  const [company, setCompany] = useState("");
   const [price, setPrice] = useState(0);
   const [description, setDescription] = useState("");
-  const [category, setCategory] = useState("");
-  const [Stock, setStock] = useState(0);
+  const [category, setCategory] = useState([]);
+  const [selectedWeights, setSelectedWeights] = useState([]);
   const [images, setImages] = useState([]);
   const [imagesPreview, setImagesPreview] = useState([]);
+  const [nutritonImages, setNutImages] = useState([]);
+  const [nutritonimagesPreview, setNutritonImagesPreview] = useState([]);
+  console.log("nutrion image", nutritonimagesPreview);
+  console.log("image", imagesPreview);
 
-  // handle the selected values
+  // handle the selectedFlavours values
   const classes = useStyles();
-  const [formState, setFormState] = useState({
-    productCatagories: [],
-  });
-
-  const [formState1, setFormState1] = useState({
-    showProductCatagories: [],
-  });
-
-  const handleFieldChange = (event) => {
-    console.log(event);
-    event.persist();
-    setFormState((formState) => ({
-      ...formState,
-      [event.target.name]:
-        event.target.type === "checkbox"
-          ? event.target.checked
-          : event.target.value,
-    }));
-  };
-
-  const handleFieldChangeforselect = (event) => {
-    console.log(event);
-    event.persist();
-    setFormState1((formState1) => ({
-      ...formState1,
-      [event.target.name]:
-        event.target.type === "checkbox"
-          ? event.target.checked
-          : event.target.value,
-    }));
-  };
-
   const createProductSubmitHandler = (e) => {
     e.preventDefault();
-
     const myForm = new FormData();
-
     myForm.set("name", name);
     myForm.set("price", price);
     myForm.set("description", description);
     myForm.set("category", category);
-    myForm.set("Stock", Stock);
-
+    myForm.set("selectedFlavours", selectedFlavours);
+    myForm.set("selectedWeights", selectedWeights);
+    myForm.set("company", company);
     images.forEach((image) => {
       myForm.append("images", image);
     });
+    nutritonImages.forEach((nutritonImages) => {
+      myForm.append("nutritonImages", nutritonImages);
+    });
     // dispatch(createProduct(myForm));
   };
-
   const createProductImagesChange = (e) => {
     const files = Array.from(e.target.files);
-
-    setImages([]);
-    setImagesPreview([]);
-
     files.forEach((file) => {
       const reader = new FileReader();
 
@@ -100,6 +99,25 @@ const NewProduct = () => {
 
       reader.readAsDataURL(file);
     });
+  };
+  const createNutrionImagesChange = (e) => {
+    const files = Array.from(e.target.files);
+    const reader = new FileReader();
+    const imageUrl = reader.readAsDataURL(files);
+    setNutritonImagesPreview(imageUrl);
+    setNutImages(imageUrl);
+    // files.forEach((file) => {
+    //   const reader = new FileReader();
+
+    //   reader.onload = () => {
+    //     if (reader.readyState === 2) {
+    //       setNutritonImagesPreview((old) => [reader.result]);
+    //       setNutImages((old) => [reader.result]);
+    //     }
+    //   };
+
+    //   reader.readAsDataURL(file);
+    // });
   };
 
   return (
@@ -145,47 +163,36 @@ const NewProduct = () => {
                 className="handleTextArea"
               ></TextareaAutosize>
             </div>
-
             <div>
-              <TextField
-                label="Select"
-                classes={{ root: classes.root }}
-                className="set-outline"
-                select
-                name="productCatagories"
-                id="productCatagories"
-                variant="outlined"
-                SelectProps={{
-                  multiple: true,
-                  value: formState.productCatagories,
-                  onChange: handleFieldChange,
-                }}
-              >
-                <MenuItem value="admin">Items-1</MenuItem>
-                <MenuItem value="user1">Items-2</MenuItem>
-                <MenuItem value="user2">Items-3</MenuItem>
-              </TextField>
+              <Select
+                options={catOptions}
+                placeholder="Select  a Category..."
+                value={category}
+                onChange={(selectedOption) => setCategory(selectedOption)}
+              />
+            </div>
+            <div>
+              <Select
+                isMulti={true}
+                options={suppOptions}
+                placeholder="Select  Flavours..."
+                value={selectedFlavours}
+                onChange={(selectedOption) =>
+                  setSelectedFlavours(selectedOption)
+                }
+              />
             </div>
 
             <div>
-              <TextField
-                label="Select"
-                classes={{ root: classes.root }}
-                className="set-outline"
-                select
-                name="showProductCatagories"
-                id="showProductCatagories"
-                variant="outlined"
-                SelectProps={{
-                  multiple: true,
-                  value: formState1.showProductCatagories,
-                  onChange: handleFieldChangeforselect,
-                }}
-              >
-                <MenuItem value="admin">Items-1</MenuItem>
-                <MenuItem value="user1">Items-2</MenuItem>
-                <MenuItem value="user2">Items-3</MenuItem>
-              </TextField>
+              <Select
+                isMulti={true}
+                options={supplimentWeights}
+                placeholder="Select  Weights..."
+                value={selectedWeights}
+                onChange={(selectedOption) =>
+                  setSelectedWeights(selectedOption)
+                }
+              />
             </div>
 
             <div>
@@ -193,15 +200,19 @@ const NewProduct = () => {
                 classes={{ root: classes.root }}
                 className="set-outline"
                 variant="outlined"
-                type="number"
-                placeholder="Stock"
+                type="text"
+                placeholder="Company Name"
                 required
-                onChange={(e) => setStock(e.target.value)}
+                value={company}
+                onChange={(e) => setCompany(e.target.value)}
               />
             </div>
 
             <div id="createProductFormFile">
+              <label htmlFor="file">Upload File:</label>
+
               <input
+                placeholder="add product images"
                 className="add_product_input"
                 type="file"
                 name="avatar"
@@ -217,6 +228,22 @@ const NewProduct = () => {
               ))}
             </div>
 
+            <div>
+              <input
+                placeholder="add product images"
+                className="add_product_input"
+                type="file"
+                name="avatar"
+                accept="image/*"
+                onChange={createNutrionImagesChange}
+                // multiple
+              />
+            </div>
+            <div id="createProductFormImage">
+              {nutritonimagesPreview && (
+                <img src={nutritonimagesPreview} alt="Product Preview" />
+              )}
+            </div>
             <Button id="createProductBtn" type="submit" className="btn-reset">
               Create
             </Button>
