@@ -62,7 +62,7 @@ const NewProduct = () => {
   const [imagesPreview, setImagesPreview] = useState([]);
   const [nutritonImages, setNutImages] = useState([]);
   const [nutritonimagesPreview, setNutritonImagesPreview] = useState([]);
-  console.log("nutrion image", nutritonimagesPreview);
+  console.log("nutrion image", images);
   console.log("image", imagesPreview);
 
   // handle the selectedFlavours values
@@ -80,9 +80,7 @@ const NewProduct = () => {
     images.forEach((image) => {
       myForm.append("images", image);
     });
-    nutritonImages.forEach((nutritonImages) => {
-      myForm.append("nutritonImages", nutritonImages);
-    });
+
     // dispatch(createProduct(myForm));
   };
   const createProductImagesChange = (e) => {
@@ -100,25 +98,7 @@ const NewProduct = () => {
       reader.readAsDataURL(file);
     });
   };
-  const createNutrionImagesChange = (e) => {
-    const files = Array.from(e.target.files);
-    const reader = new FileReader();
-    const imageUrl = reader.readAsDataURL(files);
-    setNutritonImagesPreview(imageUrl);
-    setNutImages(imageUrl);
-    // files.forEach((file) => {
-    //   const reader = new FileReader();
-
-    //   reader.onload = () => {
-    //     if (reader.readyState === 2) {
-    //       setNutritonImagesPreview((old) => [reader.result]);
-    //       setNutImages((old) => [reader.result]);
-    //     }
-    //   };
-
-    //   reader.readAsDataURL(file);
-    // });
-  };
+ 
 
   return (
     <Fragment>
@@ -209,10 +189,9 @@ const NewProduct = () => {
             </div>
 
             <div id="createProductFormFile">
-              <label htmlFor="file">Upload File:</label>
+              {/* <label htmlFor="file">Upload File:</label> */}
 
               <input
-                placeholder="add product images"
                 className="add_product_input"
                 type="file"
                 name="avatar"
@@ -227,23 +206,7 @@ const NewProduct = () => {
                 <img key={index} src={image} alt="Product Preview" />
               ))}
             </div>
-
-            <div>
-              <input
-                placeholder="add product images"
-                className="add_product_input"
-                type="file"
-                name="avatar"
-                accept="image/*"
-                onChange={createNutrionImagesChange}
-                // multiple
-              />
-            </div>
-            <div id="createProductFormImage">
-              {nutritonimagesPreview && (
-                <img src={nutritonimagesPreview} alt="Product Preview" />
-              )}
-            </div>
+           
             <Button id="createProductBtn" type="submit" className="btn-reset">
               Create
             </Button>
