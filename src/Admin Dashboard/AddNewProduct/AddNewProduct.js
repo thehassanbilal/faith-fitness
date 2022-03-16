@@ -195,27 +195,6 @@ const NewProduct = () => {
               />
             </div>
 
-<<<<<<< HEAD
-            <div id="createProductFormFile">
-              {/* <label htmlFor="file">Upload File:</label> */}
-
-              <input
-                className="add_product_input"
-                type="file"
-                name="avatar"
-                accept="image/*"
-                onChange={createProductImagesChange}
-                multiple
-              />
-            </div>
-
-            <div id="createProductFormImage">
-              {imagesPreview.map((image, index) => (
-                <img key={index} src={image} alt="Product Preview" />
-              ))}
-            </div>
-           
-=======
             <DropzoneArea
               acceptedFiles={["image/*"]}
               filesLimit={2}
@@ -223,7 +202,6 @@ const NewProduct = () => {
               onChange={(files) => console.log("Files:", files)}
             />
 
->>>>>>> 22fae39ada80adf3e65ff6f17d2f35cb6b2859d9
             <Button id="createProductBtn" type="submit" className="btn-reset">
               Create
             </Button>
