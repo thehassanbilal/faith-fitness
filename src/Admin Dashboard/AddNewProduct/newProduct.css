@@ -163,3 +163,9 @@
     padding: 1.8vmax;
   }
 }
+.css-b62m3t-container {
+  position: relative;
+  box-sizing: border-box;
+  max-width: 350px;
+  width: 100%;
+}
