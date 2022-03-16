@@ -8,7 +8,6 @@
   display: flex;
   flex-direction: column;
   height: 100vh;
-  padding: 12px;
 }
 .newProductContainer h1 {
   color: rgba(0, 0, 0, 0.733);
@@ -108,6 +107,9 @@
   outline: none;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.219);
 }
+#createProductBtn:hover {
+  border: unset !important;
+}
 
 .MuiInputBase-input {
   padding: 12px 8px !important;
@@ -117,6 +119,11 @@
   padding: 8px !important;
   font-size: 1rem !important;
   outline: lightgray !important;
+}
+
+.handleTextArea::placeholder {
+  color: rgb(159, 159, 159);
+  font-family: Poppins;
 }
 
 .handleTextArea:focus,
@@ -136,6 +143,7 @@
 .MuiList-padding {
   padding: unset !important;
 }
+
 @media screen and (max-width: 600px) {
   .createProductForm > div > input,
   .createProductForm > div > select,

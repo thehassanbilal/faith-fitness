@@ -11,7 +11,11 @@ export const Layout = ({ children }) => {
   const { pathname } = useLocation();
 
   const renderLayoutComponent = () => {
-    if (pathname === "/signup" || pathname === "/signin") {
+    if (
+      pathname === "/signup" ||
+      pathname === "/signin" ||
+      pathname === "/dashboard"
+    ) {
       return (
         <>
           {showCart && <Cart />}

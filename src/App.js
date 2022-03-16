@@ -24,6 +24,7 @@ import CheckoutItems from "./components/Layout/Cart/CheckoutItems";
 import Dashboard from "./Admin Dashboard/Dashboard";
 import Dietplan from "./routes/DietPlan/Dietplan";
 import NewProduct from "./Admin Dashboard/AddNewProduct/AddNewProduct";
+import AdminDashboard from "./Admin Dashboard/AddNewProduct/AdminDashboard";
 
 function App() {
   return (
@@ -46,6 +47,7 @@ function App() {
             <Route path="/checkout" element={<CheckoutItems />} />
             <Route path="*" element={<Error />} />
             <Route path="/admin" element={<NewProduct />} />
+            <Route path="/dashboard" element={<AdminDashboard />} />
             <Route
               // isAdmin={true}
               exact
