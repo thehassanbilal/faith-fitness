@@ -4,12 +4,15 @@ import React, { Fragment, useState } from "react";
 import "./newProduct.css";
 // import { Select, SelectOption, SelectInput } from "reaselct";
 import Select from "react-select";
-import { Button, TextField, TextareaAutosize, Grid } from "@material-ui/core";
+import { Button, TextField, TextareaAutosize } from "@material-ui/core";
 import "../../App.css";
 import { DropzoneArea } from "material-ui-dropzone";
+import { SubscriptionsOutlined } from "@material-ui/icons";
 
 const NewProduct = () => {
   const [selectedFlavours, setSelectedFlavours] = useState([]);
+  const [selectImage, setSelectImage] = useState([]);
+  const [selectImageDropzone, setSelectImageDropzone] = useState([]);
 
   const suppOptions = [
     { value: "bugatti", label: "Bugatti" },
@@ -36,22 +39,12 @@ const NewProduct = () => {
     { value: "cadillac", label: "Cadillac" },
   ];
 
-  // const alert = useAlert();
-
-  // const { loading, error, success } = useSelector((state) => state.newProduct);
-
   const [name, setName] = useState("");
   const [company, setCompany] = useState("");
   const [price, setPrice] = useState(0);
   const [description, setDescription] = useState("");
   const [category, setCategory] = useState([]);
   const [selectedWeights, setSelectedWeights] = useState([]);
-  const [images, setImages] = useState([]);
-  const [imagesPreview, setImagesPreview] = useState([]);
-  const [nutritonImages, setNutImages] = useState([]);
-  const [nutritonimagesPreview, setNutritonImagesPreview] = useState([]);
-  console.log("nutrion image", nutritonimagesPreview);
-  console.log("image", imagesPreview);
 
   // handle the selectedFlavours values
 
@@ -65,36 +58,12 @@ const NewProduct = () => {
     myForm.set("selectedFlavours", selectedFlavours);
     myForm.set("selectedWeights", selectedWeights);
     myForm.set("company", company);
-    images.forEach((image) => {
-      myForm.append("images", image);
-    });
-    nutritonImages.forEach((nutritonImages) => {
-      myForm.append("nutritonImages", nutritonImages);
-    });
+
     // dispatch(createProduct(myForm));
   };
-  const createProductImagesChange = (e) => {
-    const files = Array.from(e.target.files);
-    files.forEach((file) => {
-      const reader = new FileReader();
 
-      reader.onload = () => {
-        if (reader.readyState === 2) {
-          setImagesPreview((old) => [...old, reader.result]);
-          setImages((old) => [...old, reader.result]);
-        }
-      };
-
-      reader.readAsDataURL(file);
-    });
-  };
-  const createNutrionImagesChange = (e) => {
-    const files = Array.from(e.target.files);
-    const reader = new FileReader();
-    const imageUrl = reader.readAsDataURL(files);
-    setNutritonImagesPreview(imageUrl);
-    setNutImages(imageUrl);
-  };
+  console.log("For First dropZone", selectImage);
+  console.log("For Second dropZone", selectImageDropzone);
 
   return (
     <Fragment>
@@ -163,15 +132,6 @@ const NewProduct = () => {
               />
             </div>
 
-            {/* <Grid container spacing={16} justify="flex-start">
-              <Grid item xs={12} sm={6} md={6} lg={6} xl={6}>
-                
-              </Grid>
-              <Grid item xs={12} sm={6} md={6} lg={6} xl={6}>
-               
-              </Grid>
-            </Grid> */}
-
             <div>
               <Select
                 isMulti={true}
@@ -183,7 +143,6 @@ const NewProduct = () => {
                 }
               />
             </div>
-
             <div>
               <TextField
                 fullWidth
@@ -201,7 +160,20 @@ const NewProduct = () => {
               acceptedFiles={["image/*"]}
               filesLimit={2}
               dropzoneText={"Drag and drop an image here or click"}
-              onChange={(files) => console.log("Files:", files)}
+              onChange={(files) =>
+                files.map((el) => setSelectImage([...selectImage, el?.path]))
+              }
+            />
+
+            <DropzoneArea
+              acceptedFiles={["image/*"]}
+              filesLimit={2}
+              dropzoneText={"Drag and drop an image here or click"}
+              onChange={(files) =>
+                files.map((el) =>
+                  setSelectImageDropzone([...selectImageDropzone, el?.path])
+                )
+              }
             />
 
             <Button id="createProductBtn" type="submit" className="btn-reset">
