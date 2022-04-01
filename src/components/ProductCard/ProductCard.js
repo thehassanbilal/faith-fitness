@@ -9,18 +9,18 @@ import Fade from "react-reveal/Fade";
 import classes from "./ProductCard.module.css";
 
 function ProductCard(props) {
-  // const dispatch = useDispatch();
+  const dispatch = useDispatch();
 
 
-  // const addToCartHandler = () => {
-  //   dispatch(
-  //     cartActions.addItemToCart({
-  //       id,
-  //       name,
-  //       price,
-  //     })
-  //   );
-  // };
+  const addToCartHandler = () => {
+    dispatch(
+      cartActions.addItemToCart({
+        // id,
+        // name,
+        // price,
+      })
+    );
+  };
 
   console.log(props);
 
@@ -37,7 +37,7 @@ function ProductCard(props) {
           <p className={classes["productCard-product-name"]}>{props.name}</p>
           <p className={classes["productCard-product-price"]}>{props.price}</p>
           <p className={classes["productCard-rating"]}>⭐⭐⭐⭐⭐</p>
-          <a href="#">Buy Now</a>
+          <a href="#" onClick={addToCartHandler}>Buy Now</a>
         </div>
       </div>
     </div>
