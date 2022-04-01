@@ -46,10 +46,10 @@ const SwiperSlider = (props) => {
         spaceBetween={10}
         slidesPerGroup={2}
         loop={true}
-        // autoplay={{
-        //   delay: 2500,
-        //   disableOnInteraction: false,
-        // }}
+        autoplay={{
+          delay: 4500,
+          disableOnInteraction: false,
+        }}
         loopFillGroupWithBlank={true}
         navigation={false}
         className='swiper'
