@@ -16,7 +16,6 @@ import Checkout from "./components/Layout/Cart/Checkout";
 import Error from "./404/Error";
 import AboutCoach from "./components/Layout/AboutCoach/AboutCoach";
 import Contact from "./contact/Contact";
-
 import Blog from "./blogs/Blog";
 import SignUp from "./authentication/SignUp";
 import SignIn from "./authentication/SignIn";

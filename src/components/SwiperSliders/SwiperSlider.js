@@ -24,7 +24,6 @@ const SwiperSlider = (props) => {
   return (
     <>
       <h1 className='pricingSection-heading line-divider'>{props.heading}</h1>
-
       <Swiper
         breakpoints={{
           640: {
@@ -47,20 +46,20 @@ const SwiperSlider = (props) => {
         spaceBetween={10}
         slidesPerGroup={2}
         loop={true}
-        autoplay={{
-          delay: 2500,
-          disableOnInteraction: false,
-        }}
+        // autoplay={{
+        //   delay: 2500,
+        //   disableOnInteraction: false,
+        // }}
         loopFillGroupWithBlank={true}
         navigation={false}
         className='swiper'
         modules={[Autoplay]}
       >
         {DUMMY_PRODUCTS.map((product) => (
-          <SwiperSlide className='swiper-slide slider-container '>
+          <SwiperSlide className="product-swiper-slide">
             <ProductCard
-              img={product.img}
               name={product.name}
+              img={product.img}
               price={product.price}
               rating={product.rating}
             />

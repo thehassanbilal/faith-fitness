@@ -31,7 +31,7 @@ export const HomePage = () => {
       <div className="app-container">
         <CarouselComponent />
         <div className="main-container">
-          <SwiperSlider className="most-popular" heading={"MOST POPsULAR"} />
+          <SwiperSlider className="most-popular" heading={"MOST POPULAR"} />
           <ProductsCategoriesContainer />
           <OurPrograms />
           <WhyUs />

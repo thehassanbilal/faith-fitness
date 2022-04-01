@@ -1,5 +1,9 @@
 /** @format */
 
+.slider-container {
+  padding: 12px;
+}
+
 .SwiperSlider-Heading {
   margin: 20px;
   padding: 60px 0px 0px 10px;
@@ -9,19 +13,23 @@
   text-align: center;
 }
 
-/* .swiper-slide {
-  padding: 30px 0;
-} */
 
-.slider-container {
-  padding: 12px;
-}
+.product-swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
 
-.swiper-pagination-bullet-active {
-  background-image: linear-gradient(
-    #4c1216,
-    #902129,
-    #881e25,
-    #5e1a1e
-  ) !important;
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
 }
