@@ -61,30 +61,61 @@ import proteinCompanyProductsJackedNutrition from "../assets/shop/companiesImgs/
 
 export const DUMMY_PRODUCTS = [
   {
+    name: "Name",
     img: imgOne,
+    price: "Rs 12,000",
+    rating: "4.5",
   },
-  { img: imgTwo },
   {
+    name: "Name",
+    img: imgTwo,
+    price: "Rs 12,000",
+    rating: "4.5",
+  },
+  {
+    name: "Name",
     img: imgThree,
+    price: "Rs 12,000",
+    rating: "4.5",
   },
-  { img: imgFour },
   {
+    name: "Name",
+    img: imgFour,
+    price: "Rs 12,000",
+    rating: "4.5",
+  },
+  {
+    name: "Name",
     img: imgFive,
+    price: "Rs 12,000",
+    rating: "4.5",
   },
   {
+    name: "Name",
     img: imgSix,
+    price: "Rs 12,000",
+    rating: "4.5",
   },
-  { img: imgSeven },
+  { name: "Name", img: imgSeven, price: "Rs 12,000", rating: "4.5" },
   {
+    name: "Name",
     img: imgEight,
+    price: "Rs 12,000",
+    rating: "4.5",
   },
-  { img: imgNine },
+  { name: "Name", img: imgNine, price: "Rs 12,000", rating: "4.5" },
   {
+    name: "Name",
     img: imgTen,
+    price: "Rs 12,000",
+    rating: "4.5",
   },
-  { img: imgEleven },
+  { name: "Name", img: imgEleven, price: "Rs 12,000", rating: "4.5" },
   {
+    name: "Name",
     img: imgTwelve,
+    price: "Rs 12,000",
+    rating: "4.5",
   },
 ];
 

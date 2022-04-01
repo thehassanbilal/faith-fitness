@@ -6,37 +6,40 @@ import { Link } from "react-router-dom";
 import { cartActions } from "../../features/cartSlice/cartSlice";
 import Fade from "react-reveal/Fade";
 
-import "./ProductCard.css";
+import classes from "./ProductCard.module.css";
 
-function ProductCard({ id, name, price }) {
-  const dispatch = useDispatch();
+function ProductCard(props) {
+  // const dispatch = useDispatch();
 
 
-  const addToCartHandler = () => {
-    dispatch(
-      cartActions.addItemToCart({
-        id,
-        name,
-        price,
-      })
-    );
-  };
+  // const addToCartHandler = () => {
+  //   dispatch(
+  //     cartActions.addItemToCart({
+  //       id,
+  //       name,
+  //       price,
+  //     })
+  //   );
+  // };
+
+  console.log(props);
 
   return (
-    <div className="ProductCard-container container">
-      <Fade left>
-        <Link to={`/product/${id}`}>
-          <img src={"i"} alt="Product " />
-          <div className="ProductCard-detailPart">
-            <p className="ProductCard-name">{name}</p>
-            <p className="ProductCard-price">RS {price}</p>
-            <div className="ProductCard-rating">{}⭐⭐⭐⭐⭐</div>
-          </div>
-        </Link>
-        <button onClick={addToCartHandler}>
-          <i className="fa fa-shopping-cart" style={{ color: "white" }}></i>
-        </button>
-      </Fade>
+    <div className={classes["productCard-container"]}>
+      <div className={classes["productCard-card"]}>
+        <div className={classes["productCard-img-container"]}>
+          <img
+            className={classes["productCard-image"]}
+            src={props?.img}
+          />
+        </div>
+        <div className={classes["productCard-content-box"]}>
+          <p className={classes["productCard-product-name"]}>{props.name}</p>
+          <p className={classes["productCard-product-price"]}>{props.price}</p>
+          <p className={classes["productCard-rating"]}>⭐⭐⭐⭐⭐</p>
+          <a href="#">Buy Now</a>
+        </div>
+      </div>
     </div>
   );
 }
