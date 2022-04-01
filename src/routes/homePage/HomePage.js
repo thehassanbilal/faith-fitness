@@ -18,9 +18,6 @@ export const HomePage = () => {
     );
     const js = await databyit.json();
     const da = await data.json();
-    console.log(js);
-
-    console.log(da);
     return da;
   };
   useEffect(() => {
