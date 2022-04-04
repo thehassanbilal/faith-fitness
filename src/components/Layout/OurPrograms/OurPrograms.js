@@ -12,26 +12,6 @@ const OurPrograms = () => {
   const learnMore = "Learn More..";
   const programsData = [
     {
-<<<<<<< HEAD
-      logo: <img src={icons1} height="80" width="80" />,
-      title: "Flex Muscle",
-      desc: "Lacking motivation to get back into the gym? Back in the gym already but feel stagnated? Or maybe you’re just looking for new inspiration for a the new year. Whatever your situation, reading words of wisdom from successful people can be super-inspiring.",
-    },
-    {
-      logo: <img src={icons4} height="80" width="80" />,
-      title: "Cardio Exercises",
-      desc: "Lacking motivation to get back into the gym? Back in the gym already but feel stagnated? Or maybe you’re just looking for new inspiration for a the new year. Whatever your situation, reading words of wisdom from successful people can be super-inspiring.",
-    },
-    {
-      logo: <img src={icons2} height="80" width="80" />,
-      title: "Body Weight",
-      desc: "Lacking motivation to get back into the gym? Back in the gym already but feel stagnated? Or maybe you’re just looking for new inspiration for a the new year. Whatever your situation, reading words of wisdom from successful people can be super-inspiring.",
-    },
-    {
-      logo: <img src={icons3} height="80" width="80" />,
-      title: "Weight Lifting",
-      desc: "Lacking motivation to get back into the gym? Back in the gym already but feel stagnated? Or maybe you’re just looking for new inspiration for a the new year. Whatever your situation, reading words of wisdom from successful people can be super-inspiring.",
-=======
       logo: <img src={icons1} height='80' width='80' />,
       title: 'Aerobic Exercises',
       desc: `Aerobic exercise is a type of cardiovascular exercise that causes your heart to beat faster. Your blood circulates fast throughout your body during aerobic exercise, and your lungs take in more oxygen.By raising "good" high-density lipoprotein (HDL) cholesterol, keep your arteries clear.`,
@@ -50,7 +30,6 @@ const OurPrograms = () => {
       logo: <img src={icons3} height='80' width='80' />,
       title: 'Weight Lifting',
       desc: `Strength training has become an integral aspect of most workout routines, thanks to a growing body of evidence demonstrating its lots of advantages. If you've ever tried strength training, you might be wondering how it can help you live a healthier life.`,
->>>>>>> a48493b4ec87145e15c7e6a9bdae5972bdc67851
     },
   ];
   return (
