@@ -5,12 +5,13 @@
 }
 
 .pricingSection-heading {
-  font-family: 'Pacifico', 'cursive';
+  font-family: "Pacifico", "cursive";
   font-weight: normal;
   font-size: 40px;
-  padding-top: 40px;
+  padding-top: 64px;
   text-align: center;
   color: #3b6d3a;
+  margin-bottom: 0;
 }
 
 .pricingSection-title {

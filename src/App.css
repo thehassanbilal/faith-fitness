@@ -16,25 +16,18 @@
 }
 
 .pricingSection-heading {
-  /* font-family: "Pacifico", "cursive";
-  font-weight: normal;
-  font-size: 40px;
-  padding-top: 40px;
+  color: #9bdc28;
+  font-size: 48px !important;
+  font-weight: 500;
+  line-height: 37px;
   text-align: center;
-  color: #3b6d3a; */
-  color: #9bdc28 !important;
-    font-size: 40px !important;
-    font-weight: 500 !important;
-    line-height: 37px !important;
-    text-align: center !important;
-    margin-top: 14px !important;
-    margin-bottom: 24px !important;
-    letter-spacing: -2px !important;
-    text-shadow: #212529 -3px 3px 0px !important;
-    -webkit-text-stroke: 2px #212529 !important;
-    -webkit-text-fill-color: #9bdc28 !important;
+  margin-top: 14px;
+  margin-bottom: 24px;
+  letter-spacing: -2px;
+  text-shadow: #212529 -3px 3px 0px;
+  -webkit-text-stroke: 2px #212529;
+  -webkit-text-fill-color: #9bdc28;
   font-family: matSaleh !important;
-  
 }
 
 .pricingSection-title {
@@ -76,12 +69,12 @@
   width: 28%;
 }
 .line-divider::before {
-  background: linear-gradient(to left, rgb(52 124 40) -6%, #fff);
+  background: linear-gradient(to left, #9bdc28 -6%, #fff);
   margin-right: 4vh;
   border-radius: 2px;
 }
 .line-divider::after {
-  background: linear-gradient(to right, rgb(52 124 40) -6%, #fff);
+  background: linear-gradient(to right, #9bdc28 -6%, #fff);
   margin-left: 4vh;
   border-radius: 2px;
 }

@@ -1,19 +1,30 @@
 /** @format */
 
+@font-face {
+  font-family: matSaleh;
+  src: url(../../../Mat-Saleh.ttf);
+}
+
 .whyUssection-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 54px 0;
+  padding: 64px 0;
 }
 
 .whyUsSection-heading {
-  font-family: Poppins;
-  font-weight: 400;
-  font-size: 40px;
-  padding-bottom: 0;
-  margin-bottom: 0;
-  color: #3b6d3a;
+  color: #9bdc28;
+  font-size: 48px !important;
+  font-weight: 500;
+  line-height: 37px;
+  text-align: start;
+  margin-top: 14px;
+  margin-bottom: 24px;
+  letter-spacing: -2px;
+  text-shadow: #212529 -3px 3px 0px;
+  -webkit-text-stroke: 2px #212529;
+  -webkit-text-fill-color: #9bdc28;
+  font-family: matSaleh !important;
 }
 
 .whyUsSection-title {
@@ -21,20 +32,23 @@
   align-items: center;
 }
 
-.whyUsSection-title-firstHalf {
-  font-family: Poppins;
-  font-size: 34px;
-  color: #3b6d3a;
-  font-weight: bold;
+.whyUsSection-title-firstHalf,
+.whyUsSection-title-secondHalf {
+  color: #9bdc28;
+  font-size: 38px !important;
+  font-weight: 500;
+  line-height: 37px;
+  text-align: start;
+  margin-top: 14px;
+  margin-bottom: 24px;
+  letter-spacing: -2px;
+  text-shadow: #212529 -3px 3px 0px;
+  -webkit-text-stroke: 2px #212529;
+  -webkit-text-fill-color: #9bdc28;
+  font-family: "Balsamiq Sans", cursive;
 }
 
 .whyUsSection-title-secondHalf {
-  font-family: "Alfa Slab One", sans-serif;
-  padding: 0 10px;
-
-  font-size: 38px;
-  color: #3b6d3a;
-  font-weight: bold;
 }
 
 .whyUsSection-desc {

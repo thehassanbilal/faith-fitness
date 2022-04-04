@@ -1,35 +1,53 @@
 /** @format */
 
+@font-face {
+  font-family: matSaleh;
+  src: url(../../../Mat-Saleh.ttf);
+}
+
 .programSection-heading {
-  font-family: "Pacifico", "cursive";
+  color: #9bdc28;
+  font-size: 48px !important;
   font-weight: 500;
-  font-size: 40px;
-  padding-top: 40px;
+  line-height: 37px;
   text-align: center;
-  color: #3b6d3a;
+  margin-top: 14px;
+  margin-bottom: 24px;
+  letter-spacing: -2px;
+  text-shadow: #212529 -3px 3px 0px;
+  -webkit-text-stroke: 2px #212529;
+  -webkit-text-fill-color: #9bdc28;
+  font-family: matSaleh !important;
+  margin: 0;
+  padding-top: 64px;
 }
 
 .programSection-title {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 20px;
+  padding-bottom: 0;
+  padding-top: 12px;
 }
 
-.programSection-title-firstHalf {
-  font-family: Poppins;
-  padding: 10px;
-  font-size: 34px;
-  color: #3b6d3a;
-  font-weight: bold;
+.programSection-title-firstHalf,
+.programSection-title-secondHalf {
+  color: #9bdc28;
+  font-size: 48px !important;
+  font-weight: 500;
+  line-height: 37px;
+  text-align: center;
+  margin-top: 14px;
+  margin-bottom: 24px;
+  letter-spacing: -2px;
+  text-shadow: #212529 -3px 3px 0px;
+  -webkit-text-stroke: 2px #212529;
+  -webkit-text-fill-color: #9bdc28;
+  font-family: matSaleh !important;
 }
 
 .programSection-title-secondHalf {
-  font-family: Poppins;
-  padding: 10px;
-  font-size: 34px;
-  color: #3b6d3a;
-  font-weight: bold;
+  padding-left: 16px;
 }
 
 .programSection-cards {

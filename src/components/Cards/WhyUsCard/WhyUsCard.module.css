@@ -10,7 +10,7 @@
 .whyUscard-num {
   font-family: "Architects Daughter", cursive;
   font-size: 40px;
-  color: #3b6d3a;
+  -webkit-text-fill-color: #9bdc28;
 }
 
 .WhyUsCard_whyUscard-num__hLojv div:first-child {
