@@ -11,8 +11,8 @@ import { SubscriptionsOutlined } from "@material-ui/icons";
 
 const NewProduct = () => {
   const [selectedFlavours, setSelectedFlavours] = useState([]);
-  const [selectImage, setSelectImage] = useState([]);
-  const [selectImageDropzone, setSelectImageDropzone] = useState([]);
+  const [selectImage, setSelectImage] = useState(null);
+  const [selectImageDropzone, setSelectImageDropzone] = useState(null);
 
   const suppOptions = [
     { value: "bugatti", label: "Bugatti" },
@@ -62,8 +62,19 @@ const NewProduct = () => {
     // dispatch(createProduct(myForm));
   };
 
+  const handleDropZoneImage = (acceptedFiles) => {
+    const file = acceptedFiles[0];
+    if (file) {
+      const fileObj = {
+        ...file,
+        preview: URL.createObjectURL(file),
+        fileData: file,
+      };
+      setSelectImage(fileObj);
+    }
+  };
+
   console.log("For First dropZone", selectImage);
-  console.log("For Second dropZone", selectImageDropzone);
 
   return (
     <Fragment>
@@ -159,13 +170,12 @@ const NewProduct = () => {
             <DropzoneArea
               acceptedFiles={["image/*"]}
               filesLimit={2}
+              file={selectImage}
               dropzoneText={"Drag and drop an image here or click"}
-              onChange={(files) =>
-                files.map((el) => setSelectImage([...selectImage, el?.path]))
-              }
+              onChange={handleDropZoneImage}
             />
 
-            <DropzoneArea
+            {/* <DropzoneArea
               acceptedFiles={["image/*"]}
               filesLimit={2}
               dropzoneText={"Drag and drop an image here or click"}
@@ -174,7 +184,7 @@ const NewProduct = () => {
                   setSelectImageDropzone([...selectImageDropzone, el?.path])
                 )
               }
-            />
+            /> */}
 
             <Button id="createProductBtn" type="submit" className="btn-reset">
               Create
