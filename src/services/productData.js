@@ -170,20 +170,20 @@ export const forDietPlan = [
 
 export const productsCategoriesData = [
   {
-    heading: "Supplements",
-    desc: `We deal in a wide range of premium quality supplements including  whey protein, fat burners, weight loss, weight gainers, post-workout, pre-workout, amino acids, bcaas, and other nutritional supplements. Optimum Nutrition, MuscleTech, BSN, BPI Sports, Nutrex Research, Ultimate Nutrition, and others are among our best-selling brands.`,
+    heading: "Protein",
+    desc: `Protein powder is a popular nutritional supplement. Protein is an essential macronutrient that helps build muscle, repair tissue, and make enzymes and hormones. Using protein powder may also aid weight loss and help people tone their muscles.`,
     img: productsCategoriesProteinImg,
     style: "imgRightSide",
   },
   {
-    heading: "Performance",
-    desc: `Lacking motivation to get back into the gym? Back in the gym already but feel stagnated? Or maybe you’re just looking for new inspiration for a the new year. Whatever your situation, reading words of wisdom from successful people can be super-inspiring.`,
+    heading: "Pre-workout",
+    desc: `Its purpose is to help you recover and ease the fatigue of an intense workout. Some common ingredients in pre-workouts are: Caffeine. Product makers say pre-workouts can keep you focused, give you energy, and improve your overall performance.`,
     img: productCategoriesPerformanceImg,
     style: "imgLeftSide",
   },
   {
     heading: "Accessories",
-    desc: `Lacking motivation to get back into the gym? Back in the gym already but feel stagnated? Or maybe you’re just looking for new inspiration for a the new year. Whatever your situation, reading words of wisdom from successful people can be super-inspiring.`,
+    desc: `You can find hydro Bag, shaker, bottle,floor mat , push up grips,resistant band, skipping rope and many more.`,
     img: productCategoriesAccessoriesImg,
     style: "imgRightSide",
   },

@@ -47,10 +47,15 @@ const WhyUs = () => {
               </p>
             </div>
             <p className={classes["whyUsSection-desc"]}>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor.
+              Yes, it is correct! During your free consultation, we will assist
+              you in determining your objectives. We will do everything we can
+              to assist you in achieving your objectives. Remember that working
+              together on the road to health and wellbeing is an important
+              aspect of the process. We work as a team to achieve our goals!.
+              <br/><br/>
+              For over 7 years, Destination Fitness has helped over around {whyUsCardData[0].Numbers}+ clients
+              reach their fitness goals. From youngsters to seniors, our clients
+              have achieved something they never thought possible.
             </p>
 
             <div className={classes["whyUsSection-mini-section-container"]}>
