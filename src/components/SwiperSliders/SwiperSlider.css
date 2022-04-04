@@ -11,8 +11,12 @@
   font-weight: bold;
   font-family: Poppins;
   text-align: center;
+  margin: 0;
 }
 
+.swiper-slide.product-swiper-slide.swiper-slide-active{
+  margin-right: unset !important;
+}
 
 .product-swiper-slide {
   text-align: center;

@@ -45,18 +45,6 @@ import shopProductCategoryAminoAcidImg from "../assets/shop/ProductCategoriesImg
 import shopProductCategoryPreWorkoutImg from "../assets/shop/ProductCategoriesImgs/shopProductCategoryPreWorkoutImg.jpg";
 import shopProductCategoryGiftsAndValueSetsImg from "../assets/shop/ProductCategoriesImgs/shopProductCategoryGiftsAndValueSetsImg.jpg";
 
-// Import imges for Shop Procuct Company Categories
-
-import proteinCompanyProductsTheProteinWorks from "../assets/shop/companiesImgs/theProteinWorks.jpg";
-import proteinCompanyProductsCellulor from "../assets/shop/companiesImgs/cellular.jpg";
-import proteinCompanyProductsMuscleTech from "../assets/shop/companiesImgs/muscleTech.jpg";
-import proteinCompanyProductsOn from "../assets/shop/companiesImgs/on.jpg";
-import proteinCompanyProductsJackedNutrition from "../assets/shop/companiesImgs/jackNeutrition.jpg";
-
-//------------------Product Data By Category------------------
-
-// import proteinOne from '../assets/products/Supliments DataBase/1-Six Star Muscle 100% Whey Protein Plus.webp';
-
 // ------------------------DUMMY PRODUCTS-----------------------------------------------
 
 export const DUMMY_PRODUCTS = [
@@ -168,8 +156,8 @@ export const forDietPlan = [
 
 export const productsCategoriesData = [
   {
-    heading: "Proteins",
-    desc: `Lacking motivation to get back into the gym? Back in the gym already but feel stagnated? Or maybe you’re just looking for new inspiration for a the new year. Whatever your situation, reading words of wisdom from successful people can be super-inspiring.`,
+    heading: "Supplements",
+    desc: `We deal in a wide range of premium quality supplements including  whey protein, fat burners, weight loss, weight gainers, post-workout, pre-workout, amino acids, bcaas, and other nutritional supplements. Optimum Nutrition, MuscleTech, BSN, BPI Sports, Nutrex Research, Ultimate Nutrition, and others are among our best-selling brands.`,
     img: productsCategoriesProteinImg,
     style: "imgRightSide",
   },
@@ -230,15 +218,3 @@ export const shopProductCategories = [
     id: 6,
   },
 ];
-
-//--------------------------------SHOP PRODUCT COMPANIES CATEGORIES------------------------------
-
-export const proteinCompaniesCategory = [
-  { name: "the-protein-works", img: proteinCompanyProductsTheProteinWorks },
-  { name: "cellulor", img: proteinCompanyProductsCellulor },
-  { name: "muscle-Tech", img: proteinCompanyProductsMuscleTech },
-  { name: "on", img: proteinCompanyProductsOn },
-  { name: "jack-nutrition", img: proteinCompanyProductsJackedNutrition },
-];
-
-// rafce shortcut
