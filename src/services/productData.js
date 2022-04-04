@@ -45,6 +45,18 @@ import shopProductCategoryAminoAcidImg from "../assets/shop/ProductCategoriesImg
 import shopProductCategoryPreWorkoutImg from "../assets/shop/ProductCategoriesImgs/shopProductCategoryPreWorkoutImg.jpg";
 import shopProductCategoryGiftsAndValueSetsImg from "../assets/shop/ProductCategoriesImgs/shopProductCategoryGiftsAndValueSetsImg.jpg";
 
+// Import imges for Shop Procuct Company Categories
+
+// import proteinCompanyProductsTheProteinWorks from "../assets/shop/companiesImgs/theProteinWorks.jpg";
+// import proteinCompanyProductsCellulor from "../assets/shop/companiesImgs/cellular.jpg";
+// import proteinCompanyProductsMuscleTech from "../assets/shop/companiesImgs/muscleTech.jpg";
+// import proteinCompanyProductsOn from "../assets/shop/companiesImgs/on.jpg";
+// import proteinCompanyProductsJackedNutrition from "../assets/shop/companiesImgs/jackNeutrition.jpg";
+
+//------------------Product Data By Category------------------
+
+// import proteinOne from '../assets/products/Supliments DataBase/1-Six Star Muscle 100% Whey Protein Plus.webp';
+
 // ------------------------DUMMY PRODUCTS-----------------------------------------------
 
 export const DUMMY_PRODUCTS = [
@@ -90,12 +102,12 @@ export const DUMMY_PRODUCTS = [
     price: "Rs 12,000",
     rating: "4.5",
   },
-  { 
+  {
     id: 7,
-    name: "Name", 
-    img: imgSeven, 
-    price: "Rs 12,000", 
-    rating: "4.5" 
+    name: "Name",
+    img: imgSeven,
+    price: "Rs 12,000",
+    rating: "4.5",
   },
   {
     id: 8,
@@ -104,12 +116,13 @@ export const DUMMY_PRODUCTS = [
     price: "Rs 12,000",
     rating: "4.5",
   },
-  { 
+  {
     id: 9,
-    name: "Name", 
-    img: imgNine, 
-    price: "Rs 12,000", 
-    rating: "4.5" },
+    name: "Name",
+    img: imgNine,
+    price: "Rs 12,000",
+    rating: "4.5",
+  },
   {
     id: 10,
     name: "Name",
@@ -117,12 +130,13 @@ export const DUMMY_PRODUCTS = [
     price: "Rs 12,000",
     rating: "4.5",
   },
-  { 
+  {
     id: 11,
-    name: "Name", 
-    img: imgEleven, 
-    price: "Rs 12,000", 
-    rating: "4.5" },
+    name: "Name",
+    img: imgEleven,
+    price: "Rs 12,000",
+    rating: "4.5",
+  },
   {
     id: 12,
     name: "Name",
@@ -218,3 +232,15 @@ export const shopProductCategories = [
     id: 6,
   },
 ];
+
+//--------------------------------SHOP PRODUCT COMPANIES CATEGORIES------------------------------
+
+// export const proteinCompaniesCategory = [
+//   { name: "the-protein-works", img: proteinCompanyProductsTheProteinWorks },
+//   { name: "cellulor", img: proteinCompanyProductsCellulor },
+//   { name: "muscle-Tech", img: proteinCompanyProductsMuscleTech },
+//   { name: "on", img: proteinCompanyProductsOn },
+//   { name: "jack-nutrition", img: proteinCompanyProductsJackedNutrition },
+// ];
+
+// rafce shortcut
