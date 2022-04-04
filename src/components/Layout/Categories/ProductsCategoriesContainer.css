@@ -1,7 +1,7 @@
 /** @format */
 
 .product-categories-container {
-  border: double 6px transparent;
+  /* border: double 6px transparent; */
   border-radius: 18px;
 
   background-origin: border-box;
@@ -9,7 +9,7 @@
 }
 
 .product-categories-heading {
-  padding: 30px 0px 0px 10px;
+  /* padding: 30px 0px 0px 10px; */
   font-size: 30px;
   font-weight: bold;
   font-family: Poppins;

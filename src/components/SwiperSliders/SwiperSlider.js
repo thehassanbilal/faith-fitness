@@ -46,10 +46,10 @@ const SwiperSlider = (props) => {
         spaceBetween={10}
         slidesPerGroup={2}
         loop={true}
-        autoplay={{
-          delay: 4500,
-          disableOnInteraction: false,
-        }}
+        // autoplay={{
+        //   delay: 4500,
+        //   disableOnInteraction: false,
+        // }}
         loopFillGroupWithBlank={true}
         navigation={false}
         className='swiper'
@@ -58,10 +58,10 @@ const SwiperSlider = (props) => {
         {DUMMY_PRODUCTS.map((product) => (
           <SwiperSlide className="product-swiper-slide">
             <ProductCard
-              name={product.name}
-              img={product.img}
-              price={product.price}
-              rating={product.rating}
+              name={product?.name}
+              img={product?.img}
+              price={product?.price}
+              rating={product?.rating}
             />
           </SwiperSlide>
         ))}

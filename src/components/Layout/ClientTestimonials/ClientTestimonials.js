@@ -34,28 +34,27 @@ const ClientTestimonials = () => {
                     <h3>What our clients say's?</h3>
 
                     <p className="font-italic">
-                      It is a long established fact that a reader will be
-                      distracted by the readable content of a page when looking
-                      at its layout
+                      For the past two years, I've been purchasing supplements
+                      from Faith Fitness, and they are the most reliable and
+                      gratifying supplement source in Pakistan.
                     </p>
                     <ul>
                       <li>
-                        <i className="fa fa-arrow-right"></i> The standard Lorem
-                        Ipsum passage, used since the 1500s
+                        <i className="fa fa-arrow-right"></i>100% Original
+                        Product!
                       </li>
                       <li>
-                        <i className="fa fa-arrow-right"></i> 1914 translation
-                        by H. Rackham
+                        <i className="fa fa-arrow-right"></i>100% Results
+                        Obtained!
                       </li>
                       <li>
-                        <i className="fa fa-arrow-right"></i> Section 1.10.33 of
-                        "de Finibus Bonorum et Malorum"
+                        <i className="fa fa-arrow-right"></i>100% Satisfied!
                       </li>
                     </ul>
                     <p classNameName="font-italic">
-                      Lorem Ipsum is simply dummy text of the printing and
-                      typesetting industry. Lorem Ipsum has been the industry's
-                      standard dummy text ever since the 1500s
+                      I've tried a lot of other brands, but Faith Fitness is my
+                      favourite. Pakistan's most authentic workout supplement
+                      store. They are always willing to help.
                     </p>
                   </div>
                 </div>
@@ -69,28 +68,32 @@ const ClientTestimonials = () => {
                     <h3>What our clients say's?</h3>
 
                     <p className="font-italic">
-                      It is a long established fact that a reader will be
-                      distracted by the readable content of a page when looking
-                      at its layout
+                      Personal training is excellent. I was tiny, but I was too
+                      lazy and self-conscious to go to the gym. Shamroz was my
+                      personal trainer, and I've noticed a positive change in my
+                      appearance since then. I'm content, and I'm more
+                      confidence in myself now. Faith Fitness, come highly
+                      recommended by me to anyone searching for high-quality
+                      personal training.
                     </p>
                     <ul>
                       <li>
-                        <i className="fa fa-arrow-right"></i> The standard Lorem
-                        Ipsum passage, used since the 1500s
+                        <i className="fa fa-arrow-right"></i> Training sessions
+                        were awesome.
                       </li>
                       <li>
-                        <i className="fa fa-arrow-right"></i> 1914 translation
-                        by H. Rackham
+                        <i className="fa fa-arrow-right"></i> Exercises, that
+                        were on point.
                       </li>
                       <li>
-                        <i className="fa fa-arrow-right"></i> Section 1.10.33 of
-                        "de Finibus Bonorum et Malorum"
+                        <i className="fa fa-arrow-right"></i> Prequotionary
+                        measures to prevent the onset of any injury.
                       </li>
                     </ul>
                     <p classNameName="font-italic">
-                      Lorem Ipsum is simply dummy text of the printing and
-                      typesetting industry. Lorem Ipsum has been the industry's
-                      standard dummy text ever since the 1500s
+                      In a heartbeat, I would suggest Faith Fitness. With their
+                      assistance, I intend to continue to exercise and keep a
+                      solid level of fitness for a long time.
                     </p>
                   </div>
                 </div>
@@ -104,28 +107,25 @@ const ClientTestimonials = () => {
                     <h3>What our clients say's?</h3>
 
                     <p className="font-italic text-clr">
-                      It is a long established fact that a reader will be
-                      distracted by the readable content of a page when looking
-                      at its layout
+                      I've never been a gym person, but with only 6 weeks till
+                      our wedding, I was uncomfortable with my appearance. Faith
+                      Fitness impressed me with their professionalism and
+                      knowledge, not only in terms of exercise and fitness, but
+                      also in terms of posture and nutrition.
                     </p>
                     <ul>
                       <li>
-                        <i className="fa fa-arrow-right"></i> The standard Lorem
-                        Ipsum passage, used since the 1500s
+                        <i className="fa fa-arrow-right"></i>Helped me in achieving my dream body fitness goal.
                       </li>
                       <li>
-                        <i className="fa fa-arrow-right"></i> 1914 translation
-                        by H. Rackham
+                        <i className="fa fa-arrow-right"></i> They helped me with my suppliment.
                       </li>
                       <li>
-                        <i className="fa fa-arrow-right"></i> Section 1.10.33 of
-                        "de Finibus Bonorum et Malorum"
+                        <i className="fa fa-arrow-right"></i> Training sessions were awesome.
                       </li>
                     </ul>
                     <p classNameName="font-italic text-clr">
-                      Lorem Ipsum is simply dummy text of the printing and
-                      typesetting industry. Lorem Ipsum has been the industry's
-                      standard dummy text ever since the 1500s
+                    Thank you SO much for all you’ve already done and all you will continue to do!!!
                     </p>
                   </div>
                 </div>

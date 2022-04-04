@@ -1,4 +1,0 @@
-Name: OXIMETER
-Price: 3,300
-Previous Price: 
-Rating Stars: 

@@ -87,4 +87,8 @@
 .subscribe-btn {
   width: 100%;
   margin-top: 12px;
+  color: #9bdc28;
+  background-color: black;
+  padding: 10px;
+  font-weight: 500;
 }

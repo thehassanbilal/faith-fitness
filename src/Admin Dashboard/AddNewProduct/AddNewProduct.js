@@ -9,6 +9,11 @@ import "../../App.css";
 import { DropzoneArea } from "material-ui-dropzone";
 import axios from "axios";
 const NewProduct = () => {
+  const [selectedFlavours, setSelectedFlavours] = useState([]);
+  const [selectImage, setSelectImage] = useState(null);
+  const [selectImageDropzone, setSelectImageDropzone] = useState(null);
+
+ 
   const catOptions = [
     { value: "Protien", label: "Protien" },
     { value: "water", label: "water" },
@@ -42,7 +47,6 @@ const NewProduct = () => {
   const [description, setDescription] = useState("");
   const [category, setCategory] = useState([]);
   const [selectedWeights, setSelectedWeights] = useState([]);
-  const [selectedFlavours, setSelectedFlavours] = useState([]);
 
   const [images, setImage] = useState("");
 
@@ -70,18 +74,19 @@ const NewProduct = () => {
   const createProductSubmitHandler = (e) => {
     e.preventDefault();
 
-    const data = {
-      name,
-      price,
-      description,
-      category,
-      selectedFlavours,
-      selectedWeights,
-      company,
-      images,
-    };
-    submitProdcut(data);
+  const handleDropZoneImage = (acceptedFiles) => {
+    const file = acceptedFiles[0];
+    if (file) {
+      const fileObj = {
+        ...file,
+        preview: URL.createObjectURL(file),
+        fileData: file,
+      };
+      setSelectImage(fileObj);
+    }
   };
+
+  console.log("For First dropZone", selectImage);
 
   return (
     <Fragment>
@@ -170,15 +175,34 @@ const NewProduct = () => {
                 }
               />
             </div>
+            <div>
+              <TextField
+                fullWidth
+                className="set-outline"
+                variant="outlined"
+                type="text"
+                placeholder="Company Name"
+                required
+                value={company}
+                onChange={(e) => setCompany(e.target.value)}
+              />
+            </div>
 
             <DropzoneArea
+              acceptedFiles={["image/*"]}
+              filesLimit={2}
+              file={selectImage}
+              dropzoneText={"Drag and drop an image here or click"}
+              onChange={handleDropZoneImage}
+            />
+
+            {/* <DropzoneArea
               acceptedFiles={["image/*"]}
               filesLimit={1}
               dropzoneText={
                 "Drag and drop and add nutrition image here or click"
               }
-              onChange={(file) => setImage(file[0].path)}
-            />
+            /> */}
 
             <Button id="createProductBtn" type="submit" className="btn-reset">
               Create
