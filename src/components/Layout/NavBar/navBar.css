@@ -79,8 +79,8 @@ nav ul {
   height: 22px;
   width: 22px;
   border-radius: 8px;
-  background-color: whitesmoke;
-  color: black;
+  background-color: black;
+  color: #9bdc28 !important;
   margin-left: 18px;
   font-size: 16px;
   font-family: Poppins;
@@ -88,6 +88,7 @@ nav ul {
   align-items: center;
   justify-content: center;
   color: black;
+  border: solid 2px #9bdc28;
 }
 
 .cartBatch {
@@ -145,7 +146,7 @@ nav ul {
 }
 
 .fa-shopping-cart {
-  color: whitesmoke;
+  color: #9bdc28;
 }
 
 .signin {
@@ -161,7 +162,7 @@ nav ul {
 }
 
 .cart-div {
-  background: rgb(52 124 40) -6%;
+  background: black;
   height: 38px;
   justify-content: center;
   border-radius: 8px;
@@ -169,10 +170,11 @@ nav ul {
   align-items: center;
   max-width: 100px;
   width: 100px;
+  color: white;
 }
 
 .navbar-light .navbar-toggler-icon {
-  background-image: url('../../../assets/humberger.png');
+  background-image: url("../../../assets/humberger.png");
 }
 
 .navbar-collapse {
