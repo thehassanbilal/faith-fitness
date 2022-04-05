@@ -1,5 +1,3 @@
-/** @format */
-
 import React, { Fragment, useState } from "react";
 import "./newProduct.css";
 // import { Select, SelectOption, SelectInput } from "reaselct";
@@ -10,10 +8,8 @@ import { DropzoneArea } from "material-ui-dropzone";
 import axios from "axios";
 const NewProduct = () => {
   const [selectedFlavours, setSelectedFlavours] = useState([]);
-  const [selectImage, setSelectImage] = useState(null);
-  const [selectImageDropzone, setSelectImageDropzone] = useState(null);
+  const [images, setSelectImage] = useState(null);
 
- 
   const catOptions = [
     { value: "Protien", label: "Protien" },
     { value: "water", label: "water" },
@@ -48,11 +44,18 @@ const NewProduct = () => {
   const [category, setCategory] = useState([]);
   const [selectedWeights, setSelectedWeights] = useState([]);
 
-  const [images, setImage] = useState("");
-
-  console.log("nutrion image", images);
-
-  const submitProdcut = async (data) => {
+  const createProductSubmitHandler = async (e) => {
+    e.preventDefault();
+    const data = {
+      name,
+      price,
+      category,
+      images,
+      selectedFlavours,
+      selectedWeights,
+      description,
+      company,
+    };
     try {
       const response = await fetch("http://localhost:9000/api/product", {
         headers: {
@@ -60,9 +63,7 @@ const NewProduct = () => {
           "content-type": "application/json",
         },
         method: "POST",
-        body: JSON.stringify({
-          data,
-        }),
+        body: JSON.stringify({ data }),
       });
       const product = await response.json();
       console.log(product);
@@ -70,10 +71,6 @@ const NewProduct = () => {
       console.log(err);
     }
   };
-
-  const createProductSubmitHandler = (e) => {
-    e.preventDefault();
-
   const handleDropZoneImage = (acceptedFiles) => {
     const file = acceptedFiles[0];
     if (file) {
@@ -82,11 +79,10 @@ const NewProduct = () => {
         preview: URL.createObjectURL(file),
         fileData: file,
       };
-      setSelectImage(fileObj);
+      setSelectImage(fileObj?.preview);
     }
   };
-
-  console.log("For First dropZone", selectImage);
+  console.log("For First dropZone", images);
 
   return (
     <Fragment>
@@ -120,6 +116,7 @@ const NewProduct = () => {
                 type="number"
                 placeholder="Price"
                 required
+                value={price}
                 onChange={(e) => setPrice(e.target.value)}
               />
             </div>
@@ -191,7 +188,7 @@ const NewProduct = () => {
             <DropzoneArea
               acceptedFiles={["image/*"]}
               filesLimit={2}
-              file={selectImage}
+              file={images}
               dropzoneText={"Drag and drop an image here or click"}
               onChange={handleDropZoneImage}
             />
