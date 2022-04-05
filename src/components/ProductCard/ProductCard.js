@@ -30,7 +30,7 @@ function ProductCard(props) {
         <div className={classes["productCard-img-container"]}>
           <img
             className={classes["productCard-image"]}
-            src={props?.img}
+            src={props?.img} alt="product image"
           />
         </div>
         <div className={classes["productCard-content-box"]}>
