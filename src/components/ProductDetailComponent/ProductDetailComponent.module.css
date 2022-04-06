@@ -83,8 +83,10 @@ li {
 }
 
 .ProductDetailPage-btn {
-  color: white;
+  color: #9bdc28;
   padding: 15px 20px;
+  background-color: #232323;
+  border-radius: 5px;
   border: none;
 }
 
@@ -93,7 +95,7 @@ li {
 }
 
 .ProductDetailPage-btn:hover {
-  background-color: tomato;
+  color: white;
 }
 
 .ProductDetailPage-flavour-and-weight-container {

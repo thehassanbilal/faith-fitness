@@ -71,11 +71,11 @@
 }
 
 .productCard-card:hover .productCard-content-box {
-  height: 180px;
+  height: 175px;
 }
 
-.productCard-card:hover .productCard-content-box a {
-  margin-top: 12px;
+.productCard-card:hover .productCard-btn {
+  margin-top: 5px;
 }
 
 .productCard-product-name,
@@ -95,10 +95,10 @@
   font-size: 20px;
 }
 
-.productCard-content-box a {
+.productCard-btn {
   display: inline-block;
-  margin-top: 50px;
   padding: 10px 20px;
+  margin-top: 30px;
   background: #fff;
   border-radius: 4px;
   text-decoration: none;
@@ -109,7 +109,7 @@
   transition: 0.5s;
 }
 
-.productCard-content-box a {
+.productCard-btn {
   opacity: 1;
   transform: translateY(0px);
   transition-delay: 0.05s;

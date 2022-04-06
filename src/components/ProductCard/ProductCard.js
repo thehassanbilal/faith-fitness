@@ -28,18 +28,16 @@ function ProductCard({id, name, price, img}) {
         <div className={classes["productCard-img-container"]}>
           <img
             className={classes["productCard-image"]}
-<<<<<<< HEAD
             src={img}
-=======
-            src={props?.img} alt="product image"
->>>>>>> f915ae96380da9f8a6f5b4ef306348e0d0a808f3
           />
         </div>
         <div className={classes["productCard-content-box"]}>
-          <p className={classes["productCard-product-name"]}>{name}</p>
+          <Link to="/product/:id">
+            <p className={classes["productCard-product-name"]}>{name}</p>
+          </Link>
           <p className={classes["productCard-product-price"]}>RS {price}</p>
           <p className={classes["productCard-rating"]}>⭐⭐⭐⭐⭐</p>
-          <a onClick={addToCartHandler}>Buy Now</a>
+          <a  className={classes["productCard-btn"]} onClick={addToCartHandler}>Buy Now</a>
         </div>
       </div>
     </div>
