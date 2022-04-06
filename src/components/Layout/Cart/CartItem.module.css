@@ -43,7 +43,7 @@
 
 .actions-button-add,
 .actions-button-minus {
-  background: rgb(52 124 40) -6% !important;
+  background: #232323 !important;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -62,8 +62,8 @@
   font: inherit;
   font-weight: bold;
   font-size: 1.25rem;
-  color: #8a2b06;
-  border: 1px solid #8a2b06;
+  color: #9bdc28;
+  border: 1px solid #9bdc28;
   width: 3rem;
   text-align: center;
   border-radius: 6px;
@@ -73,10 +73,8 @@
   margin: 0.25rem;
 }
 
-.cart-item button:hover,
-.cart-item button:active {
-  background-color: #8a2b06;
-  color: white;
+.cart-item button:hover {
+color: white;
 }
 
 @media (max-width: 480px) {

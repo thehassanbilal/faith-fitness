@@ -17,14 +17,12 @@
 }
 
 .products-categories-desc {
+  padding-top: 20px;
   font-size: 20px;
 }
 
 .products-categories-cta {
-  background-color: #3b6d3a;
-  color: white;
-  padding: 20px 30px;
-  border: none;
+  margin-top: 20px;
 }
 
 /* ----------------Image side---------------------- */

@@ -23,9 +23,15 @@ const Pricing = () => {
           return (
             <OurProgramsCard
               logo={cardData.logo}
-              title={cardData.title}
+              id={cardData.id}
+              name={cardData.name}
               desc={cardData.desc}
-              cost={cardData.cost}
+              price={cardData.price}
+              itemOne={cardData.itemOne}
+              itemTwo={cardData.itemTwo}
+              itemThree={cardData.itemThree}
+              itemFour={cardData.itemFour}
+              itemFive={cardData.itemFive}
               btn_txt={sub}
             />
           );

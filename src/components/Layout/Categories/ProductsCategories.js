@@ -1,6 +1,7 @@
 /** @format */
 
 import Fade from "react-reveal/Fade";
+import { Link } from "react-router-dom";
 import { CtaButton } from "../Buttons/CtaButton";
 import "./ProductsCategories.css";
 
@@ -17,7 +18,11 @@ export const ProductsCategories = (props) => {
     <div className={textStyle}>
       <h3 className="products-categories-heading">{props.heading}</h3>
       <p className="products-categories-desc">{props.desc}</p>
-      <CtaButton btnTxt={"SHOP NOW"} />
+      <div className="products-categories-cta">
+        <Link to="/store">
+        <CtaButton btnTxt={"SHOP NOW"} />
+        </Link>
+      </div>
     </div>
   );
 

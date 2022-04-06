@@ -16,7 +16,6 @@ function CheckoutItems() {
     quantity: e.quantity,
   }));
   const [popUp, setPopUp] = useState(false);
-
   //-------------------------Validations---------------------------------------------------
   const isEmpty = (value) => value?.trim() === "";
   const isFiveChars = (value) => value?.trim().length === 5;

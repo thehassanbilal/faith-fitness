@@ -23,7 +23,7 @@
 .ourProgramCard-cost {
   padding-top: 10px;
   font-size: 18px;
-  color: black;
+  color: #232323;
   font-weight: 500;
 }
 
@@ -85,10 +85,15 @@
 }
 
 .subscribe-btn {
-  width: 100%;
   margin-top: 12px;
   color: #9bdc28;
-  background-color: black;
-  padding: 10px;
+  border-radius: 10px;
+  background-color: #232323;
+  padding: 10px 20px;
   font-weight: 500;
 }
+
+.subscribe-btn:hover {
+  color: white;
+}
+
