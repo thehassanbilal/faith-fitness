@@ -1,27 +1,15 @@
-/** @format */
-
 import React, { Fragment, useState } from "react";
 import "./newProduct.css";
 // import { Select, SelectOption, SelectInput } from "reaselct";
 import Select from "react-select";
-import { Button, TextField, TextareaAutosize } from "@material-ui/core";
+import { Button, TextField, TextareaAutosize, Grid } from "@material-ui/core";
 import "../../App.css";
 import { DropzoneArea } from "material-ui-dropzone";
-import { SubscriptionsOutlined } from "@material-ui/icons";
-
+import axios from "axios";
 const NewProduct = () => {
   const [selectedFlavours, setSelectedFlavours] = useState([]);
-  const [selectImage, setSelectImage] = useState(null);
-  const [selectImageDropzone, setSelectImageDropzone] = useState(null);
+  const [images, setSelectImage] = useState(null);
 
-  const suppOptions = [
-    { value: "bugatti", label: "Bugatti" },
-    { value: "ferrari", label: "Ferrari" },
-    { value: "am", label: "Aston Martin" },
-    { value: "koenigsegg", label: "Koenigsegg" },
-    { value: "bmw", label: "BMW" },
-    { value: "cadillac", label: "Cadillac" },
-  ];
   const catOptions = [
     { value: "Protien", label: "Protien" },
     { value: "water", label: "water" },
@@ -30,14 +18,24 @@ const NewProduct = () => {
     { value: "bmw", label: "BMW" },
     { value: "cadillac", label: "Cadillac" },
   ];
-  const supplimentWeights = [
-    { value: "Protien", label: "Protien" },
-    { value: "water", label: "water" },
-    { value: "sugar", label: "Aston Martin" },
-    { value: "furits", label: "furits" },
-    { value: "bmw", label: "BMW" },
-    { value: "cadillac", label: "Cadillac" },
+
+  const suppOptions = [
+    { value: "chocolate", label: "Chocolate" },
+    { value: "strawberry", label: "Strawberry" },
+    { value: "oreo", label: "Oreo" },
+    { value: "vanilla", label: "Vanilla" },
+    { value: "tutiFruiti", label: "Tuti Fruiti" },
   ];
+
+  const supplimentWeights = [
+    { value: "3", label: "3 lbs" },
+    { value: "5", label: "5 lbs" },
+    { value: "12", label: "12 lbs" },
+  ];
+
+  // const alert = useAlert();
+
+  // const { loading, error, success } = useSelector((state) => state.newProduct);
 
   const [name, setName] = useState("");
   const [company, setCompany] = useState("");
@@ -46,22 +44,33 @@ const NewProduct = () => {
   const [category, setCategory] = useState([]);
   const [selectedWeights, setSelectedWeights] = useState([]);
 
-  // handle the selectedFlavours values
-
-  const createProductSubmitHandler = (e) => {
+  const createProductSubmitHandler = async (e) => {
     e.preventDefault();
-    const myForm = new FormData();
-    myForm.set("name", name);
-    myForm.set("price", price);
-    myForm.set("description", description);
-    myForm.set("category", category);
-    myForm.set("selectedFlavours", selectedFlavours);
-    myForm.set("selectedWeights", selectedWeights);
-    myForm.set("company", company);
-
-    // dispatch(createProduct(myForm));
+    const data = {
+      name,
+      price,
+      category,
+      images,
+      selectedFlavours,
+      selectedWeights,
+      description,
+      company,
+    };
+    try {
+      const response = await fetch("http://localhost:9000/api/product", {
+        headers: {
+          Accept: "application/json",
+          "content-type": "application/json",
+        },
+        method: "POST",
+        body: JSON.stringify({ data }),
+      });
+      const product = await response.json();
+      console.log(product);
+    } catch (err) {
+      console.log(err);
+    }
   };
-
   const handleDropZoneImage = (acceptedFiles) => {
     const file = acceptedFiles[0];
     if (file) {
@@ -70,11 +79,10 @@ const NewProduct = () => {
         preview: URL.createObjectURL(file),
         fileData: file,
       };
-      setSelectImage(fileObj);
+      setSelectImage(fileObj?.preview);
     }
   };
-
-  console.log("For First dropZone", selectImage);
+  console.log("For First dropZone", images);
 
   return (
     <Fragment>
@@ -89,6 +97,7 @@ const NewProduct = () => {
 
             <div>
               <TextField
+                id="name"
                 fullWidth
                 className="set-outline"
                 variant="outlined"
@@ -107,6 +116,7 @@ const NewProduct = () => {
                 type="number"
                 placeholder="Price"
                 required
+                value={price}
                 onChange={(e) => setPrice(e.target.value)}
               />
             </div>
@@ -120,7 +130,15 @@ const NewProduct = () => {
                 className="handleTextArea"
               ></TextareaAutosize>
             </div>
-
+            <div>
+              <TextareaAutosize
+                fullWidth
+                placeholder="Product Description"
+                value={company}
+                onChange={(e) => setCompany(e.target.value)}
+                className="handleTextArea"
+              ></TextareaAutosize>
+            </div>
             <div>
               <Select
                 fullWidth
@@ -170,19 +188,16 @@ const NewProduct = () => {
             <DropzoneArea
               acceptedFiles={["image/*"]}
               filesLimit={2}
-              file={selectImage}
+              file={images}
               dropzoneText={"Drag and drop an image here or click"}
               onChange={handleDropZoneImage}
             />
 
             {/* <DropzoneArea
               acceptedFiles={["image/*"]}
-              filesLimit={2}
-              dropzoneText={"Drag and drop an image here or click"}
-              onChange={(files) =>
-                files.map((el) =>
-                  setSelectImageDropzone([...selectImageDropzone, el?.path])
-                )
+              filesLimit={1}
+              dropzoneText={
+                "Drag and drop and add nutrition image here or click"
               }
             /> */}
 

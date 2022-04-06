@@ -28,7 +28,11 @@ function ProductCard({id, name, price, img}) {
         <div className={classes["productCard-img-container"]}>
           <img
             className={classes["productCard-image"]}
+<<<<<<< HEAD
             src={img}
+=======
+            src={props?.img} alt="product image"
+>>>>>>> f915ae96380da9f8a6f5b4ef306348e0d0a808f3
           />
         </div>
         <div className={classes["productCard-content-box"]}>
