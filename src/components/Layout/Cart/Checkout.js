@@ -32,7 +32,7 @@ const Checkout = (props) => {
     const enteredNameIsValid = !isEmpty(enteredName);
     const enteredStreetIsValid = !isEmpty(enteredStreet);
     const enteredCityIsValid = !isEmpty(enteredCity);
-    const enteredPostalCodeIsValid = isFiveChars(enteredPostalCode);
+    const enteredPostalCodeIsValid = !isFiveChars(enteredPostalCode);
 
     setFormInputsValidity({
       name: enteredNameIsValid,
@@ -41,22 +41,22 @@ const Checkout = (props) => {
       postalCode: enteredPostalCodeIsValid,
     });
 
-    const formIsValid =
-      enteredNameIsValid &&
-      enteredStreetIsValid &&
-      enteredCityIsValid &&
-      enteredPostalCodeIsValid;
+    // const formIsValid =
+    //   enteredNameIsValid &&
+    //   enteredStreetIsValid &&
+    //   enteredCityIsValid &&
+    //   enteredPostalCodeIsValid;
 
-    if (!formIsValid) {
-      return;
-    }
+    // if (!formIsValid) {
+    //   return;
+    // }
 
-    props.onConfirm({
-      name: enteredName,
-      street: enteredStreet,
-      city: enteredCity,
-      postalCode: enteredPostalCode,
-    });
+    // props.onConfirm({
+    //   name: enteredName,
+    //   street: enteredStreet,
+    //   city: enteredCity,
+    //   postalCode: enteredPostalCode,
+    // });
   };
 
   const nameControlClasses = `${classes.control} ${
@@ -71,6 +71,8 @@ const Checkout = (props) => {
   const cityControlClasses = `${classes.control} ${
     formInputsValidity.city ? "" : classes.invalid
   }`;
+
+  console.log("validity check", formInputsValidity);
 
   return (
     <div className={classes["checkout-form"]}>
@@ -98,7 +100,9 @@ const Checkout = (props) => {
           {!formInputsValidity.city && <p>Please enter a valid city!</p>}
         </div>
         <div className={classes.actions}>
-          <button className={classes.submit}>Confirm</button>
+          <button className={classes.submit} type="submit">
+            Confirm
+          </button>
         </div>
       </form>
     </div>

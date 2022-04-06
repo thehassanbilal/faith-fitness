@@ -40,11 +40,11 @@ function CheckoutItems() {
   const enteredPostalCode = postalCodeInputRef?.current?.value;
   const enteredAddress = addressInputRef?.current?.value;
 
-  const enteredNameIsValid = !isEmpty(enteredName);
-  const enteredEmailIsValid = !isEmpty(enteredEmail);
-  const enteredContactIsValid = !isEmpty(enteredContact);
+  const enteredNameIsValid = isEmpty(enteredName);
+  const enteredEmailIsValid = isEmpty(enteredEmail);
+  const enteredContactIsValid = isEmpty(enteredContact);
   const enteredPostalCodeIsValid = isFiveChars(enteredPostalCode);
-  const enteredAddressIsValid = !isEmpty(enteredAddress);
+  const enteredAddressIsValid = isEmpty(enteredAddress);
 
   const formIsValid =
     enteredNameIsValid &&
@@ -138,8 +138,10 @@ function CheckoutItems() {
                         <p className="validate">Please enter a valid name!</p>
                       )}
                     </div>
+
                     <div class="col-6">
                       <span>Email Address:</span>
+
                       <input
                         id="email"
                         placeholder="email..."
@@ -177,6 +179,7 @@ function CheckoutItems() {
                         </p>
                       )}
                     </div>
+
                     <div class="col-12">
                       <span>Address:</span>
                       <textarea
@@ -191,7 +194,6 @@ function CheckoutItems() {
                         </p>
                       )}
                     </div>
-
                     <div className="btn-submit">
                       <button class="btn" onClick={confirmHandler}>
                         Place order
