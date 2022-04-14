@@ -11,6 +11,7 @@ export const signupThunk = createAsyncThunk(
       headers: {
         Accept: "application/json",
         "Content-Type": "application/json",
+        " Access-Control-Allow-Headers": "Content-Type"
       },
       method: "POST",
       body: JSON.stringify({
@@ -29,8 +30,10 @@ export const signinThunk = createAsyncThunk(
   async ({ email, password }) => {
     const response = await fetch(`${API_PATH}/login`, {
       headers: {
-        Accept: "application/json",
+        "Accept": "application/json",
         "Content-type": "application/json",
+        // "Access-Control-Allow-Origin":"*",
+       " Access-Control-Allow-Headers": "Content-Type"
       },
       method: "POST",
       body: JSON.stringify({
