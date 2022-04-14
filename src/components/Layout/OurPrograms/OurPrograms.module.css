@@ -33,17 +33,17 @@
 .programSection-title-firstHalf,
 .programSection-title-secondHalf {
   color: #9bdc28;
-  font-size: 48px !important;
+  font-size: 38px !important;
   font-weight: 500;
   line-height: 37px;
-  text-align: center;
+  text-align: start;
   margin-top: 14px;
   margin-bottom: 24px;
   letter-spacing: -2px;
   text-shadow: #212529 -3px 3px 0px;
   -webkit-text-stroke: 2px #212529;
   -webkit-text-fill-color: #9bdc28;
-  font-family: matSaleh !important;
+  font-family: "Balsamiq Sans", cursive;
 }
 
 .programSection-title-secondHalf {

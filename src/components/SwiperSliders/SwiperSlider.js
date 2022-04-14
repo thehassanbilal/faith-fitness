@@ -1,21 +1,21 @@
 /** @format */
 
 // Import Swiper React components
-import { Swiper, SwiperSlide } from 'swiper/react';
+import { Swiper, SwiperSlide } from "swiper/react";
 
-import { DUMMY_PRODUCTS } from '../../services/productData';
+import { DUMMY_PRODUCTS } from "../../services/productData";
 
 // Import Swiper styles
-import 'swiper/css';
-import 'swiper/css/pagination';
-import 'swiper/css/navigation';
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
 
-import './SwiperSlider.css';
-import '../../routes/Shop/SelectedProductCategory/SelectedProductCategory.css';
+import "./SwiperSlider.css";
+import "../../routes/Shop/SelectedProductCategory/SelectedProductCategory.css";
 
 // import Swiper core and required modules
-import SwiperCore, { Autoplay, Pagination, Navigation } from 'swiper';
-import ProductCard from '../ProductCard/ProductCard';
+import SwiperCore, { Autoplay, Pagination, Navigation } from "swiper";
+import ProductCard from "../ProductCard/ProductCard";
 
 // install Swiper modules
 SwiperCore.use([Pagination, Navigation]);
@@ -23,7 +23,7 @@ SwiperCore.use([Pagination, Navigation]);
 const SwiperSlider = (props) => {
   return (
     <>
-      <h1 className='pricingSection-heading line-divider'>{props.heading}</h1>
+      <h1 className="pricingSection-heading line-divider">{props.heading}</h1>
       <Swiper
         breakpoints={{
           640: {
@@ -52,12 +52,13 @@ const SwiperSlider = (props) => {
         // }}
         loopFillGroupWithBlank={true}
         navigation={false}
-        className='swiper'
+        className="swiper"
         modules={[Autoplay]}
       >
         {DUMMY_PRODUCTS.map((product) => (
           <SwiperSlide className="product-swiper-slide">
             <ProductCard
+              id={product?.id}
               name={product?.name}
               img={product?.img}
               price={product?.price}
