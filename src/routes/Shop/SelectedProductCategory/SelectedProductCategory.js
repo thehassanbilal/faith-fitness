@@ -1,16 +1,14 @@
 /** @format */
 
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import CategoriesBlock from "../../../components/CategoriesBlock/CategoriesBlock";
 import { Banner } from "../../../components/Layout/Banner/Banner";
 import SwiperSlider from "../../../components/SwiperSliders/SwiperSlider";
 
-import { proteinCompaniesCategory } from "../../../services/productData";
 import "./SelectedProductCategory.css";
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import {
-  getCompaniesThunk,
   getSelectedCategoryThunk,
   removeSelectedCategoryProduct,
 } from "../../../features/productSlice";
@@ -18,13 +16,13 @@ import ProductCard from "../../../components/ProductCard/ProductCard";
 import "../../../App.css";
 
 const SelectedProductCategory = () => {
+  const dispatch = useDispatch();
   let { id } = useParams();
+  const [cat,setcat]=useState([])
 
   const selectedCategory = useSelector(
     (state) => state.productSlice.selectedCategory
   );
-
-  const dispatch = useDispatch();
 
   useEffect(() => {
     "useEffect is running";
@@ -39,20 +37,21 @@ const SelectedProductCategory = () => {
         </div>
         <p className="SelectedProductCategory-param"></p>
         <h1 className="pricingSection-heading line-divider">
-          {selectedCategory.name}
+          {selectedCategory?.data?.attributes?.name}
         </h1>
 
         <div className="SelectedProductCategory-products">
-          {selectedCategory?.map((product, i) => {
+          {/* {Object.entries(selectedCategory)?.map((product) => {
             return (
               <ProductCard
-                id={product._id}
-                img={product?.images?.Product_img}
-                name={product.name}
-                price={product.price}
+                id={product[1]?.products?.data?.[0]?.id}
+                // img={product?.data.attributes?.products?.data[0]?.}
+                name={product[1]?.products?.data?.[0]?.attributes.name}
+                price={product?.data?.attributes?.products?.data[0]?.attributes.price}
               />
             );
-          })}
+
+          })} */}
         </div>
       </div>
 

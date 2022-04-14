@@ -6,10 +6,10 @@ import { Link } from 'react-router-dom';
 import '../../src/authentication/auth.css';
 import { signinThunk } from '../features/authSlice/authSlice';
 
-function SignIn() {
+function Login() {
   const dispatch = useDispatch();
   const [email, setemail] = useState('');
-  const [password, setpassword] = useState();
+  const [password, setpassword] = useState('');
 
   const signinHandler = (e) => {
     e.preventDefault();
@@ -66,4 +66,4 @@ function SignIn() {
   );
 }
 
-export default SignIn;
+export default Login;

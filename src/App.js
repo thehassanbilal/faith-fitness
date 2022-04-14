@@ -18,12 +18,12 @@ import AboutCoach from "./components/Layout/AboutCoach/AboutCoach";
 import Contact from "./contact/Contact";
 import Blog from "./blogs/Blog";
 import SignUp from "./authentication/SignUp";
-import SignIn from "./authentication/SignIn";
 import CheckoutItems from "./components/Layout/Cart/CheckoutItems";
 import Dashboard from "./Admin Dashboard/Dashboard";
 import Dietplan from "./routes/DietPlan/Dietplan";
 import NewProduct from "./Admin Dashboard/AddNewProduct/AddNewProduct";
 import AdminDashboard from "./Admin Dashboard/AddNewProduct/AdminDashboard";
+import Login from "./authentication/Login";
 function App() {
   return (
     <>
@@ -41,7 +41,7 @@ function App() {
             <Route path="/contact" element={<Contact />} />
             <Route path="/blog" element={<Blog />} />
             <Route path="/signup" element={<SignUp />} />
-            <Route path="/signin" element={<SignIn />} />
+            <Route path="/signin" element={<Login />} />
             <Route path="/checkout" element={<CheckoutItems />} />
             <Route path="*" element={<Error />} />
             <Route path="/admin" element={<NewProduct />} />

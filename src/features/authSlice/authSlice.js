@@ -1,7 +1,7 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import React from "react";
 
-const API_PATH = "http://localhost:9000";
+const API_PATH = "http://localhost:5000";
 
 export const signupThunk = createAsyncThunk(
   "POSTSignup/signupThunk",

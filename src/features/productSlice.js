@@ -1,6 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
-const API_PATH = "http://localhost:9000";
+const API_PATH = "http://localhost:1337";
 
 const headers = {
   method: "GET",
@@ -25,12 +25,8 @@ export const addNewProductThunk = createAsyncThunk("addProduct", async () => {
 
 export const getProductCategoriesThunk = createAsyncThunk(
   "GETProduct/getProductByCategoryThunk",
-  async ({ newProduct }) => {
-    const response = await fetch(
-      `${API_PATH}/supplement-categories`,
-      headers,
-      newProduct
-    );
+  async () => {
+    const response = await fetch(`${API_PATH}/api/supplement-categories`, headers);
     const data = await response.json();
     return data;
   }
@@ -42,10 +38,12 @@ export const getSelectedCategoryThunk = createAsyncThunk(
   async (id) => {
     console.log(id);
     const response = await fetch(
-      `${API_PATH}/api/product/?supplimentCategory=${id}`,
+      `${API_PATH}/api/supplement-categories/${id}?populate=*`,
       headers
     );
-    const data = await response.json();
+    const {data} = await response.json();
+
+    console.log(data);
     return data;
   }
 );
