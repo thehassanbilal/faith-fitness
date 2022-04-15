@@ -8,7 +8,7 @@ const CategoriesBlock = ({ data }) => {
     <div className={classes["categories-block-container"]}>
       {data?.map((category) => (
         <>
-          <Link to={`/products/${category.id}`} key={category.name}>
+          <Link to={`/products/${category.name}`} key={category.name}>
             <div className={classes["categories-block-category-container"]}>
               <img
                 className={classes["categories-block-category-img"]}

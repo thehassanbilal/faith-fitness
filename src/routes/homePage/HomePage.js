@@ -11,21 +11,6 @@ import NewsLetter from "../../cookies/NewLetter";
 import { useEffect } from "react";
 
 export const HomePage = () => {
-  const datafetching = async () => {
-    const data = await fetch("http://localhost:9000/api/product");
-    const databyit = await fetch(
-      "http://localhost:9000/api/product/find/621f8c8e0c3642ef9ccf3824"
-    );
-    const js = await databyit.json();
-    const da = await data.json();
-    console.log(js);
-
-    console.log(da);
-    return da;
-  };
-  useEffect(() => {
-    datafetching();
-  }, []);
   return (
     <>
       <div className="app-container">

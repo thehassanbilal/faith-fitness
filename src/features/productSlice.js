@@ -1,11 +1,12 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
-const API_PATH = "http://localhost:1337";
+const API_PATH = "http://localhost:5000";
 
 const headers = {
   method: "GET",
   headers: {
     "Content-Type": "application/json",
+    " Access-Control-Allow-Headers": "Content-Type",
   },
 };
 const PostHeaders = {
@@ -26,7 +27,10 @@ export const addNewProductThunk = createAsyncThunk("addProduct", async () => {
 export const getProductCategoriesThunk = createAsyncThunk(
   "GETProduct/getProductByCategoryThunk",
   async () => {
-    const response = await fetch(`${API_PATH}/api/supplement-categories`, headers);
+    const response = await fetch(
+      `${API_PATH}/api/supplement-categories`,
+      headers
+    );
     const data = await response.json();
     return data;
   }
@@ -35,13 +39,17 @@ export const getProductCategoriesThunk = createAsyncThunk(
 
 export const getSelectedCategoryThunk = createAsyncThunk(
   "GETProduct/getSelectedCategoryThunk",
-  async (id) => {
-    console.log(id);
-    const response = await fetch(
-      `${API_PATH}/api/supplement-categories/${id}?populate=*`,
-      headers
-    );
-    const {data} = await response.json();
+  async () => {
+    // console.log("here", name);
+    const response = await fetch(`http://localhost:5000/api/products`, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        " Access-Control-Allow-Headers": "Content-Type",
+      },
+    });
+    console.log(response);
+    const { data } = await response.json();
 
     console.log(data);
     return data;
