@@ -108,6 +108,14 @@ nav ul {
   border: none;
 }
 
+.dashboard-btn{
+font-weight: 500;
+}
+
+.dashboard-btn:hover{
+color: #3b6d3a;
+}
+
 /* ----------------DROP DOWN BUTTON CSS------------------------> */
 
 .navBar-dropdown-moreBtn {

@@ -40,8 +40,8 @@ function App() {
             <Route path="/dietplan" element={<Dietplan />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/blog" element={<Blog />} />
-            <Route path="/signup" element={<SignUp />} />
-            <Route path="/signin" element={<Login />} />
+            {/* <Route path="/signup" element={<SignUp />} /> */}
+            <Route path="/login" element={<Login />} />
             <Route path="/checkout" element={<CheckoutItems />} />
             <Route path="*" element={<Error />} />
             <Route path="/admin" element={<NewProduct />} />

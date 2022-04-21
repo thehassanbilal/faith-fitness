@@ -1,12 +1,11 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
-const API_PATH = "http://localhost:5000";
+const API_PATH = "http://localhost:9000";
 
 const headers = {
   method: "GET",
   headers: {
     "Content-Type": "application/json",
-    " Access-Control-Allow-Headers": "Content-Type",
   },
 };
 const PostHeaders = {
@@ -41,17 +40,9 @@ export const getSelectedCategoryThunk = createAsyncThunk(
   "GETProduct/getSelectedCategoryThunk",
   async () => {
     // console.log("here", name);
-    const response = await fetch(`http://localhost:5000/api/products`, {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-        " Access-Control-Allow-Headers": "Content-Type",
-      },
-    });
-    console.log(response);
-    const { data } = await response.json();
-
-    console.log(data);
+    const response = await fetch(`${API_PATH}/api/products`, headers,
+    );
+    const  data = await response.json();
     return data;
   }
 );
@@ -69,12 +60,14 @@ export const getCompaniesThunk = createAsyncThunk(
 export const getSelectedProductThunk = createAsyncThunk(
   "GETProduct/getSelectedProductThunk",
   async (id) => {
-    const response = await fetch(`${API_PATH}/api/product/find/${id}`, headers);
+    const response = await fetch(`${API_PATH}/api/products/${id}`, headers);
     const data = await response.json();
-    console.log(data);
     return data;
   }
 );
+
+
+
 const productSlice = createSlice({
   name: "prductSlice",
   initialState: {
@@ -122,7 +115,6 @@ const productSlice = createSlice({
     },
     // --------------------------------------------------------
     [getSelectedProductThunk.pending]: (state, action) => {
-      console.log("pending");
     },
     [getSelectedProductThunk.fulfilled]: (state, action) => {
       return { ...state, selectedProduct: action.payload };

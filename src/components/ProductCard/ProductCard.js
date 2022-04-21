@@ -28,7 +28,7 @@ function ProductCard({ id, name, price, img }) {
           <img className={classes["productCard-image"]} src={img} />
         </div>
         <div className={classes["productCard-content-box"]}>
-          <Link to="/product/:id">
+          <Link to={`/product/${id}`}>
             <p className={classes["productCard-product-name"]}>{name}</p>
           </Link>
           <p className={classes["productCard-product-price"]}>RS {price}</p>

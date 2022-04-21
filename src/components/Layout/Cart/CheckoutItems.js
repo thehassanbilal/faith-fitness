@@ -11,10 +11,12 @@ function CheckoutItems() {
   let navigate = useNavigate();
   const dispatch = useDispatch();
   const cartData = useSelector((state) => state.cart.items);
-  const ProdIdsAndQuan = cartData?.map((e) => ({
+
+  const idAndQuantity = cartData?.map((e) => ({
     productId: e?.id,
-    quantity: e.quantity,
+    quantity: e?.quantity,
   }));
+  
   const [popUp, setPopUp] = useState(false);
   //-------------------------Validations---------------------------------------------------
   const isEmpty = (value) => value?.trim() === "";
@@ -55,6 +57,7 @@ function CheckoutItems() {
 
   const confirmHandler = (event) => {
     event.preventDefault();
+
     setFormInputsValidity({
       name: enteredNameIsValid,
       email: enteredEmailIsValid,
@@ -65,8 +68,9 @@ function CheckoutItems() {
 
     if (formIsValid) {
       console.log("info is valid");
-      setPopUp(true);
+      
     } else {
+      setPopUp(true);
       console.log("info not validate");
     }
   };
@@ -81,12 +85,17 @@ function CheckoutItems() {
     enteredPostalCode,
     enteredAddress,
   };
+  console.log(address.enteredName);
   const confirmOrderHandler = () => {
     console.log("cart data", address, cartData);
     dispatch(
       placeOrderThunk({
-        address,
-        cartData: ProdIdsAndQuan,
+        fullName: enteredName,
+        email: enteredEmail,
+        contact: enteredContact,
+        postalCode: enteredPostalCode,
+        address: enteredAddress,
+        products: idAndQuantity,
         totalToPay: totalToPay,
       })
     );

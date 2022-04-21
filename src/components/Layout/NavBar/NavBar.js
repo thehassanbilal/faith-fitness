@@ -6,14 +6,21 @@ import { uiActions } from "../../../features/uiSlice/uiSlice";
 import "../NavBar/navBar.css";
 import logo from "../../../assets/logo/logo.svg";
 import { useState, useEffect } from "react";
+import { userSelector, logout } from "../../../features/authSlice/authSlice";
+import ProfileBtn from "./ProfileBtn";
 const NavBar = () => {
   const dispatch = useDispatch();
 
   const cartQuantity = useSelector((state) => state.cart.totalQuantity);
 
+  const {username , isLoggedIn } = useSelector(userSelector);
+
   const toggleCartHandler = () => {
     dispatch(uiActions.toggle());
   };
+  const logoutHandler = () => {
+    dispatch(logout());
+  }
 
   // for sticky navbar
   const [stickyClass, setStickyClass] = useState("");
@@ -81,16 +88,14 @@ const NavBar = () => {
             <Outlet />
 
             <div className="navBar-rightDiv">
-              <a onClick={toggleCartHandler} className="cartIcon">
+              {isLoggedIn ? <div > <Link className="dashboard-btn" to={'/dashboard'}>Dashboard</Link> </div> : <a onClick={toggleCartHandler} className="cartIcon">
                 <div className="cart-div">
                   <i className="fa fa-shopping-cart"></i>
                   <div className="cartBatc">{cartQuantity}</div>
                 </div>
-              </a>
+              </a>}
 
-              <Link to="/signin" className="signin">
-                Sign In
-              </Link>
+              {isLoggedIn && <ProfileBtn username={username} /> }
             </div>
           </div>
         </div>

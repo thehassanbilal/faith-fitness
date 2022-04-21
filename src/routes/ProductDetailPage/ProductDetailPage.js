@@ -13,19 +13,17 @@ const ProductDetailPage = () => {
   const { id } = useParams();
   const dispatch = useDispatch();
 
-  const productData = useSelector(
+  const product = useSelector(
     (state) => state.productSlice.selectedProduct
   );
 
   useEffect(() => {
-    console.log("this is running");
     dispatch(getSelectedProductThunk(id));
-    return () => dispatch(removeSelectedProduct());
   }, [dispatch, id]);
 
   return (
     <div>
-      <ProductDetailComponent data={productData} />
+      <ProductDetailComponent data={product} />
     </div>
   );
 };

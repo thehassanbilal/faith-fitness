@@ -5,7 +5,7 @@ import Select from "react-select";
 import { Button, TextField, TextareaAutosize, Grid } from "@material-ui/core";
 import "../../App.css";
 import { DropzoneArea } from "material-ui-dropzone";
-import axios from "axios";
+
 const NewProduct = () => {
   const [selectedFlavours, setSelectedFlavours] = useState([]);
   const [images, setSelectImage] = useState(null);
@@ -97,7 +97,7 @@ const NewProduct = () => {
 
             <div>
               <TextField
-                id="name"
+                name="name"
                 fullWidth
                 className="set-outline"
                 variant="outlined"
@@ -110,6 +110,7 @@ const NewProduct = () => {
             </div>
             <div>
               <TextField
+                name="price"
                 fullWidth
                 className="set-outline"
                 variant="outlined"
@@ -123,19 +124,11 @@ const NewProduct = () => {
 
             <div>
               <TextareaAutosize
+              name="desc"
                 fullWidth
                 placeholder="Product Description"
                 value={description}
                 onChange={(e) => setDescription(e.target.value)}
-                className="handleTextArea"
-              ></TextareaAutosize>
-            </div>
-            <div>
-              <TextareaAutosize
-                fullWidth
-                placeholder="Product Description"
-                value={company}
-                onChange={(e) => setCompany(e.target.value)}
                 className="handleTextArea"
               ></TextareaAutosize>
             </div>

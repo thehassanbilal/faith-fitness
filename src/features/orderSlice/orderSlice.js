@@ -5,18 +5,31 @@ const API_PATH = "http://localhost:9000";
 
 export const placeOrderThunk = createAsyncThunk(
   "POSTPlaceOrder/placeOrderThunk",
-  async ({ address, cartData, totalToPay }) => {
-    console.log(address, cartData, totalToPay);
-    const response = await fetch(`${API_PATH}/api/order`, {
+  async ({
+    fullName,
+    email,
+    contact,
+    postalCode,
+    address,
+    products,
+    totalToPay,
+  }) => {
+    console.log("Products", products);
+    const response = await fetch(`${API_PATH}/api/orders`, {
       headers: {
         Accept: "application/json",
         "content-type": "application/json",
       },
       method: "POST",
       body: JSON.stringify({
+        fullName,
+        email,
+        contact,
+        postalCode,
         address,
-        products: cartData,
-        amount: totalToPay,
+        products,
+        totalToPay,
+        creator: "62566cf1c8236bbb21efcc5d",
       }),
     });
     return response.json();
@@ -26,9 +39,7 @@ export const placeOrderThunk = createAsyncThunk(
 const orderSlice = createSlice({
   name: "order",
   initialState: { emptorData: [] },
-  reducers: {
-  
-  },
+  reducers: {},
   extraReducers: {
     [placeOrderThunk.pending]: (state, action) => {
       console.log("pending");
