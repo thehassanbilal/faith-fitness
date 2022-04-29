@@ -2,6 +2,7 @@
 
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 import "./App.css";
 import "swiper/css/bundle";
@@ -24,7 +25,11 @@ import Dietplan from "./routes/DietPlan/Dietplan";
 import NewProduct from "./Admin Dashboard/AddNewProduct/AddNewProduct";
 import AdminDashboard from "./Admin Dashboard/AddNewProduct/AdminDashboard";
 import Login from "./authentication/Login";
+import { userSelector } from "../src/features/authSlice/authSlice";
 function App() {
+
+  const {isLoggedIn} = useSelector(userSelector);
+
   return (
     <>
       <BrowserRouter>
@@ -45,7 +50,10 @@ function App() {
             <Route path="/checkout" element={<CheckoutItems />} />
             <Route path="*" element={<Error />} />
             <Route path="/admin" element={<NewProduct />} />
-            <Route path="/dashboard" element={<AdminDashboard />} />
+            {/* {isLoggedIn ?  */}
+            <Route path="/dashboard" element={<AdminDashboard />} /> 
+            {/* // : <Route path="*" element={<Error />} />} */}
+            
           </Routes>
         </Layout>
       </BrowserRouter>

@@ -9,11 +9,11 @@ import img from "../../assets/products/DUMMY_PRODUCTS/1.jpg";
 
 const ProductDetailComponent = ({data}) => {
   const {product} = data;
-  console.log(product);
   const dispatch = useDispatch();
 
   const {
     id,
+    image,
     name,
     price,
     desc,
@@ -39,7 +39,7 @@ const ProductDetailComponent = ({data}) => {
     <div className={classes["ProductDetailPage-container"]}>
       <div className={classes["ProductDetailPage-imgSide"]}>
         <div className={classes["ProductDetailPage-img-container"]}>
-          {/* <img src={img} /> */}
+          <img src={image} />
         </div>
         <div className={classes["ProductDetailPage-desc"]}>
           <h3 className={classes["desc"]}>Description:</h3>

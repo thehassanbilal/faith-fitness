@@ -24,10 +24,8 @@ const SelectedProductCategory = () => {
   );
   
   const products = selectedCategory.products;
-  console.log(products);
 
   useEffect(async () => {
-    console.log("i am in useEffect");
     dispatch(getSelectedCategoryThunk(name));
   }, []);
 

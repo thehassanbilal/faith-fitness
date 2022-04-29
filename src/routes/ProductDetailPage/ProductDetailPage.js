@@ -11,6 +11,7 @@ import ProductDetailComponent from "../../components/ProductDetailComponent/Prod
 
 const ProductDetailPage = () => {
   const { id } = useParams();
+  console.log(id);
   const dispatch = useDispatch();
 
   const product = useSelector(
@@ -18,8 +19,11 @@ const ProductDetailPage = () => {
   );
 
   useEffect(() => {
+    console.log("use effect envoked!");
     dispatch(getSelectedProductThunk(id));
   }, [dispatch, id]);
+
+  console.log(product);
 
   return (
     <div>
